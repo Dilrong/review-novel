@@ -8,7 +8,13 @@ export const boardSlice = createApi({
   endpoints: (builder) => ({
     getBoardList: builder.query<Board[], void>({
       queryFn: async () => {
-        return supabase.from("board").select();
+        const { data, error } = await supabase.from("board").select();
+
+        if (error) {
+          return { error: error };
+        }
+
+        return { data: data as Board[] };
       },
     }),
   }),

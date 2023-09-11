@@ -8,12 +8,28 @@ export const novelSlice = createApi({
   endpoints: (builder) => ({
     getNovelList: builder.query<Novel[], void>({
       queryFn: async () => {
-        return supabase.from("novel").select();
+        const { data, error } = await supabase.from("novel").select();
+
+        if (error) {
+          return { error: error };
+        }
+
+        return { data: data as Novel[] };
       },
     }),
     getNovelDetail: builder.query<Novel, number>({
       queryFn: async (id: number) => {
-        return supabase.from("novel").select().eq("id", id).single();
+        const { data, error } = await supabase
+          .from("novel")
+          .select()
+          .eq("id", id)
+          .single();
+
+        if (error) {
+          return { error: error };
+        }
+
+        return { data: data as Novel };
       },
     }),
   }),

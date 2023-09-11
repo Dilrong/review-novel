@@ -8,21 +8,43 @@ export const chapterSlice = createApi({
   endpoints: (builder) => ({
     getChapterList: builder.query<Chapter[], void>({
       queryFn: async () => {
-        return supabase.from("chapter").select();
+        const { data, error } = await supabase.from("chapter").select();
+
+        if (error) {
+          return { error: error };
+        }
+
+        return { data: data as Chapter[] };
       },
     }),
     getChapterListByNovel: builder.query<Chapter[], number>({
       queryFn: async (id: number) => {
-        return supabase
+        const { data, error } = await supabase
           .from("chapter")
           .select()
           .eq("novel_id", id)
           .order("order");
+
+        if (error) {
+          return { error: error };
+        }
+
+        return { data: data as Chapter[] };
       },
     }),
     getChapterDetail: builder.query<Chapter, number>({
       queryFn: async (id: number) => {
-        return supabase.from("chapter").select().eq("id", id).single();
+        const { data, error } = await supabase
+          .from("chapter")
+          .select()
+          .eq("id", id)
+          .single();
+
+        if (error) {
+          return { error: error };
+        }
+
+        return { data: data as Chapter };
       },
     }),
   }),

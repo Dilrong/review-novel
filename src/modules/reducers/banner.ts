@@ -8,7 +8,13 @@ export const bannerSlice = createApi({
   endpoints: (builder) => ({
     getBannerList: builder.query<Banner[], void>({
       queryFn: async () => {
-        return supabase.from("banner").select();
+        const { data, error } = await supabase.from("banner").select();
+
+        if (error) {
+          return { error: error };
+        }
+
+        return { data: data as Banner[] };
       },
     }),
   }),
