@@ -34,7 +34,7 @@ const ClientPage = ({ id }: Props) => {
                 href={chapter.source}
                 target="_blank"
               >
-                원문: {chapter.source}
+                출처: {chapter.source}
               </Link>
             </p>
             <hr className="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700" />

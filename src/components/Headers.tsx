@@ -13,11 +13,11 @@ const Headers = () => {
       </Suspense>
       <header>
         <nav className=" bg-white shadow border-gray-200 px-2 py-2.5">
-          <div className="flex flex-wrap max-w-7xl justify-between items-center mx-auto ">
+          <div className="flex flex-wrap max-w-7xl justify-between items-center mx-auto font-ridi">
             <Link href="/" className="flex items-center">
               {/* <img src="" className="mr-3 h-6 sm:h-9" alt="Petsta" /> */}
               <h1 className="self-center text-xl font-semibold whitespace-nowrap">
-                노벨<span className="text-yellow-400 font-bold"> 덕</span>
+                노벨<span className="text-yellow-300 font-bold"> DucK</span>
               </h1>
             </Link>
             {/* <div className="flex items-center lg:order-2">

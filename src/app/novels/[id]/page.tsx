@@ -6,7 +6,6 @@ interface Props {
     id: number;
   };
 }
-
 const NovelsDetailPage = ({ params }: Props) => {
   try {
     return <ClientPage id={params.id} />;
