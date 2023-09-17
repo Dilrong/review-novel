@@ -21,7 +21,6 @@ const ClientPage = ({ id }: Props) => {
     <div className="flex flex-col min-h-screen px-4">
       <article className="flex flex-col w-full max-w-7xl mx-auto py-4 font-ridi">
         {chapterList?.map((chapter: Chapter, index) => (
-          // <Link href="" key={index}>
           <div key={index}>
             <h3 className="text-3xl font-bold py-4">{chapter.title}</h3>
             <p
@@ -39,7 +38,6 @@ const ClientPage = ({ id }: Props) => {
             </p>
             <hr className="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700" />
           </div>
-          // </Link>
         ))}
       </article>
     </div>

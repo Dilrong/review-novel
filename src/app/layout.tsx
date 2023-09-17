@@ -12,7 +12,10 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "노벨덕 - 소설 덕후를 위한 공간",
+  title: {
+    default: "노벨덕 | 소설 덕후를 위한 공간",
+    template: "%s | 노벨덕",
+  },
   description: "소설 덕후를 위한 공간",
   openGraph: {
     title: "노벨덕 - 소설 덕후를 위한 공간",
