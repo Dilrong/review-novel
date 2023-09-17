@@ -3,12 +3,12 @@
 const Footer = () => {
   return (
     <>
-      {/* <section className="text-xs bg-yellow-50">
+      <section className="text-xs bg-yellow-50">
         <article className="px-4 py-2">
           <span className="font-bold text-yellow-500 pr-4">공지</span>
           <span className="text-xs">내용</span>
         </article>
-      </section> */}
+      </section>
       <footer className="bg-neutral-50 shadow">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
           <span className="font-ridi block text-xs text-gray-700 sm:text-center mb-1">
