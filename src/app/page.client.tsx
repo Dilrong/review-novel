@@ -62,6 +62,9 @@ const ClientPage: FC<ClientPageProps> = () => {
                         height={250}
                       />
                       <h3 className="font-semibold mt-2">{novel.title}</h3>
+                      <p className="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 mt-2 bg-yellow-200 text-yellow-900 rounded">
+                        {novel.category}
+                      </p>
                     </Link>
                   </SwiperSlide>
                 ))}
@@ -114,6 +117,9 @@ const ClientPage: FC<ClientPageProps> = () => {
                         height={250}
                       />
                       <h3 className="font-semibold mt-2">{novel.title}</h3>
+                      <p className="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 mt-2 bg-yellow-200 text-yellow-900 rounded">
+                        {novel.category}
+                      </p>
                     </Link>
                   </SwiperSlide>
                 ))}
