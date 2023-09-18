@@ -8,6 +8,7 @@ import { Novel } from "@/lib/types/novel";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { DucksPick } from "@/lib/types/ducksPick";
 
 interface ClientPageProps {}
 
@@ -100,14 +101,14 @@ const ClientPage: FC<ClientPageProps> = () => {
                   },
                 }}
               >
-                {duckPickList?.map((novel: Novel, index) => (
+                {duckPickList?.map((novel: DucksPick, index) => (
                   <SwiperSlide
                     className="flex justify-center align-middle m-1"
                     key={index}
                   >
                     <Link
-                      href={`/novels/${novel.id}`}
-                      as={`/novels/${novel.id}`}
+                      href={`/novels/${novel.novel_id}`}
+                      as={`/novels/${novel.novel_id}`}
                     >
                       <Image
                         className="rounded"
