@@ -50,13 +50,13 @@ const Headers = () => {
               className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
               id="mobile-menu-2"
             >
-              {/* <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-6 lg:mt-0">
+              <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-6 lg:mt-0">
                 <li>
-                  <Link href="/novel" className="block">
-                    번역
+                  <Link href="/novels" className="block">
+                    소설
                   </Link>
                 </li>
-              </ul> */}
+              </ul>
             </div>
           </div>
         </nav>
