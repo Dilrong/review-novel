@@ -9,6 +9,7 @@ import { Novel } from "@/lib/types/novel";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { DucksPick } from "@/lib/types/ducksPick";
+import NovelCard from "@/components/NovelCard";
 
 interface ClientPageProps {}
 
@@ -51,22 +52,7 @@ const ClientPage: FC<ClientPageProps> = () => {
                     className="flex justify-center align-middle m-1"
                     key={index}
                   >
-                    <Link
-                      href={`/novels/${novel.id}`}
-                      as={`/novels/${novel.id}`}
-                    >
-                      <Image
-                        className="rounded"
-                        src={novel.thumbnail}
-                        alt={novel.title}
-                        width={250}
-                        height={250}
-                      />
-                      <h3 className="font-semibold mt-2">{novel.title}</h3>
-                      <p className="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 mt-2 bg-yellow-200 text-yellow-900 rounded">
-                        {novel.category}
-                      </p>
-                    </Link>
+                    <NovelCard novel={novel} />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -106,22 +92,7 @@ const ClientPage: FC<ClientPageProps> = () => {
                     className="flex justify-center align-middle m-1"
                     key={index}
                   >
-                    <Link
-                      href={`/novels/${novel.novel_id}`}
-                      as={`/novels/${novel.novel_id}`}
-                    >
-                      <Image
-                        className="rounded"
-                        src={novel.thumbnail}
-                        alt={novel.title}
-                        width={250}
-                        height={250}
-                      />
-                      <h3 className="font-semibold mt-2">{novel.title}</h3>
-                      <p className="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 mt-2 bg-yellow-200 text-yellow-900 rounded">
-                        {novel.category}
-                      </p>
-                    </Link>
+                    <NovelCard novel={novel} />
                   </SwiperSlide>
                 ))}
               </Swiper>
