@@ -36,9 +36,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${ubuntu.className}`}>
-        <Headers />
-        <Providers>{children}</Providers>
-        <Footer />
+        <Providers>
+          <Headers />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

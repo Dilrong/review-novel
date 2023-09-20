@@ -17,7 +17,22 @@ export const boardSlice = createApi({
         return { data: data as Board[] };
       },
     }),
+    getBoardDetail: builder.query<Board, number>({
+      queryFn: async (id: number) => {
+        const { data, error } = await supabase
+          .from("board")
+          .select()
+          .eq("id", id)
+          .single();
+
+        if (error) {
+          return { error: error };
+        }
+
+        return { data: data as Board };
+      },
+    }),
   }),
 });
 
-export const { useGetBoardListQuery } = boardSlice;
+export const { useGetBoardListQuery, useGetBoardDetailQuery } = boardSlice;
