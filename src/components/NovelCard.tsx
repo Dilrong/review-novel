@@ -24,7 +24,7 @@ const NovelCard = ({ novel }: Props) => {
 
   return (
     <Link href={`/novels/${novel.id}`}>
-      <div className="w-64 mb-4">
+      <div className="w-full max-w-64 mb-4">
         <img
           className="rounded"
           src={novel.thumbnail}
