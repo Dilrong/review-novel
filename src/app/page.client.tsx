@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { DucksPick } from "@/lib/types/ducksPick";
 import NovelCard from "@/components/NovelCard";
+import PickCard from "@/components/PickCard";
 
 interface ClientPageProps {}
 
@@ -92,7 +93,7 @@ const ClientPage: FC<ClientPageProps> = () => {
                     className="flex justify-center align-middle m-1"
                     key={index}
                   >
-                    <NovelCard novel={novel} />
+                    <PickCard novel={novel} />
                   </SwiperSlide>
                 ))}
               </Swiper>
