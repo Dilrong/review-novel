@@ -23,7 +23,7 @@ const Footer = () => {
           <span className="block text-sm text-gray-700 sm:text-center ">
             © 2023{" "}
             <a href="/" className="hover:underline">
-              Grit.Farm
+              NovelDuck
             </a>
             . All Rights Reserved.
           </span>
