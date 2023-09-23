@@ -34,7 +34,7 @@ const PickCard = ({ novel }: Props) => {
         />
         <h3 className="font-semibold mt-2 truncate">{novel.title}</h3>
         <p
-          className={`text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 mt-2 bg-${categoryColor}-200 text-${categoryColor}-900 rounded`}
+          className={`text-xs inline-flex items-center leading-sm uppercase px-2 py-1 mt-1 bg-gray-200 text-gray-900 rounded`}
         >
           {novel.category}
         </p>
