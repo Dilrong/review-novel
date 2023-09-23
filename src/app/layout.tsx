@@ -35,6 +35,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          href="/rss.xml"
+          title="Novel Feed RSS"
+        />
+      </head>
       <body className={`${ubuntu.className}`}>
         <Providers>
           <Headers />
