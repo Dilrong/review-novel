@@ -18,7 +18,7 @@ const Footer = () => {
       <footer className="bg-neutral-50 shadow">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
           <span className="font-ridi block text-xs text-gray-700 sm:text-center mb-1">
-            소설 덕후를 위한 공간 - 노벨덕
+            소설로 자연스럽게 배우는 외국어 - Novelduck
           </span>
           <span className="block text-sm text-gray-700 sm:text-center ">
             © 2023{" "}

@@ -9,8 +9,8 @@ import { Novel } from "@/lib/types/novel";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { DucksPick } from "@/lib/types/ducksPick";
-import NovelCard from "@/components/NovelCard";
-import PickCard from "@/components/PickCard";
+import NovelCard from "@/app/novels/components/NovelCard";
+import PickCard from "@/app/components/PickCard";
 
 interface ClientPageProps {}
 
@@ -23,7 +23,7 @@ const ClientPage: FC<ClientPageProps> = () => {
       {/* <Banner /> */}
       <section className="mt-8">
         <article className="max-w-7xl mx-auto px-2">
-          <h2 className="text-xl font-bold">최신 소설</h2>
+          <h2 className="text-xl font-bold">The Latest</h2>
           <div className="flex flex-col gap-4 mt-2">
             <div>
               <Swiper

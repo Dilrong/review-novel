@@ -2,6 +2,8 @@
 
 import { Novel } from "@/lib/types/novel";
 import Link from "next/link";
+import Image from "next/image";
+import NoCover from "../../../../public/images/no_cover.jpeg";
 
 interface Props {
   novel: Novel;
@@ -11,9 +13,9 @@ const NovelCard = ({ novel }: Props) => {
   return (
     <Link href={`/novels/${novel.id}`}>
       <div className="w-full max-w-64 mb-4">
-        <img
-          className="rounded"
-          src={novel.thumbnail}
+        <Image
+          className="rounded-sm"
+          src={NoCover}
           alt={novel.title}
           width={250}
           height={250}

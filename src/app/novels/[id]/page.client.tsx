@@ -27,13 +27,14 @@ const ClientPage = ({ id }: Props) => {
               className="leading-10"
               dangerouslySetInnerHTML={{ __html: marked(chapter.content) }}
             ></p>
-            <p className="mt-4 truncate">
+            <p className="text-xs mt-4 truncate">
+              <span className="mr-1">출처:</span>
               <Link
-                className="text-xs text-blue-900"
+                className="text-blue-900"
                 href={chapter.source}
                 target="_blank"
               >
-                출처: {chapter.source}
+                {chapter.source}
               </Link>
             </p>
             <hr className="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700" />

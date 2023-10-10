@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 
 import Providers from "./providers.client";
-import Headers from "@/components/Headers";
-import Footer from "@/components/Footer";
+import Headers from "@/app/components/Headers";
+import Footer from "@/app/components/Footer";
 
 const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],
@@ -13,13 +13,13 @@ const ubuntu = Ubuntu({
 
 export const metadata: Metadata = {
   title: {
-    default: "노벨덕 | 소설 덕후를 위한 공간",
+    default: "노벨덕 | 소설로 자연스럽게 배우는 외국어",
     template: "%s | 노벨덕",
   },
-  description: "소설 덕후를 위한 공간",
+  description: "소설로 자연스럽게 배우는 외국어",
   openGraph: {
-    title: "노벨덕 - 소설 덕후를 위한 공간",
-    description: "소설 덕후를 위한 공간",
+    title: "노벨덕 - 소설로 자연스럽게 배우는 외국어",
+    description: "소설로 자연스럽게 배우는 외국어",
     url: "https://novelduck.farm/",
     siteName: "NovelDuck",
     images: ["/images/og.png"],

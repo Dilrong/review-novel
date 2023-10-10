@@ -18,7 +18,7 @@ const Headers = () => {
             <Link href="/" className="flex items-center">
               {/* <img src="" className="mr-3 h-6 sm:h-9" alt="Petsta" /> */}
               <h1 className="self-center text-xl font-semibold whitespace-nowrap">
-                노벨<span className="text-yellow-300 font-bold"> DucK</span>
+                Novel<span className="text-yellow-300 font-bold"> DucK</span>
               </h1>
             </Link>
             {/* <div className="flex items-center lg:order-2">
@@ -53,7 +53,7 @@ const Headers = () => {
               <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-6 lg:mt-0">
                 <li>
                   <Link href="/novels" className="block">
-                    소설
+                    Browse
                   </Link>
                 </li>
               </ul>

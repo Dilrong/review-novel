@@ -1,7 +1,7 @@
 import fs from "fs";
 import RSS from "rss";
-import { supabase } from "../lib/utils/supabase";
-import { Novel } from "../lib/types/novel";
+import { supabase } from "./supabase";
+import { Novel } from "../types/novel";
 
 export default async function generateRssFeed() {
   const { data: novelList } = await supabase.from("novel").select();
