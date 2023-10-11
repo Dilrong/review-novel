@@ -25,7 +25,7 @@ const PickCard = ({ novel }: Props) => {
   }, [novel.category]);
 
   return (
-    <Link href={`/novels/${novel.novel_id}`}>
+    <Link href={`/viewer/${novel.novel_id}`}>
       <div className="w-full max-w-64 mb-4">
         <Image
           className="rounded-sm"

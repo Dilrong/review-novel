@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   description: "소설로 자연스럽게 배우는 외국어",
   openGraph: {
-    title: "노벨덕 - 소설로 자연스럽게 배우는 외국어",
+    title: "노벨덕 | 소설로 자연스럽게 배우는 외국어",
     description: "소설로 자연스럽게 배우는 외국어",
     url: "https://novelduck.farm/",
     siteName: "NovelDuck",

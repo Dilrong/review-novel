@@ -11,7 +11,7 @@ interface Props {
 
 const NovelCard = ({ novel }: Props) => {
   return (
-    <Link className="w-64" href={`/novels/${novel.id}`}>
+    <Link className="w-64" href={`/viewer/${novel.id}`}>
       <div className="w-full max-w-64 mb-4">
         <Image
           className="rounded-sm"
