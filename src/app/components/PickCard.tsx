@@ -2,7 +2,9 @@
 
 import { DucksPick } from "@/lib/types/ducksPick";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import NoCover from "../../../public/images/no_cover.jpeg";
 
 interface Props {
   novel: DucksPick;
@@ -25,9 +27,9 @@ const PickCard = ({ novel }: Props) => {
   return (
     <Link href={`/novels/${novel.novel_id}`}>
       <div className="w-full max-w-64 mb-4">
-        <img
-          className="rounded"
-          src={novel.thumbnail}
+        <Image
+          className="rounded-sm"
+          src={NoCover}
           alt={novel.title}
           width={250}
           height={250}
