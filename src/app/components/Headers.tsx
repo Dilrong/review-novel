@@ -14,11 +14,12 @@ const Headers = () => {
       </Suspense>
       <header>
         <nav className=" bg-white shadow border-gray-200 px-2 py-2.5">
-          <div className="flex flex-wrap max-w-7xl justify-between items-center mx-auto font-ridi">
+          <div className="flex flex-wrap max-w-7xl justify-between items-center mx-auto">
             <Link href="/" className="flex items-center">
               {/* <img src="" className="mr-3 h-6 sm:h-9" alt="Petsta" /> */}
-              <h1 className="self-center text-xl font-semibold whitespace-nowrap">
-                Novel<span className="text-yellow-300 font-bold"> DucK</span>
+              <h1 className="self-center text-xl font-semibold whitespace-nowrap font-ridi">
+                Novel
+                <span className="text-yellow-300 font-bold ml-1">DucK</span>
               </h1>
             </Link>
             {/* <div className="flex items-center lg:order-2">
@@ -50,12 +51,20 @@ const Headers = () => {
               className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
               id="mobile-menu-2"
             >
-              <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-6 lg:mt-0">
+              <ul className="flex flex-col mt-4 items-center lg:flex-row lg:space-x-4 lg:mt-0">
                 <li>
                   <Link href="/novels" className="block">
                     Browse
                   </Link>
                 </li>
+                {/* <li>
+                  <Link
+                    href="/users/signin"
+                    className="bg-yellow-300 text-base px-4 py-2 rounded-full"
+                  >
+                    SIGN IN
+                  </Link>
+                </li> */}
               </ul>
             </div>
           </div>
