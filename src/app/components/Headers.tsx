@@ -1,11 +1,13 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import Analytics from "./Analytics";
 import MetaInfo from "./MetaInfo";
 
 const Headers = () => {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <>
       <Suspense>
@@ -22,34 +24,39 @@ const Headers = () => {
                 <span className="text-yellow-300 font-bold ml-1">DucK</span>
               </h1>
             </Link>
-            {/* <div className="flex items-center lg:order-2">
-                <button
-                  data-collapse-toggle="mobile-menu-2"
-                  type="button"
-                  className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                  aria-controls="mobile-menu-2"
-                  aria-expanded="false"
+            <div className="flex md:hidden items-center lg:order-2">
+              <button
+                data-collapse-toggle="mobile-menu"
+                type="button"
+                className="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+                onClick={() => {
+                  setToggle(!toggle);
+                }}
+              >
+                <span className="sr-only">Open menu</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
                 >
-                  <span className="sr-only">Open menu</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3.75 9h16.5m-16.5 6.75h16.5"
-                    />
-                  </svg>
-                </button>
-              </div> */}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
+            </div>
             <div
-              className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-              id="mobile-menu-2"
+              className={`${
+                !toggle && "hidden"
+              } justify-between items-center w-full lg:flex lg:w-auto lg:order-1`}
+              id="mobile-menu"
             >
               <ul className="flex flex-col mt-4 items-center lg:flex-row lg:space-x-4 lg:mt-0">
                 <li>
