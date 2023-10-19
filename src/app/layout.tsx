@@ -2,9 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 
-import Providers from "./providers.client";
 import Headers from "@/app/components/Headers";
 import Footer from "@/app/components/Footer";
+import { supabase } from "@/lib/utils/supabase";
 
 const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],
@@ -28,11 +28,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+  const { data: board } = await supabase.from("board").select().single();
+
   return (
     <html lang="ko">
       <head>
@@ -44,12 +42,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${ubuntu.className}`}>
-        <Providers>
-          <Headers />
-          {children}
-          <Footer />
-        </Providers>
+        <Headers />
+        {children}
+        <Footer board={board} />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

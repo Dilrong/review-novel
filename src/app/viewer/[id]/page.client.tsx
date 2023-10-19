@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 
-import { useGetChapterListByNovelQuery } from "@/modules/reducers/chapter";
 import { Chapter } from "@/lib/types/chatper";
 import Link from "next/link";
 import { marked } from "marked";
@@ -9,20 +8,19 @@ import ViewerMenu from "./components/ViewerMenu";
 import Discussions from "./components/Discussion";
 
 interface Props {
-  id: number;
+  chapterList: Chapter[];
 }
 
-const ClientPage = ({ id }: Props) => {
+const ClientPage = ({ chapterList }: Props) => {
   marked.use({
     gfm: true,
     breaks: true,
   });
-  const { data: chapterList, isLoading } = useGetChapterListByNovelQuery(id);
 
   return (
     <div className="flex flex-col min-h-screen px-4">
-      <section className="flex flex-col w-full max-w-7xl mx-auto py-4 font-ridi">
-        {chapterList?.map((chapter: Chapter, index) => (
+      <section className="flex flex-col w-full max-w-7xl mx-auto py-4 font-maruBuri">
+        {chapterList.map((chapter: Chapter, index) => (
           <div key={index}>
             <div>
               <h3 className="text-4xl font-bold">{chapter.title}</h3>
@@ -50,11 +48,6 @@ const ClientPage = ({ id }: Props) => {
               </Link>
             </p>
             <hr className="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700" />
-            <Discussions
-              url={"https://novelduck.farm"}
-              identifier={chapter.id.toString()}
-              title={chapter.title}
-            />
           </div>
         ))}
       </section>

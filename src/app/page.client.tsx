@@ -1,9 +1,5 @@
 "use client";
-import React, { FC } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useGetNovelListQuery } from "@/modules/reducers/novel";
-import { useGetDuckPickListQuery } from "@/modules/reducers/duckPick";
+import React from "react";
 import { Novel } from "@/lib/types/novel";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,12 +8,12 @@ import { DucksPick } from "@/lib/types/ducksPick";
 import NovelCard from "@/app/novels/components/NovelCard";
 import PickCard from "@/app/components/PickCard";
 
-interface ClientPageProps {}
+interface Props {
+  novelList: Novel[];
+  duckPickList: DucksPick[];
+}
 
-const ClientPage: FC<ClientPageProps> = () => {
-  const { data: novelList } = useGetNovelListQuery();
-  const { data: duckPickList } = useGetDuckPickListQuery();
-
+const ClientPage = ({ novelList, duckPickList }: Props) => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* <Banner /> */}
@@ -48,7 +44,7 @@ const ClientPage: FC<ClientPageProps> = () => {
                   },
                 }}
               >
-                {novelList?.map((novel: Novel, index) => (
+                {novelList.map((novel: Novel, index) => (
                   <SwiperSlide
                     className="flex justify-center align-middle m-1"
                     key={index}
@@ -88,7 +84,7 @@ const ClientPage: FC<ClientPageProps> = () => {
                   },
                 }}
               >
-                {duckPickList?.map((novel: DucksPick, index) => (
+                {duckPickList.map((novel: DucksPick, index) => (
                   <SwiperSlide
                     className="flex justify-center align-middle m-1"
                     key={index}

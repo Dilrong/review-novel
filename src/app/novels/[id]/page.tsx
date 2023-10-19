@@ -1,7 +1,8 @@
+import { Chapter } from "@/lib/types/chatper";
+import { supabase } from "@/lib/utils/supabase";
 import { Metadata } from "next";
 import Custom500 from "../../error/500";
 import ClientPage from "./page.client";
-import { supabase } from "@/lib/utils/supabase";
 
 interface Props {
   params: {
@@ -22,9 +23,13 @@ export const generateMetadata = async ({
   };
 };
 
-const NovelsDetailPage = ({ params }: Props) => {
+const NovelsDetailPage = async ({ params: { id } }: Props) => {
+  const { data: chapterList } = await supabase
+    .from("chapter")
+    .select()
+    .eq("novel_id", id);
   try {
-    return <ClientPage id={params.id} />;
+    return <ClientPage chapterList={chapterList as Chapter[]} />;
   } catch (e) {
     return <Custom500 />;
   }

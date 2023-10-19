@@ -19,7 +19,7 @@ const Headers = () => {
           <div className="flex flex-wrap max-w-7xl justify-between items-center mx-auto">
             <Link href="/" className="flex items-center">
               {/* <img src="" className="mr-3 h-6 sm:h-9" alt="Petsta" /> */}
-              <h1 className="self-center text-xl font-semibold whitespace-nowrap font-ridi">
+              <h1 className="self-center text-xl font-semibold whitespace-nowrap font-maruBuri">
                 Novel
                 <span className="text-yellow-300 font-bold ml-1">DucK</span>
               </h1>
