@@ -8,6 +8,10 @@ import MetaInfo from "./MetaInfo";
 const Headers = () => {
   const [toggle, setToggle] = useState(false);
 
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <>
       <Suspense>
@@ -31,9 +35,7 @@ const Headers = () => {
                 className="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
-                onClick={() => {
-                  setToggle(!toggle);
-                }}
+                onClick={handleToggle}
               >
                 <span className="sr-only">Open menu</span>
                 <svg
@@ -60,7 +62,7 @@ const Headers = () => {
             >
               <ul className="flex flex-col mt-4 items-center lg:flex-row lg:space-x-4 lg:mt-0">
                 <li>
-                  <Link href="/novels" className="block">
+                  <Link href="/novels" className="block" onClick={handleToggle}>
                     Browse
                   </Link>
                 </li>

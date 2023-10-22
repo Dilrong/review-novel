@@ -8,7 +8,7 @@ interface Props {}
 const NovelFilter = ({}: Props) => {
   return (
     <>
-      <div className="w-full flex items-center gap-4 pt-1 pb-4">
+      <div className="w-full flex items-center gap-4 pt-1 pb-4 overflow-auto">
         <Link href="/novels/category/romance">
           <CategoryTag name="Fantasy" />
         </Link>
