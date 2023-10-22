@@ -3,7 +3,7 @@
 import React from "react";
 import { Novel } from "@/lib/types/novel";
 import NovelCard from "@/app/novels/components/NovelCard";
-import NovelFilter from "./components/NovelFilter";
+import NovelFilter from "../../components/NovelFilter";
 
 interface Props {
   novelList: Novel[];

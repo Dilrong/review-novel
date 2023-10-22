@@ -4,6 +4,7 @@ import { Novel } from "@/lib/types/novel";
 import Link from "next/link";
 import Image from "next/image";
 import NoCover from "../../../../public/images/no_cover.jpeg";
+import CategoryTag from "@/app/components/CategoryTag";
 
 interface Props {
   novel: Novel;
@@ -21,11 +22,7 @@ const NovelCard = ({ novel }: Props) => {
           height={250}
         />
         <h3 className="font-semibold mt-2 truncate">{novel.title}</h3>
-        <p
-          className={`text-xs inline-flex items-center leading-sm uppercase px-2 py-1 mt-1 bg-gray-200 text-gray-900 rounded`}
-        >
-          {novel.category}
-        </p>
+        <CategoryTag name={novel.category} />
       </div>
     </Link>
   );
