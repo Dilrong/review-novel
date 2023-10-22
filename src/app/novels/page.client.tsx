@@ -14,7 +14,7 @@ const ClientPage = ({ novelList }: Props) => {
       <section className="mt-8">
         <article className="max-w-7xl mx-auto px-2">
           <h2 className="text-xl font-bold pb-4">Browse</h2>
-          <div className="flex flex-wrap gap-8">
+          <div className="flex flex-wrap gap-8 justify-center md:justify-start">
             {novelList.map((novel: Novel, index) => (
               <NovelCard key={index} novel={novel} />
             ))}

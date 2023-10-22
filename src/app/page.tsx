@@ -1,5 +1,4 @@
 import { Novel } from "@/lib/types/novel";
-import { DucksPick } from "@/lib/types/ducksPick";
 import { supabase } from "@/lib/utils/supabase";
 import Custom500 from "./error/500";
 import ClientPage from "./page.client";
@@ -11,16 +10,17 @@ const ServerPage = async () => {
     .order("created_at", { ascending: false })
     .limit(5);
   const { data: duckPickList } = await supabase
-    .from("duck_pick")
+    .from("novel")
     .select()
     .order("created_at", { ascending: false })
+    .eq("pick", true)
     .limit(5);
 
   try {
     return (
       <ClientPage
         novelList={novelList as Novel[]}
-        duckPickList={duckPickList as DucksPick[]}
+        duckPickList={duckPickList as Novel[]}
       />
     );
   } catch (e) {

@@ -4,13 +4,11 @@ import { Novel } from "@/lib/types/novel";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { DucksPick } from "@/lib/types/ducksPick";
 import NovelCard from "@/app/novels/components/NovelCard";
-import PickCard from "@/app/components/PickCard";
 
 interface Props {
   novelList: Novel[];
-  duckPickList: DucksPick[];
+  duckPickList: Novel[];
 }
 
 const ClientPage = ({ novelList, duckPickList }: Props) => {
@@ -84,12 +82,12 @@ const ClientPage = ({ novelList, duckPickList }: Props) => {
                   },
                 }}
               >
-                {duckPickList.map((novel: DucksPick, index) => (
+                {duckPickList.map((novel: Novel, index) => (
                   <SwiperSlide
                     className="flex justify-center align-middle m-1"
                     key={index}
                   >
-                    <PickCard novel={novel} />
+                    <NovelCard novel={novel} />
                   </SwiperSlide>
                 ))}
               </Swiper>
