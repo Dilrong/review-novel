@@ -15,4 +15,5 @@ const ServerPage = async ({}: Props) => {
   }
 };
 
+export const revalidate = 0;
 export default ServerPage;

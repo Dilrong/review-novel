@@ -35,4 +35,5 @@ const NovelsDetailPage = async ({ params: { id } }: Props) => {
   }
 };
 
+export const revalidate = 0;
 export default NovelsDetailPage;

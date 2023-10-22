@@ -20,4 +20,5 @@ const ServerPage = async () => {
   }
 };
 
+export const revalidate = 0;
 export default ServerPage;
