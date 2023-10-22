@@ -41,4 +41,5 @@ const ViewerPage = async ({ params: { id } }: Props) => {
   }
 };
 
+export const revalidate = 0;
 export default ViewerPage;

@@ -4,8 +4,8 @@ import React from "react";
 import { Chapter } from "@/lib/types/chatper";
 import Link from "next/link";
 import { marked } from "marked";
+import * as DOMPurify from "dompurify";
 import ViewerMenu from "./components/ViewerMenu";
-import Discussions from "./components/Discussion";
 
 interface Props {
   chapterList: Chapter[];
@@ -34,8 +34,10 @@ const ClientPage = ({ chapterList }: Props) => {
               </div>
             </div>
             <article
-              className="leading-10"
-              dangerouslySetInnerHTML={{ __html: marked(chapter.content) }}
+              className="prose leading-10"
+              dangerouslySetInnerHTML={{
+                __html: marked(DOMPurify.sanitize(chapter.content)),
+              }}
             ></article>
             <p className="text-xs mt-4 truncate">
               <span className="mr-1">출처:</span>
@@ -47,6 +49,7 @@ const ClientPage = ({ chapterList }: Props) => {
                 {chapter.source}
               </Link>
             </p>
+            {console.log(marked(DOMPurify.sanitize(chapter.content)))}
             <hr className="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700" />
           </div>
         ))}
