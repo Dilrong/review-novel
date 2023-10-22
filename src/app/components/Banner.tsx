@@ -1,12 +1,11 @@
 "use client";
-import { useGetBannerListQuery } from "@/modules/reducers/banner";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Banner } from "@/lib/types/banner";
 
 const Banner = () => {
-  const { data: bannerList } = useGetBannerListQuery();
+  const bannerList: [] = [];
 
   return (
     <div>
@@ -22,7 +21,7 @@ const Banner = () => {
           clickable: true,
         }}
       >
-        {bannerList!.map((banner: Banner, index) => (
+        {bannerList.map((banner: Banner, index) => (
           <SwiperSlide
             className="flex justify-center align-middle m-1"
             key={index}
