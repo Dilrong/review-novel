@@ -49,7 +49,6 @@ const ClientPage = ({ chapterList }: Props) => {
                 {chapter.source}
               </Link>
             </p>
-            {console.log(marked(DOMPurify.sanitize(chapter.content)))}
             <hr className="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700" />
           </div>
         ))}
