@@ -5,8 +5,16 @@ import Custom500 from "./error/500";
 import ClientPage from "./page.client";
 
 const ServerPage = async () => {
-  const { data: novelList } = await supabase.from("novel").select();
-  const { data: duckPickList } = await supabase.from("duck_pick").select();
+  const { data: novelList } = await supabase
+    .from("novel")
+    .select()
+    .order("created_at", { ascending: false })
+    .limit(5);
+  const { data: duckPickList } = await supabase
+    .from("duck_pick")
+    .select()
+    .order("created_at", { ascending: false })
+    .limit(5);
 
   try {
     return (
