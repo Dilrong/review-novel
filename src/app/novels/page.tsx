@@ -6,7 +6,10 @@ import ClientPage from "./page.client";
 interface Props {}
 
 const ServerPage = async ({}: Props) => {
-  const { data: novelList } = await supabase.from("novel").select();
+  const { data: novelList } = await supabase
+    .from("novel")
+    .select()
+    .order("created_at", { ascending: false });
 
   try {
     return <ClientPage novelList={novelList as Novel[]} />;

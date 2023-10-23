@@ -13,7 +13,8 @@ const ServerPage = async ({ params: { filter } }: Props) => {
   const { data: novelList } = await supabase
     .from("novel")
     .select()
-    .eq("category", filter);
+    .eq("category", filter)
+    .order("created_at", { ascending: false });
 
   try {
     return <ClientPage novelList={novelList as Novel[]} />;
