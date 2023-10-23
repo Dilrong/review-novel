@@ -35,8 +35,6 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
     .eq("id", 1)
     .single();
 
-  console.log(board);
-
   return (
     <html lang="ko">
       <head>
