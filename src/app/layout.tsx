@@ -29,7 +29,13 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
-  const { data: board } = await supabase.from("board").select().single();
+  const { data: board } = await supabase
+    .from("board")
+    .select()
+    .eq("id", 1)
+    .single();
+
+  console.log(board);
 
   return (
     <html lang="ko">
