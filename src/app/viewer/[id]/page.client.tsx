@@ -1,17 +1,37 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Chapter } from "@/lib/types/chatper";
 import Link from "next/link";
 import { marked } from "marked";
 import * as DOMPurify from "dompurify";
-import ViewerMenu from "./components/ViewerMenu";
+import TranslationButton from "./components/TranslationButton";
 
 interface Props {
   chapterList: Chapter[];
 }
 
 const ClientPage = ({ chapterList }: Props) => {
+  const [content, setContent] = useState("");
+
+  useEffect(() => {
+    setContent(chapterList[0].content);
+  }, [chapterList]);
+
+  const translationContent = (lang: string) => {
+    switch (lang) {
+      case "ko":
+        setContent(chapterList[0].content_ko);
+        break;
+      case "jp":
+        setContent(chapterList[0].content_jp);
+        break;
+      default:
+        setContent(chapterList[0].content);
+        break;
+    }
+  };
+
   marked.use({
     gfm: true,
     breaks: true,
@@ -24,8 +44,31 @@ const ClientPage = ({ chapterList }: Props) => {
           <div key={index}>
             <div>
               <h3 className="text-4xl font-bold">{chapter.title}</h3>
-              <div className="flex items-center justify-between gap-4 mt-2">
-                {/* <ViewerMenu /> */}
+              <div className="flex items-center justify-between gap-4 py-2">
+                <div className="flex text-sm gap-2">
+                  <TranslationButton
+                    name="EN"
+                    handleClick={() => {
+                      translationContent("en");
+                    }}
+                  />
+                  {chapterList[0].content_jp !== "''::text" && (
+                    <TranslationButton
+                      name="KO"
+                      handleClick={() => {
+                        translationContent("ko");
+                      }}
+                    />
+                  )}
+                  {chapterList[0].content_jp !== "''::text" && (
+                    <TranslationButton
+                      name="JP"
+                      handleClick={() => {
+                        translationContent("jp");
+                      }}
+                    />
+                  )}
+                </div>
                 <p className="text-xs text-gray-500">
                   {new Intl.DateTimeFormat("kr").format(
                     new Date(chapter.created_at)
@@ -36,7 +79,7 @@ const ClientPage = ({ chapterList }: Props) => {
             <article
               className="prose leading-10"
               dangerouslySetInnerHTML={{
-                __html: marked(DOMPurify.sanitize(chapter.content)),
+                __html: marked(DOMPurify.sanitize(content)),
               }}
             ></article>
             <p className="text-xs mt-4 truncate">
