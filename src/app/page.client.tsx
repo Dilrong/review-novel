@@ -5,16 +5,18 @@ import { Novel } from "@/lib/types/novel";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import NovelCard from "@/app/novels/components/NovelCard";
+import Banner from "./components/Banner";
 
 interface Props {
   novelList: Novel[];
   duckPickList: Novel[];
+  bannerList: Banner[];
 }
 
-const ClientPage = ({ novelList, duckPickList }: Props) => {
+const ClientPage = ({ novelList, duckPickList, bannerList }: Props) => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* <Banner /> */}
+      <Banner bannerList={bannerList} />
       <section className="mt-8">
         <article className="max-w-7xl mx-auto px-2">
           <h2 className="text-xl font-bold">The Latest</h2>
