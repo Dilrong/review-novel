@@ -22,15 +22,17 @@ export async function generateMetadata ({
   const { data: chapter } = await supabase
       .from('chapter')
       .select()
-      .eq('order', 1)
       .eq('novel_id', id)
       .single()
 
+  const description = chapter?.content.substring(0, 150)
+
   return {
     title: novel.title,
+    description,
     openGraph: {
       title: `${novel.title} | 노벨덕`,
-      description: chapter?.content,
+      description,
       siteName: 'NovelDuck',
       images: ['/images/og.png'],
       locale: 'ko-KR',
