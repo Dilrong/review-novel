@@ -10,7 +10,7 @@ interface Props {
   }
 }
 
-export async function generateMetadata ({
+export async function generateMetadata({
   params: { id },
 }: Props): Promise<Metadata> {
   const { data: novel } = await supabase
@@ -20,10 +20,10 @@ export async function generateMetadata ({
     .single()
 
   const { data: chapter } = await supabase
-      .from('chapter')
-      .select()
-      .eq('novel_id', id)
-      .single()
+    .from('chapter')
+    .select()
+    .eq('novel_id', id)
+    .single()
 
   const description = chapter?.content.substring(0, 150)
 
@@ -47,8 +47,6 @@ const ViewerPage = async ({ params: { id } }: Props) => {
     .select()
     .eq('novel_id', id)
     .order('order')
-
-
 
   try {
     return <ClientPage chapterList={chapterList as Chapter[]} />

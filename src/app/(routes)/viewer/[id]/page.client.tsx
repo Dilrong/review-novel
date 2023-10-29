@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 import { marked } from 'marked'
-import DOMPurify from 'isomorphic-dompurify';
+import DOMPurify from 'isomorphic-dompurify'
 import Chapter from '@/lib/types/Chapter'
 import TranslationButton from './components/TranslationButton'
 

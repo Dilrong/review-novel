@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Novel  from '@/lib/types/Novel'
+import Novel from '@/lib/types/Novel'
 import NovelCard from '@/app/(routes)/novels/components/NovelCard'
 import NovelFilter from '../../components/NovelFilter'
 

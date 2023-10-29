@@ -6,7 +6,8 @@ import React from 'react'
 import Logo from '../../../../../public/images/logo.svg'
 
 function ClientPage() {
-  return <div className="flex flex-col min-h-screen text-left">
+  return (
+    <div className="flex flex-col min-h-screen text-left">
       <section className="flex flex-col w-full max-w-7xl mx-auto py-4">
         <h1 className="text-4xl text-center font-bold mt-8">
           NovelDuck 스타일 가이드
@@ -16,7 +17,7 @@ function ClientPage() {
         </h2>
         <section className="mt-8">
           <h3 className="text-2xl font-bold mb-4">로고</h3>
-          <Image width={100} src={Logo} alt="novelduck logo"/>
+          <Image width={100} src={Logo} alt="novelduck logo" />
         </section>
         <section className="mt-8">
           <h3 className="text-2xl font-bold">색상</h3>
@@ -78,6 +79,7 @@ function ClientPage() {
         </section>
       </section>
     </div>
+  )
 }
 
 export default ClientPage

@@ -3,7 +3,6 @@ import Board from '@/lib/types/Board'
 import Custom500 from '@/app/(routes)/error/500'
 import ClientPage from './page.client'
 
-
 const ServerPage = async () => {
   const { data: novelList } = await supabase
     .from('board')

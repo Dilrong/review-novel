@@ -6,11 +6,14 @@ import Link from 'next/link'
 function NovelFilter() {
   return (
     <div className="w-full flex items-center gap-4 pt-1 pb-4 overflow-auto">
-      <Link href="/novels/category/romance">
+      <Link href="/novels/category/fantasy">
         <CategoryTag name="Fantasy" />
       </Link>
       <Link href="/novels/category/fun">
         <CategoryTag name="Fun" />
+      </Link>
+      <Link href="/novels/category/meme">
+        <CategoryTag name="MEME" />
       </Link>
       <Link href="/novels/category/horror">
         <CategoryTag name="Horror" />
@@ -21,8 +24,11 @@ function NovelFilter() {
       <Link href="/novels/category/sad">
         <CategoryTag name="Sad" />
       </Link>
-      <Link href="/novels/category/romance">
+      <Link href="/novels/category/sf">
         <CategoryTag name="SF" />
+      </Link>
+      <Link href="/novels/category/etc">
+        <CategoryTag name="etc" />
       </Link>
     </div>
   )
