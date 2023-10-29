@@ -30,7 +30,7 @@ export async function generateMetadata ({
     title: novel.title,
     openGraph: {
       title: `${novel.title} | 노벨덕`,
-      description: chapter.content,
+      description: chapter?.content,
       siteName: 'NovelDuck',
       images: ['/images/og.png'],
       locale: 'ko-KR',
