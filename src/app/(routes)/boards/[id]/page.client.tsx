@@ -3,7 +3,7 @@
 import React from 'react'
 import Board from '@/lib/types/Board'
 import { marked } from 'marked'
-import DOMPurify from 'dompurify'
+import DOMPurify from 'isomorphic-dompurify';
 import dayjs from 'dayjs'
 
 interface Props {
