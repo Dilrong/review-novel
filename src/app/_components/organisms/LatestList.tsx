@@ -2,9 +2,9 @@
 
 import {Swiper, SwiperSlide} from 'swiper/react'
 import Novel from "@/lib/types/Novel";
-import NovelCard from "@/app/(routes)/novels/components/NovelCard";
 import React from "react";
 import Heading3 from "@/app/_components/atoms/Heading3";
+import NovelCard from "@/app/_components/molecules/NovelCard";
 
 interface Props {
     novelList: Novel[];
@@ -44,7 +44,8 @@ function LatestList({novelList}: Props) {
                                     className="flex justify-center align-middle m-1"
                                     key={novel.id}
                                 >
-                                    <NovelCard novel={novel}/>
+                                    <NovelCard key={novel.id} id={novel.id} title={novel.title}
+                                               category={novel.category}/>
                                 </SwiperSlide>
                             ))}
                         </Swiper>

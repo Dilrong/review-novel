@@ -7,7 +7,7 @@ import MainBanner from '@/app/_components/organisms/MainBanner'
 import 'swiper/css'
 import LatestList from "@/app/_components/organisms/LatestList";
 import PickList from "@/app/_components/organisms/PickList";
-import ScreenContainer from "@/app/_components/molecules/ScreenContainer";
+import ScreenContainer from "@/app/_components/molecules/Container/ScreenContainer";
 
 interface Props {
     novelList: Novel[]

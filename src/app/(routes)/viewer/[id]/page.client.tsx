@@ -6,7 +6,7 @@ import Link from 'next/link'
 import {marked} from 'marked'
 import DOMPurify from 'isomorphic-dompurify'
 import Chapter from '@/lib/types/Chapter'
-import ScreenContainer from "@/app/_components/molecules/ScreenContainer";
+import ScreenContainer from "@/app/_components/molecules/Container/ScreenContainer";
 import TranslationButton from './components/TranslationButton'
 
 interface Props {
