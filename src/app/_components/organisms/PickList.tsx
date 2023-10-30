@@ -1,9 +1,11 @@
 'use client'
 
-import {Swiper, SwiperSlide} from 'swiper/react'
 import Novel from "@/lib/types/Novel";
 import NovelCard from "@/app/(routes)/novels/components/NovelCard";
 import React from "react";
+import Heading3 from "@/app/_components/atoms/Heading3";
+import {Swiper, SwiperSlide} from "swiper/react";
+
 
 interface Props {
     novelList: Novel[];
@@ -11,9 +13,9 @@ interface Props {
 
 function PickList({novelList}: Props) {
     return (
-        <section className="mt-8 bg-neutral-100 py-8">
+        <section className="mt-8">
             <article className="max-w-7xl mx-auto px-2">
-                <h2 className="text-xl font-bold">Duck&apos;s Pick</h2>
+                <Heading3 text="Duck&apos;s Pick"/>
                 <div className="flex flex-col gap-4 mt-2">
                     <div>
                         <Swiper

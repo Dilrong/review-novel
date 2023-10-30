@@ -15,7 +15,7 @@ interface Props {
     bannerList: Banner[]
 }
 
-function ClientPage({novelList, duckPickList, bannerList}: Props) {
+function HomeTemplate({novelList, duckPickList, bannerList}: Props) {
     return (
         <ScreenContainer>
             <MainBanner bannerList={bannerList}/>
@@ -25,4 +25,4 @@ function ClientPage({novelList, duckPickList, bannerList}: Props) {
     );
 }
 
-export default ClientPage
+export default HomeTemplate
