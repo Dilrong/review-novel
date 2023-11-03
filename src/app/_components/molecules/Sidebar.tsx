@@ -41,7 +41,7 @@ function Sidebar() {
           <ul className="space-y-2 font-medium">
             <li>
               <a
-                href="/"
+                href="/admin"
                 className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
               >
                 <svg
@@ -59,7 +59,7 @@ function Sidebar() {
             </li>
             <li>
               <a
-                href="/novels"
+                href="/admin/novels"
                 className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
               >
                 <svg

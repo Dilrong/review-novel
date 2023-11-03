@@ -43,7 +43,8 @@ function ClientPage() {
         await supabase.auth.signOut()
       }
 
-      router.push('/')
+      router.push('/admin')
+      console.log('test')
       router.refresh()
     } catch (error) {
       Swal.fire(

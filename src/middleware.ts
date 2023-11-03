@@ -12,12 +12,12 @@ export async function middleware(req: NextRequest) {
   } = await supabase.auth.getUser()
 
   if (!user) {
-    return NextResponse.redirect(new URL('/auth', req.url))
+    return NextResponse.redirect(new URL('/admin/auth', req.url))
   }
 
   return res
 }
 
 export const config = {
-  matcher: ['/', '/novels/:path*', '/banner/:path*', '/boards/:path*'],
+  matcher: ['/admin/', '/admin/novels/:path*'],
 }
