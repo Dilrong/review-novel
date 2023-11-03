@@ -5,6 +5,7 @@ export default interface Novel {
   summary: string
   source: string
   category: string
+  length: number
   created_at: Date
   updated_at: Date
   chapter_id: number

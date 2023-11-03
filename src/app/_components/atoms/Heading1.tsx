@@ -1,15 +1,11 @@
 'use client'
 
 interface Props {
-    text: string;
+  text: string
 }
 
-function Heading1({text}: Props) {
-    return (
-        <h1 className="font-bold text-6xl">
-            {text}
-        </h1>
-    )
+function Heading1({ text }: Props) {
+  return <h1 className="text-6xl font-bold">{text}</h1>
 }
 
 export default Heading1

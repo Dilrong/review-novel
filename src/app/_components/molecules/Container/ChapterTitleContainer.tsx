@@ -1,19 +1,17 @@
 'use client'
 
-import React, {ReactNode} from "react";
+import React, { ReactNode } from 'react'
 
 interface Props {
-    children: ReactNode;
+  children: ReactNode
 }
 
-function ChapterTitleContainer({children}: Props) {
-    return (
-        <div className="mt-4 truncate">
-            <div className="flex flex-col">
-                {children}
-            </div>
-        </div>
-    )
+function ChapterTitleContainer({ children }: Props) {
+  return (
+    <div className="mt-4 truncate">
+      <div className="flex flex-col">{children}</div>
+    </div>
+  )
 }
 
 export default ChapterTitleContainer

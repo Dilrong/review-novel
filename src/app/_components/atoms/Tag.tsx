@@ -1,15 +1,15 @@
 'use client'
 
 interface Props {
-    text: string
+  text: string
 }
 
-function Tag({text}: Props) {
-    return (
-        <p className="text-xs cursor-pointer inline-flex items-center leading-sm uppercase px-2 py-1 mt-1 bg-gray-200 hover:bg-gray-300 text-gray-900 rounded">
-            #{text}
-        </p>
-    )
+function Tag({ text }: Props) {
+  return (
+    <p className="leading-sm mt-1 inline-flex cursor-pointer items-center rounded bg-gray-200 px-2 py-1 text-xs uppercase text-gray-900 hover:bg-gray-300">
+      #{text}
+    </p>
+  )
 }
 
 export default Tag

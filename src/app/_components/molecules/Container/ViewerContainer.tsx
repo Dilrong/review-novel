@@ -1,17 +1,17 @@
 'use client'
 
-import React, {ReactNode} from "react";
+import React, { ReactNode } from 'react'
 
 interface Props {
-    children: ReactNode;
+  children: ReactNode
 }
 
-function ViewerContainer({children}: Props) {
-    return (
-        <section className="flex flex-col w-full max-w-7xl mx-auto px-2 py-4 font-maruBuri">
-            {children}
-        </section>
-    )
+function ViewerContainer({ children }: Props) {
+  return (
+    <section className="mx-auto flex w-full max-w-7xl flex-col px-2 py-4 font-maruBuri">
+      {children}
+    </section>
+  )
 }
 
 export default ViewerContainer
