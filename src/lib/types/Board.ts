@@ -1,6 +1,6 @@
 export default interface Board {
   id: number
-  title: number
+  title: string
   content: string
   category: string
   created_at: Date

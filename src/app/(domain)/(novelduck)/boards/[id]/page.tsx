@@ -1,6 +1,6 @@
 import supabase from '@/lib/utils/supabase'
 import Board from '@/lib/types/Board'
-import ClientPage from './page.client'
+import BoardDetailTemplate from '@/app/_components/templates/BoardDetailTempate'
 
 interface Props {
   params: {
@@ -15,7 +15,7 @@ const ServerPage = async ({ params: { id } }: Props) => {
     .eq('id', id)
     .single()
 
-  return <ClientPage board={board as Board} />
+  return <BoardDetailTemplate board={board as Board} />
 }
 
 export const revalidate = 0
