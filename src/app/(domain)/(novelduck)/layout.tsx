@@ -5,6 +5,9 @@ import { Ubuntu } from 'next/font/google'
 import supabase from '@/lib/utils/supabase'
 import Headers from '@/app/_components/organisms/Headers'
 import Footer from '@/app/_components/organisms/Footer'
+import GoogleTagAnalytics from '@/app/_components/molecules/GoogleTagAnalytics'
+import { Suspense } from 'react'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -35,8 +38,6 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
     .eq('id', 1)
     .single()
 
-  console.log(board)
-
   return (
     <html lang="ko">
       <head>
@@ -46,6 +47,10 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
           href="/rss.xml"
           title="Novel Feed RSS"
         />
+        <Suspense>
+          <GoogleAnalytics />
+          <GoogleTagAnalytics />
+        </Suspense>
       </head>
       <body className={`${ubuntu.className}`}>
         <Headers />

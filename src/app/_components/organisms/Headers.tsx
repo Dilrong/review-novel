@@ -5,7 +5,7 @@ import Logo from '@/app/_components/molecules/Logo'
 import NavMobile from '@/app/_components/molecules/Nav/NavMobile'
 import NavPc from '@/app/_components/molecules/Nav/NavPc'
 import NavContainer from '@/app/_components/molecules/Nav/NavContainer'
-import Analytics from '@/app/_components/molecules/Analytics'
+import GoogleTagAnalytics from '@/app/_components/molecules/GoogleTagAnalytics'
 import MetaInfo from '../atoms/MetaInfo'
 
 function Headers() {
@@ -18,7 +18,7 @@ function Headers() {
   return (
     <>
       <Suspense>
-        <Analytics />
+        <GoogleTagAnalytics />
         <MetaInfo />
       </Suspense>
       <NavContainer>
