@@ -115,6 +115,7 @@ function ClientPage() {
           <option value="fantasy">FANTASY</option>
           <option value="fun">FUN</option>
           <option value="meme">MEME</option>
+          <option value="motivation">MOTIVATION</option>
           <option value="horror">HORROR</option>
           <option value="romance">ROMANCE</option>
           <option value="sad">SAD</option>
