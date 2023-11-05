@@ -14,7 +14,7 @@ function PickList({ novelList }: Props) {
   return (
     <section className="mt-8">
       <article className="mx-auto max-w-7xl px-2">
-        <Heading3 text="Duck's Pick" />
+        <Heading3 text="추천 소설" />
         <div className="mt-2 flex flex-col gap-4">
           <div>
             <Swiper

@@ -8,7 +8,7 @@ import NavContainer from '@/app/_components/molecules/Nav/NavContainer'
 import GoogleTagAnalytics from '@/app/_components/molecules/GoogleTagAnalytics'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { GoogleAnalytics } from 'nextjs-google-analytics'
-import MetaInfo from '../atoms/MetaInfo'
+import MetaInfo from './MetaInfo'
 
 function Headers() {
   const [toggle, setToggle] = useState(false)

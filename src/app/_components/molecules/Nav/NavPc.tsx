@@ -18,7 +18,7 @@ function NavPc({ toggle, handleToggle }: Props) {
       <ul className="mt-4 flex flex-col items-center lg:mt-0 lg:flex-row lg:space-x-4">
         <li>
           <Link href="/novels" className="block" onClick={handleToggle}>
-            Browse
+            소설
           </Link>
         </li>
       </ul>

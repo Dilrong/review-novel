@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: '노벨덕 | 소설로 자연스럽게 배우는 외국어',
     description: '소설로 자연스럽게 배우는 외국어',
     url: 'https://novelduck.farm',
-    siteName: 'NovelDuck',
+    siteName: '노벨덕',
     images: ['/images/og.png'],
     locale: 'ko-KR',
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: '노벨덕 | 소설로 자연스럽게 배우는 외국어',
     description: '소설로 자연스럽게 배우는 외국어',
     images: ['/images/og.png'],
-    creator: 'NovelDuck',
+    creator: '노벨덕',
     site: 'https://novelduck.farm',
   },
   icons: {

@@ -16,7 +16,7 @@ function NovelTemplate({ novelList }: Props) {
   return (
     <ScreenContainer>
       <BrowserContainer>
-        <Heading3 text="Browse" />
+        <Heading3 text="소설" />
         <NovelFilter />
         <BrowserList novelList={novelList} />
       </BrowserContainer>

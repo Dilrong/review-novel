@@ -14,7 +14,7 @@ function LatestList({ novelList }: Props) {
   return (
     <section className="mt-8">
       <article className="mx-auto max-w-7xl px-2">
-        <Heading3 text="The Latest" />
+        <Heading3 text="최신 소설" />
         <div className="mt-2 flex flex-col gap-4">
           <div>
             <Swiper
