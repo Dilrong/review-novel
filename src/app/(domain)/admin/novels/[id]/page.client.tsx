@@ -268,14 +268,14 @@ function ClientPage({ novel, chapterList }: Props) {
         ))}
         <button
           type="submit"
-          className="focus:ring-primary-300 mt-8 w-full rounded-lg bg-yellow-300 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-400 focus:outline-none focus:ring-0"
+          className="mt-8 w-full rounded-lg bg-yellow-300 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-400 focus:outline-none focus:ring-0 focus:ring-primary"
         >
           수정하기
         </button>
       </form>
       <button
         type="button"
-        className="focus:ring-primary-300 mt-2 w-full rounded-lg bg-red-300 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-400 focus:outline-none focus:ring-0"
+        className="mt-2 w-full rounded-lg bg-red-300 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-400 focus:outline-none focus:ring-0 focus:ring-primary"
         onClick={() => {
           deleteNovel(novel.id)
         }}

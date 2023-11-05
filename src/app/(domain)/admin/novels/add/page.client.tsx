@@ -169,7 +169,7 @@ function ClientPage() {
         />
         <button
           type="submit"
-          className="focus:ring-primary-300 w-full rounded-lg bg-yellow-300 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-400 focus:outline-none focus:ring-0"
+          className="w-full rounded-lg bg-yellow-300 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-400 focus:outline-none focus:ring-0 focus:ring-primary"
         >
           추가하기
         </button>

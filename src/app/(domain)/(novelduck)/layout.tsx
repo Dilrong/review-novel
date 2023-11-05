@@ -12,6 +12,7 @@ const ubuntu = Ubuntu({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://novelduck.farm'),
   title: {
     default: '노벨덕 | 소설로 자연스럽게 배우는 외국어',
     template: '%s | 노벨덕',
@@ -20,11 +21,33 @@ export const metadata: Metadata = {
   openGraph: {
     title: '노벨덕 | 소설로 자연스럽게 배우는 외국어',
     description: '소설로 자연스럽게 배우는 외국어',
-    url: 'https://novelduck.farm/',
+    url: 'https://novelduck.farm',
     siteName: 'NovelDuck',
     images: ['/images/og.png'],
     locale: 'ko-KR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: '노벨덕 | 소설로 자연스럽게 배우는 외국어',
+    description: '소설로 자연스럽게 배우는 외국어',
+    images: ['/images/og.png'],
+    creator: 'NovelDuck',
+    site: 'https://novelduck.farm',
+  },
+  icons: {
+    icon: '/images/icons/apple-icon.png',
+    apple: '/images/icons/apple-icon.png',
+    other: {
+      rel: 'apple-icon-precomposed.png',
+      url: '/images/icons/apple-icon-precomposed.png',
+    },
+  },
+  alternates: {
+    canonical: 'https://novelduck.farm',
+    types: {
+      'application/rss+xml': 'https://novelduck.farm/rss',
+    },
   },
 }
 
@@ -37,14 +60,6 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
 
   return (
     <html lang="ko">
-      <head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          href="/rss.xml"
-          title="Novel Feed RSS"
-        />
-      </head>
       <body className={`${ubuntu.className}`}>
         <Headers />
         {children}

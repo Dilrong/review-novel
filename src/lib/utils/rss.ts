@@ -13,7 +13,7 @@ export default async function generateRssFeed() {
 
   const feedOptions = {
     title: 'NovelDuck | RSS Feed',
-    description: '소설 덕후를 위한 공간',
+    description: '소설로 자연스럽게 배우는 외국어',
     site_url: siteUrl,
     feed_url: `${siteUrl}/rss.xml`,
     language: 'ko',
