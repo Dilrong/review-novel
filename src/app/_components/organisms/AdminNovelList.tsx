@@ -1,15 +1,28 @@
+'use client'
+
 import Novel from '@/lib/types/Novel'
-import NovelItem from './NovelItem'
-import ToolBox from './ToolBox'
+import React from 'react'
+
+import Link from 'next-intl/link'
+import AdminNovelItem from '@/app/_components/molecules/AdminNovelItem'
 
 interface Props {
   novelList: Novel[]
 }
 
-function NovelList({ novelList }: Props) {
+function AdminNovelList({ novelList }: Props) {
   return (
     <div className="relative overflow-auto">
-      <ToolBox />
+      <div className="mb-2 flex justify-end">
+        <Link href="/admin/novels/add">
+          <button
+            type="button"
+            className="mb-2 mr-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-yellow-400 focus:outline-none"
+          >
+            소설 추가
+          </button>
+        </Link>
+      </div>
       <table className="w-full text-left text-sm text-gray-500">
         <thead className=" bg-gray-50 uppercase text-gray-700">
           <tr>
@@ -29,7 +42,7 @@ function NovelList({ novelList }: Props) {
         </thead>
         <tbody>
           {novelList?.map((novel: Novel) => (
-            <NovelItem key={novel.id} novel={novel} />
+            <AdminNovelItem key={novel.id} novel={novel} />
           ))}
         </tbody>
       </table>
@@ -37,4 +50,4 @@ function NovelList({ novelList }: Props) {
   )
 }
 
-export default NovelList
+export default AdminNovelList

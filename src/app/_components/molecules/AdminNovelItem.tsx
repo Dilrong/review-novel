@@ -8,7 +8,7 @@ interface Props {
   novel: Novel
 }
 
-function NovelItem({ novel }: Props) {
+function AdminNovelItem({ novel }: Props) {
   return (
     <tr className="border-b bg-white hover:bg-gray-50">
       <th
@@ -31,4 +31,4 @@ function NovelItem({ novel }: Props) {
   )
 }
 
-export default NovelItem
+export default AdminNovelItem

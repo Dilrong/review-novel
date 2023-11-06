@@ -150,15 +150,15 @@ function ClientPage() {
         />
         <div className="mt-4">
           <textarea
-            rows={4}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-            placeholder="한글 번역본을 입력하세요."
+            rows={8}
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 font-maruBuri text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="영어 번역본을 입력하세요."
             {...register('content', {})}
           />
         </div>
         <textarea
           rows={4}
-          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          className="mt-4 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
           placeholder="한글 번역본을 입력하세요."
           {...register('contentKo', {})}
         />

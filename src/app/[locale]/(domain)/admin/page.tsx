@@ -1,6 +1,6 @@
-import ClientPage from '@/app/[locale]/(domain)/admin/page.client'
+import AdminDashBoardTemplate from '@/app/_components/templates/AdminDashBoardTemplate'
 
-const ServerPage = async () => <ClientPage />
+const ServerPage = async () => <AdminDashBoardTemplate />
 
 export const revalidate = 0
 
