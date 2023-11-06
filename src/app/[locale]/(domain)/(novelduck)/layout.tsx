@@ -1,10 +1,12 @@
-import '../../globals.css'
+import '../../../globals.css'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 
 import supabase from '@/lib/utils/supabase'
 import Headers from '@/app/_components/organisms/Headers'
 import Footer from '@/app/_components/organisms/Footer'
+import { NextIntlClientProvider } from 'next-intl'
+import Custom404 from '@/app/[locale]/(domain)/(novelduck)/not-found'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -51,19 +53,40 @@ export const metadata: Metadata = {
   },
 }
 
-const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'ko' }]
+}
+
+const RootLayout = async ({
+  children,
+  params: { locale },
+}: {
+  children: React.ReactNode
+  params: {
+    locale: string
+  }
+}) => {
   const { data: board } = await supabase
     .from('board')
     .select()
     .eq('id', 1)
     .single()
 
+  let messages
+  try {
+    messages = (await import(`@/i18n/${locale}.json`)).default
+  } catch (error) {
+    Custom404()
+  }
+
   return (
-    <html lang="ko">
+    <html className="h-full" lang={locale}>
       <body className={`${ubuntu.className}`}>
-        <Headers />
-        {children}
-        <Footer board={board} />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Headers />
+          {children}
+          <Footer board={board} />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

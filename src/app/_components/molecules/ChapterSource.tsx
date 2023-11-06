@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import React from 'react'
 import Caption from '@/app/_components/atoms/Caption'
 import ChapterSourceContainer from '@/app/_components/molecules/Container/ChapterSourceContainer'

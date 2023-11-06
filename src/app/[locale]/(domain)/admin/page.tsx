@@ -1,4 +1,4 @@
-import ClientPage from '@/app/(domain)/admin/page.client'
+import ClientPage from '@/app/[locale]/(domain)/admin/page.client'
 
 const ServerPage = async () => <ClientPage />
 

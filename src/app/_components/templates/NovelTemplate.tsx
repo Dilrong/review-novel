@@ -7,16 +7,19 @@ import BrowserContainer from '@/app/_components/molecules/Container/BrowserConta
 import Heading3 from '@/app/_components/atoms/Heading3'
 import NovelFilter from '@/app/_components/organisms/NovelFilter'
 import BrowserList from '@/app/_components/organisms/BrowserList'
+import { useTranslations } from 'next-intl'
 
 interface Props {
   novelList: Novel[]
 }
 
 function NovelTemplate({ novelList }: Props) {
+  const t = useTranslations()
+
   return (
     <ScreenContainer>
       <BrowserContainer>
-        <Heading3 text="소설" />
+        <Heading3 text={t('novel_page_title')} />
         <NovelFilter />
         <BrowserList novelList={novelList} />
       </BrowserContainer>

@@ -44,7 +44,6 @@ function ClientPage() {
       }
 
       router.push('/admin')
-      console.log('test')
       router.refresh()
     } catch (error) {
       Swal.fire(

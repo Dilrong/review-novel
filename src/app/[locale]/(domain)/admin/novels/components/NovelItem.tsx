@@ -1,7 +1,7 @@
 'use client'
 
 import dayjs from 'dayjs'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import Novel from '@/lib/types/Novel'
 
 interface Props {

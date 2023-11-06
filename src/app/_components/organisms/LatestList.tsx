@@ -5,16 +5,19 @@ import Novel from '@/lib/types/Novel'
 import React from 'react'
 import Heading3 from '@/app/_components/atoms/Heading3'
 import NovelCard from '@/app/_components/molecules/NovelCard'
+import { useTranslations } from 'next-intl'
 
 interface Props {
   novelList: Novel[]
 }
 
 function LatestList({ novelList }: Props) {
+  const t = useTranslations()
+
   return (
     <section className="mt-8">
       <article className="mx-auto max-w-7xl px-2">
-        <Heading3 text="최신 소설" />
+        <Heading3 text={t('latest_list_title')} />
         <div className="mt-2 flex flex-col gap-4">
           <div>
             <Swiper

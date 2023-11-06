@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import Board from '@/lib/types/Board'
 
 interface Props {

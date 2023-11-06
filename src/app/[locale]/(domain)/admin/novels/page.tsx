@@ -1,6 +1,6 @@
 import Novel from '@/lib/types/Novel'
 import supabase from '@/lib/utils/supabase'
-import Custom500 from '@/app/(domain)/(novelduck)/error'
+import Custom500 from '@/app/[locale]/(domain)/(novelduck)/error'
 import ClientPage from './page.client'
 
 const ServerPage = async () => {

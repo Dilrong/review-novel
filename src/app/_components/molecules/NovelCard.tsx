@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import Image from 'next/image'
 import Tag from '@/app/_components/atoms/Tag'
 import Heading6 from '@/app/_components/atoms/Heading6'

@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import dayjs from 'dayjs'
 import React from 'react'
 

@@ -1,23 +1,43 @@
 import supabase from '@/lib/utils/supabase'
-import Novel from '@/lib/types/Novel'
 
 const homepage = 'https://novelduck.farm'
+const supportedLanguages = ['en', 'ko']
 
 export default async function sitemap() {
+  const sitemapEntries: { url: string; lastModified: string }[] = []
+
   const { data: novelList } = await supabase
     .from('novel')
     .select()
     .order('created_at', { ascending: false })
 
-  const novels = novelList?.map((novel: Novel) => ({
-    url: `${homepage}/viewer/${novel.id}`,
-    lastModified: new Date(novel.created_at).toISOString(),
-  }))
+  if (novelList) {
+    novelList.forEach((novel) => {
+      supportedLanguages.forEach((language) => {
+        sitemapEntries.push({
+          url: `${homepage}/${language}/viewer/${novel.id}`,
+          lastModified: new Date(novel.created_at).toISOString(),
+        })
+      })
+    })
+  }
 
-  const routes = ['', '/novels', '/boards', '/about'].map((route) => ({
-    url: `${homepage}${route}`,
-    lastModified: new Date().toISOString(),
-  }))
+  supportedLanguages.forEach((language) => {
+    sitemapEntries.push({
+      url: `${homepage}/${language}`,
+      lastModified: new Date().toISOString(),
+    })
 
-  return [...routes, ...novels!]
+    sitemapEntries.push({
+      url: `${homepage}/${language}/boards`,
+      lastModified: new Date().toISOString(),
+    })
+
+    sitemapEntries.push({
+      url: `${homepage}/${language}/novels`,
+      lastModified: new Date().toISOString(),
+    })
+  })
+
+  return [...sitemapEntries]
 }

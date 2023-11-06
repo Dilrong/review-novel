@@ -1,6 +1,7 @@
 'use client'
 
-import Link from 'next/link'
+import Link from 'next-intl/link'
+import { useTranslations } from 'next-intl'
 
 interface Props {
   toggle: boolean
@@ -8,6 +9,8 @@ interface Props {
 }
 
 function NavPc({ toggle, handleToggle }: Props) {
+  const t = useTranslations()
+
   return (
     <div
       className={`${
@@ -18,7 +21,7 @@ function NavPc({ toggle, handleToggle }: Props) {
       <ul className="mt-4 flex flex-col items-center lg:mt-0 lg:flex-row lg:space-x-4">
         <li>
           <Link href="/novels" className="block" onClick={handleToggle}>
-            소설
+            {t('browser_menu')}
           </Link>
         </li>
       </ul>
