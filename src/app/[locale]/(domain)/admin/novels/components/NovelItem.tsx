@@ -15,7 +15,10 @@ function NovelItem({ novel }: Props) {
         scope="row"
         className="whitespace-nowrap px-6 py-4 font-medium text-gray-900"
       >
-        <Link className="hover:text-yellow-400" href={`/novels/${novel.id}`}>
+        <Link
+          className="hover:text-yellow-400"
+          href={`/admin/novels/${novel.id}`}
+        >
           {novel.title}
         </Link>
       </th>
