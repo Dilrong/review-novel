@@ -12,8 +12,8 @@ function NovelFilter() {
         link="/novels/category/fantasy"
         text={t('novel_category_fantasy')}
       />
-      <LinkTag link="/novels/category/fun" text={t('NOVEL_CATEGORY_FUN')} />
-      <LinkTag link="/novels/category/meme" text={t('NOVEL_CATEGORY_MEME')} />
+      <LinkTag link="/novels/category/fun" text={t('novel_category_fun')} />
+      <LinkTag link="/novels/category/meme" text={t('novel_category_meme')} />
       <LinkTag
         link="/novels/category/motivation"
         text={t('novel_category_motivation')}
