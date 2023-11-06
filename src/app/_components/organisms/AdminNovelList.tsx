@@ -5,6 +5,7 @@ import React from 'react'
 
 import Link from 'next-intl/link'
 import AdminNovelItem from '@/app/_components/molecules/AdminNovelItem'
+import Heading3 from '@/app/_components/atoms/Heading3'
 
 interface Props {
   novelList: Novel[]
@@ -13,7 +14,8 @@ interface Props {
 function AdminNovelList({ novelList }: Props) {
   return (
     <div className="relative overflow-auto">
-      <div className="mb-2 flex justify-end">
+      <div className="mb-2 flex justify-between">
+        <Heading3 text="소설 관리" />
         <Link href="/admin/novels/add">
           <button
             type="button"

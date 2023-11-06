@@ -1,7 +1,6 @@
 import Chapter from '@/lib/types/Chapter'
 
 import supabase from '@/lib/utils/supabase'
-import Custom500 from '@/app/[locale]/(domain)/(novelduck)/error'
 import ClientPage from './page.client'
 
 interface Props {
@@ -23,11 +22,19 @@ const ServerPage = async ({ params }: Props) => {
     .eq('novel_id', params.id)
     .order('order')
 
-  try {
-    return <ClientPage novel={novel} chapterList={chapterList as Chapter[]} />
-  } catch (e) {
-    return <Custom500 />
-  }
+  // const { data: categoryList } = await supabase
+  //   .from('category')
+  //   .select()
+  //   .order('created_at', { ascending: true })
+
+  return (
+    <ClientPage novel={novel} chapterList={chapterList as Chapter[]} />
+    // <AdminNovelDetailTemplate
+    //   novel={novel}
+    //   chapterList={chapterList as Chapter[]}
+    //   categoryList={categoryList as Category[]}
+    // />
+  )
 }
 
 export const revalidate = 0
