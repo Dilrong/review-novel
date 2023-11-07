@@ -23,7 +23,7 @@ function NovelCard({ id, thumbnail, title, category }: Props) {
           width={250}
           height={250}
         />
-        <div className="mt-2 truncate">
+        <div className="mt-2 ">
           <Heading6 text={title} />
         </div>
         <Tag text={category} />
