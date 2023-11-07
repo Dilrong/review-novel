@@ -4,21 +4,21 @@ import Link from 'next-intl/link'
 import Image from 'next/image'
 import Tag from '@/app/_components/atoms/Tag'
 import Heading6 from '@/app/_components/atoms/Heading6'
-import NoCover from '../../../../public/images/no_cover.jpeg'
 
 interface Props {
   id: number
+  thumbnail: string
   title: string
   category: string
 }
 
-function NovelCard({ id, title, category }: Props) {
+function NovelCard({ id, thumbnail, title, category }: Props) {
   return (
     <Link className="w-64" href={`/viewer/${id}`}>
       <div className="mb-4 w-full">
         <Image
           className="rounded-sm"
-          src={NoCover}
+          src={thumbnail}
           alt={title}
           width={250}
           height={250}

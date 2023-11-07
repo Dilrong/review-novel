@@ -50,6 +50,7 @@ function PickList({ novelList }: Props) {
                   <NovelCard
                     key={novel.id}
                     id={novel.id}
+                    thumbnail={novel.thumbnail}
                     title={novel.title}
                     category={novel.category}
                   />

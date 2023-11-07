@@ -49,6 +49,7 @@ function LatestList({ novelList }: Props) {
                 >
                   <NovelCard
                     key={novel.id}
+                    thumbnail={novel.thumbnail}
                     id={novel.id}
                     title={novel.title}
                     category={novel.category}

@@ -28,6 +28,8 @@ function ClientPage() {
         .from('novel')
         .insert({
           title: data.title,
+          thumbnail:
+            'https://ywvpflgpzvitldkbyzmi.supabase.co/storage/v1/object/sign/novel-thumbnail/No%20Cover.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJub3ZlbC10aHVtYm5haWwvTm8gQ292ZXIuanBlZyIsImlhdCI6MTY5OTM2MjkwNCwiZXhwIjoxNzMwODk4OTA0fQ.n16ASDA_NunEqmensxi64ysXyVFtiUdSPJnV3cghQPk&t=2023-11-07T13%3A15%3A04.367Z',
           category: data.category,
           length: data.length,
         })
