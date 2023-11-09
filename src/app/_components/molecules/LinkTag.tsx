@@ -5,13 +5,13 @@ import Link from 'next-intl/link'
 
 interface Props {
   link: string
-  text: string
+  id: number
 }
 
-function LinkTag({ link, text }: Props) {
+function LinkTag({ link, id }: Props) {
   return (
     <Link href={link}>
-      <Tag text={text} />
+      <Tag id={id} />
     </Link>
   )
 }

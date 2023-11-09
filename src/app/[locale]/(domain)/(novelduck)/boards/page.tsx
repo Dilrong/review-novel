@@ -4,7 +4,7 @@ import BoardTemplate from '@/app/_components/templates/BoardTempate'
 
 const ServerPage = async () => {
   const { data: dataList } = await supabase
-    .from('board')
+    .from('boards')
     .select()
     .order('created_at', { ascending: false })
 

@@ -9,7 +9,7 @@ interface Props {
   id: number
   thumbnail: string
   title: string
-  category: string
+  category: number
 }
 
 function NovelCard({ id, thumbnail, title, category }: Props) {
@@ -26,7 +26,7 @@ function NovelCard({ id, thumbnail, title, category }: Props) {
         <div className="mt-2 ">
           <Heading6 text={title} />
         </div>
-        <Tag text={category} />
+        <Tag id={category} />
       </div>
     </Link>
   )

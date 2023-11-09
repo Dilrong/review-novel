@@ -1,12 +1,10 @@
 export default interface Novel {
   id: number
-  thumbnail: string
   title: string
+  thumbnail: string
   summary: string
   source: string
-  category: string
-  length: number
+  category_id: number
   created_at: Date
   updated_at: Date
-  chapter_id: number
 }

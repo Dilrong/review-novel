@@ -5,18 +5,18 @@ import HomeTemplate from '@/app/_components/templates/HomeTemplate'
 
 const ServerPage = async () => {
   const { data: novelList } = await supabase
-    .from('novel')
+    .from('novels')
     .select()
     .order('created_at', { ascending: false })
     .limit(5)
   const { data: duckPickList } = await supabase
-    .from('novel')
-    .select()
+    .from('recommendations')
+    .select(`...novels ( id, title, thumbnail, category_id)`)
     .order('created_at', { ascending: false })
-    .eq('pick', true)
+    .eq('feature', 'pick')
     .limit(5)
   const { data: bannerList } = await supabase
-    .from('banner')
+    .from('banners')
     .select()
     .order('created_at', { ascending: false })
     .limit(5)
@@ -24,7 +24,7 @@ const ServerPage = async () => {
   return (
     <HomeTemplate
       novelList={novelList as Novel[]}
-      duckPickList={duckPickList as Novel[]}
+      duckPickList={duckPickList as unknown as Novel[]}
       bannerList={bannerList as Banner[]}
     />
   )

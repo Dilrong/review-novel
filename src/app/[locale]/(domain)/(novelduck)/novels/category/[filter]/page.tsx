@@ -14,6 +14,7 @@ const ServerPage = async ({ params: { filter } }: Props) => {
     .select()
     .eq('category', filter)
     .order('created_at', { ascending: false })
+    .limit(12)
 
   return <NovelTemplate novelList={novelList as Novel[]} />
 }
