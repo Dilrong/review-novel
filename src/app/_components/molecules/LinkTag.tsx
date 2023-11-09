@@ -1,6 +1,6 @@
 'use client'
 
-import Tag from '@/app/_components/atoms/Tag'
+import Tag from '@/app/_components/atoms/Tag/Tag'
 import Link from 'next-intl/link'
 
 interface Props {

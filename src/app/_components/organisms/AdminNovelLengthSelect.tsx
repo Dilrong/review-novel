@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Select from '@/app/_components/atoms/Select'
+import Select from '@/app/_components/atoms/Select/Select'
 
 interface Props {}
 

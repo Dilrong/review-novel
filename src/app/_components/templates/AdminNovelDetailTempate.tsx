@@ -3,12 +3,12 @@
 import React from 'react'
 import ScreenContainer from '@/app/_components/molecules/Container/ScreenContainer'
 import AdminAddForm from '@/app/_components/molecules/Container/AdminAddForm'
-import Heading3 from '@/app/_components/atoms/Heading3'
-import Input from '@/app/_components/atoms/Input'
+import Heading3 from '@/app/_components/atoms/Heading3/Heading3'
+import Input from '@/app/_components/atoms/Input/Input'
 import AdminNovelCategorySelect from '@/app/_components/organisms/AdminNovelCategorySelect'
 import AdminNovelLengthSelect from '@/app/_components/organisms/AdminNovelLengthSelect'
-import TextArea from '@/app/_components/atoms/TextArea'
-import Button from '@/app/_components/atoms/Button'
+import TextArea from '@/app/_components/atoms/TextArea/TextArea'
+import Button from '@/app/_components/atoms/Button/Button'
 import Category from '@/lib/types/Category'
 
 interface Props {
