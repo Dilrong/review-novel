@@ -9,7 +9,7 @@ interface Props {
   handleClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-function Button({ type = 'button', text, handleClick }: Props) {
+function Button({ type = 'button', text = '', handleClick }: Props) {
   return (
     <button
       type={type}

@@ -5,7 +5,7 @@ import React from 'react'
 
 import Link from 'next-intl/link'
 import AdminNovelItem from '@/app/_components/molecules/AdminNovelItem'
-import Heading3 from '@/app/_components/atoms/Heading3'
+import Heading3 from '@/app/_components/atoms/Heading3/Heading3'
 
 interface Props {
   novelList: Novel[]

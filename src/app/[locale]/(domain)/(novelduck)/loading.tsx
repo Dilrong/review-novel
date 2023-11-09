@@ -1,4 +1,4 @@
-import Loading from '@/app/_components/atoms/Loading'
+import Loading from '@/app/_components/atoms/Loading/Loading'
 import ScreenContainer from '@/app/_components/molecules/Container/ScreenContainer'
 
 export default function LoadingPage() {

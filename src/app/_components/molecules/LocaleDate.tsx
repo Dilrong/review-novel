@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Caption from '@/app/_components/atoms/Caption'
+import Caption from '@/app/_components/atoms/Caption/Caption'
 
 interface Props {
   date: Date

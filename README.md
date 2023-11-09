@@ -8,6 +8,21 @@
 npm run dev
 ```
 
+### ENV
+
+```
+# SEO
+NEXT_PUBLIC_NAVER_SITE_ID=
+# ANALYTICS
+NEXT_PUBLIC_GA_MEASUREMENT_ID=
+NEXT_PUBLIC_GTM_ID=
+# SUPABASE
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+# SLACK
+NEXT_PUBLIC_SLACK_HOOKS=
+```
+
 ## Tech Stack
 
 - next.js
@@ -15,7 +30,7 @@ npm run dev
 
 ## Atomic Design
 
-본 프로젝트는 아토믹 디자인을 적용
+본 프로젝트는 아토믹 디자인을 적용함
 
 ## 참고
 

@@ -2,7 +2,7 @@
 
 import Link from 'next-intl/link'
 import React from 'react'
-import Caption from '@/app/_components/atoms/Caption'
+import Caption from '@/app/_components/atoms/Caption/Caption'
 import ChapterSourceContainer from '@/app/_components/molecules/Container/ChapterSourceContainer'
 
 interface Props {

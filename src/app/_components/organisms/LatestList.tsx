@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Novel from '@/lib/types/Novel'
 import React from 'react'
-import Heading3 from '@/app/_components/atoms/Heading3'
+import Heading3 from '@/app/_components/atoms/Heading3/Heading3'
 import NovelCard from '@/app/_components/molecules/NovelCard'
 import { useTranslations } from 'next-intl'
 
