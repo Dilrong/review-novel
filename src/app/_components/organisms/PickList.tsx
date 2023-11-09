@@ -52,7 +52,7 @@ function PickList({ novelList }: Props) {
                     id={novel.id}
                     thumbnail={novel.thumbnail}
                     title={novel.title}
-                    category={novel.category}
+                    category={novel.category_id}
                   />
                 </SwiperSlide>
               ))}
