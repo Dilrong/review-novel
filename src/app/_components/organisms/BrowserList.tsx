@@ -1,7 +1,6 @@
 'use client'
 
 import Novel from '@/lib/types/Novel'
-import React from 'react'
 import NovelCard from '@/app/_components/molecules/NovelCard'
 
 interface Props {
@@ -9,6 +8,8 @@ interface Props {
 }
 
 function BrowserList({ novelList }: Props) {
+  // TODO: 인피니티 스크롤 작업
+
   return (
     <div className="flex flex-wrap justify-center gap-8 md:justify-start">
       {novelList.map((novel: Novel) => (
@@ -17,7 +18,7 @@ function BrowserList({ novelList }: Props) {
           thumbnail={novel.thumbnail}
           id={novel.id}
           title={novel.title}
-          category={novel.category}
+          category={novel.category_id}
         />
       ))}
     </div>

@@ -13,13 +13,13 @@ export async function generateMetadata({
   params: { id },
 }: Props): Promise<Metadata> {
   const { data: novel } = await supabase
-    .from('novel')
+    .from('novels')
     .select()
     .eq('id', id)
     .single()
 
   const { data: chapter } = await supabase
-    .from('chapter')
+    .from('chapters')
     .select()
     .eq('novel_id', id)
     .single()
@@ -42,10 +42,10 @@ export async function generateMetadata({
 
 const ViewerPage = async ({ params: { id } }: Props) => {
   const { data: chapterList } = await supabase
-    .from('chapter')
+    .from('chapters')
     .select()
     .eq('novel_id', id)
-    .order('order')
+    .order('sequence')
 
   return <ViewerTemplate chapterList={chapterList as Chapter[]} />
 }

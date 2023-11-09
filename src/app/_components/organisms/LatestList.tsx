@@ -52,7 +52,7 @@ function LatestList({ novelList }: Props) {
                     thumbnail={novel.thumbnail}
                     id={novel.id}
                     title={novel.title}
-                    category={novel.category}
+                    category={novel.category_id}
                   />
                 </SwiperSlide>
               ))}

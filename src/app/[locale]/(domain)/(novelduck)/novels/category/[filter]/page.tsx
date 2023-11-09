@@ -1,6 +1,7 @@
 import supabase from '@/lib/utils/supabase'
 import Novel from '@/lib/types/Novel'
 import NovelTemplate from '@/app/_components/templates/NovelTemplate'
+import Category from '@/lib/types/Category'
 
 interface Props {
   params: {
@@ -14,8 +15,19 @@ const ServerPage = async ({ params: { filter } }: Props) => {
     .select()
     .eq('category', filter)
     .order('created_at', { ascending: false })
+    .limit(12)
 
-  return <NovelTemplate novelList={novelList as Novel[]} />
+  const { data: categoryList } = await supabase
+    .from('categories')
+    .select()
+    .order('created_at', { ascending: false })
+
+  return (
+    <NovelTemplate
+      novelList={novelList as Novel[]}
+      categoryList={categoryList as Category[]}
+    />
+  )
 }
 
 export const revalidate = 0

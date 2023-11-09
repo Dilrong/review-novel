@@ -42,19 +42,19 @@ function ChapterViewer({ chapter }: Props) {
     return (
       <div className="flex gap-2">
         <TranslationButton
-          name="EN"
+          name="🇺🇸 EN"
           handleClick={() => {
             setContentLang('en')
           }}
         />
         <TranslationButton
-          name="한국어"
+          name="🇰🇷 한국어"
           handleClick={() => {
             setContentLang('ko')
           }}
         />
         <TranslationButton
-          name="日本語"
+          name="🇯🇵 日本語"
           handleClick={() => {
             setContentLang('jp')
           }}

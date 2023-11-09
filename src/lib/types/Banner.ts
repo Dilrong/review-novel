@@ -1,9 +1,9 @@
 export default interface Banner {
   id: number
-  order: number
-  image_url: string
-  content: string
+  name: string
   link: string
+  image_pc: string
+  image_mobile: string
   created_at: Date
   updated_at: Date
 }

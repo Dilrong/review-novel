@@ -31,8 +31,8 @@ function MainBanner({ bannerList }: Props) {
           >
             <BannerItem
               link={banner.link}
-              image={banner.image_url}
-              content={banner.content}
+              image={banner.image_pc}
+              content={banner.name}
             />
           </SwiperSlide>
         ))}

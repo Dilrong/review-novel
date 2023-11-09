@@ -1,7 +1,5 @@
 'use client'
 
-import Tag from '@/app/_components/atoms/Tag'
-
 interface Props {
   name: string
   handleClick: () => void
@@ -10,7 +8,9 @@ interface Props {
 function TranslationButton({ name, handleClick }: Props) {
   return (
     <button type="button" onClick={handleClick}>
-      <Tag text={name} />
+      <p className="mt-1 inline-flex cursor-pointer items-center rounded bg-black px-2 py-1 text-xs uppercase text-neutral-300 hover:bg-neutral-950">
+        {name}
+      </p>
     </button>
   )
 }

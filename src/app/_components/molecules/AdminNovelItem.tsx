@@ -22,8 +22,6 @@ function AdminNovelItem({ novel }: Props) {
           {novel.title}
         </Link>
       </th>
-      <td className="px-6 py-4">{novel.category}</td>
-      <td className="px-6 py-4">{novel.length}</td>
       <td className="px-6 py-4">
         {dayjs(novel.created_at).format('YYYY-MM-DD')}
       </td>
