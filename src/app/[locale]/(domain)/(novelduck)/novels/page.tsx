@@ -15,7 +15,6 @@ const ServerPage = async ({ params: { locale } }: Props) => {
     .from('novels')
     .select()
     .order('created_at', { ascending: false })
-
   toLocaleTitle(novelList as Novel[], locale)
 
   const { data: categoryList } = await supabase

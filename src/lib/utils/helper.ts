@@ -18,15 +18,14 @@ const toLocaleTitle = (novelList: Novel[], locale: string) => {
       titleField = 'title'
   }
 
-  const updatedNovelList: Novel[] = []
-  novelList.forEach((novel: Novel) => {
-    updatedNovelList.push({
-      ...novel,
-      title: (novel as any)[titleField],
+  if (novelList) {
+    novelList.forEach((novel: Novel) => {
+      // eslint-disable-next-line no-param-reassign
+      novel.title = <string>novel[titleField as keyof Novel]
     })
-  })
+  }
 
-  return updatedNovelList
+  return novelList
 }
 
 /**

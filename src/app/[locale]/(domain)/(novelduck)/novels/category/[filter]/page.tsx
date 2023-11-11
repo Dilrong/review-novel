@@ -18,7 +18,6 @@ const ServerPage = async ({ params: { filter, locale } }: Props) => {
     .eq('category', filter)
     .order('created_at', { ascending: false })
     .limit(12)
-
   toLocaleTitle(novelList as Novel[], locale)
 
   const { data: categoryList } = await supabase

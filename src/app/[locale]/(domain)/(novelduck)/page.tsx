@@ -16,7 +16,6 @@ const ServerPage = async ({ params: { locale } }: Props) => {
     .select()
     .order('created_at', { ascending: false })
     .limit(5)
-
   toLocaleTitle(novelList as Novel[], locale)
 
   const { data: duckPickList } = await supabase
@@ -27,7 +26,6 @@ const ServerPage = async ({ params: { locale } }: Props) => {
     .order('created_at', { ascending: false })
     .eq('feature', 'pick')
     .limit(5)
-
   toLocaleTitle(duckPickList as unknown as Novel[], locale)
 
   const { data: bannerList } = await supabase
