@@ -4,7 +4,7 @@ import Novel from '@/lib/types/Novel'
 import React from 'react'
 
 import Link from 'next-intl/link'
-import AdminNovelItem from '@/app/_components/molecules/AdminNovelItem'
+import AdminNovelItem from '@/app/_components/molecules/AdminNovelItem/AdminNovelItem'
 import Heading3 from '@/app/_components/atoms/Heading3/Heading3'
 
 interface Props {

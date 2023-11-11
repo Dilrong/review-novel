@@ -1,3 +1,34 @@
+import Novel from '@/lib/types/Novel'
+
+/**
+ * 국가에 맞는 언어로 제목 변경
+ * @param novelList 소설 리스트
+ * @param locale 국가
+ */
+const toLocaleTitle = (novelList: Novel[], locale: string) => {
+  let titleField = ''
+  switch (locale) {
+    case 'ko':
+      titleField = 'title_ko'
+      break
+    case 'ja':
+      titleField = 'title_ja'
+      break
+    default:
+      titleField = 'title'
+  }
+
+  const updatedNovelList: Novel[] = []
+  novelList.forEach((novel: Novel) => {
+    updatedNovelList.push({
+      ...novel,
+      title: (novel as any)[titleField],
+    })
+  })
+
+  return updatedNovelList
+}
+
 /**
  * 카테고리 ID 이름으로 변경
  * @param id 카테고리 ID
@@ -37,4 +68,4 @@ const toCategoryName = (id: number) => {
   return name
 }
 
-export default toCategoryName
+export { toCategoryName, toLocaleTitle }

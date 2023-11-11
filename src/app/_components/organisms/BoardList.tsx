@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Board from '@/lib/types/Board'
-import BoardItem from '@/app/_components/molecules/BoardItem'
+import BoardItem from '@/app/_components/molecules/BoardItem/BoardItem'
 
 interface Props {
   boardList: Board[]
@@ -20,7 +20,6 @@ function BoardList({ boardList }: Props) {
           key={board.id}
           id={board.id}
           title={board.title}
-          category={board.category}
           createdAt={board.created_at}
         />
       ))}

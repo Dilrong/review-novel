@@ -2,6 +2,7 @@
 
 import dayjs from 'dayjs'
 import React from 'react'
+import Heading2 from '@/app/_components/atoms/Heading2/Heading2'
 
 interface Props {
   title: string
@@ -11,7 +12,7 @@ interface Props {
 function BoardTitle({ title, createdAt }: Props) {
   return (
     <>
-      <h2 className="text-2xl font-bold">{title}</h2>
+      <Heading2 text={title} />
       <p className="my-1 text-sm text-gray-500">
         {dayjs(createdAt).format('YYYY.MM.DD')}
       </p>

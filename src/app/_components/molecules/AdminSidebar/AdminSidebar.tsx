@@ -1,4 +1,4 @@
-function Sidebar() {
+function AdminSidebar() {
   return (
     <>
       <button
@@ -81,4 +81,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default AdminSidebar

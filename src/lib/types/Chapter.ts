@@ -4,7 +4,7 @@ export default interface Chapter {
   title: string
   content: string
   content_ko: string
-  content_jp: string
+  content_ja: string
   source: string
   created_at: Date
   updated_at: Date

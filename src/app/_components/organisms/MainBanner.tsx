@@ -3,7 +3,7 @@
 import Banner from '@/lib/types/Banner'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import BannerItem from '@/app/_components/molecules/BannerItem'
+import BannerItem from '@/app/_components/molecules/BannerItem/BannerItem'
 
 interface Props {
   bannerList: Banner[]
@@ -32,7 +32,7 @@ function MainBanner({ bannerList }: Props) {
             <BannerItem
               link={banner.link}
               image={banner.image_pc}
-              content={banner.name}
+              name={banner.name}
             />
           </SwiperSlide>
         ))}

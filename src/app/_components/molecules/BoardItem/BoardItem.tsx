@@ -7,11 +7,10 @@ import React from 'react'
 interface Props {
   id: number
   title: string
-  category: string
   createdAt: Date
 }
 
-function BoardItem({ id, title, category, createdAt }: Props) {
+function BoardItem({ id, title, createdAt }: Props) {
   return (
     <Link
       href={`boards/${id}`}
@@ -20,7 +19,6 @@ function BoardItem({ id, title, category, createdAt }: Props) {
     >
       <div className="flex flex-col">
         <div className="flex">
-          <p className="mr-1 font-bold">[{category}]</p>
           <p>{title}</p>
         </div>
         <p className="mt-1 text-sm text-gray-500">

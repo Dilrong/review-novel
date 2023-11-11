@@ -6,16 +6,16 @@ import Image from 'next/image'
 interface Props {
   link: string
   image: string
-  content: string
+  name: string
 }
 
-function BannerItem({ link, image, content }: Props) {
+function BannerItem({ link, image, name }: Props) {
   return (
     <Link href={link} target="_blank">
       <Image
         className="mt-8 max-h-80 w-full bg-cover"
         src={image}
-        alt={content}
+        alt={name}
         width={1280}
         height={320}
       />
