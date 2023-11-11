@@ -28,8 +28,8 @@ function ChapterViewer({ chapter }: Props) {
       case 'ko':
         setContent(chapter.content_ko)
         break
-      case 'jp':
-        setContent(chapter.content_jp)
+      case 'ja':
+        setContent(chapter.content_ja)
         break
       default:
         setContent(chapter.content)
@@ -56,7 +56,7 @@ function ChapterViewer({ chapter }: Props) {
         <TranslationButton
           name="🇯🇵 日本語"
           handleClick={() => {
-            setContentLang('jp')
+            setContentLang('ja')
           }}
         />
       </div>

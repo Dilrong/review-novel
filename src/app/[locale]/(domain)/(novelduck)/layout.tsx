@@ -76,7 +76,7 @@ const RootLayout = async ({
   try {
     messages = (await import(`@/i18n/${locale}.json`)).default
   } catch (error) {
-    Custom404()
+    return <Custom404 />
   }
 
   return (

@@ -26,6 +26,8 @@ export const Default: Story = {
     novel: {
       id: 1,
       title: 'title',
+      title_ko: '제목',
+      title_ja: '日本語',
       thumbnail: 'image',
       category_id: 1,
       created_at: new Date(),

@@ -28,7 +28,7 @@ type Inputs = {
   chapterTitle: string
   content: string
   contentKo: string
-  contentJp: string
+  contentJa: string
 }
 
 function AdminNovelAddTemplate({ categoryList }: Props) {
@@ -66,7 +66,7 @@ function AdminNovelAddTemplate({ categoryList }: Props) {
         title: data.chapterTitle,
         content: data.content,
         content_ko: data.contentKo,
-        content_jp: data.contentJp,
+        content_ja: data.contentJa,
         source: data.source,
         novel_id: novel[0].id,
       })
@@ -155,7 +155,7 @@ function AdminNovelAddTemplate({ categoryList }: Props) {
         <TextArea
           rows={8}
           placeholder="일본어 번역본을 입력하세요."
-          {...register('contentJp', {})}
+          {...register('contentJa', {})}
         />
         <Button type="submit" text="추가하기" />
       </AdminAddForm>

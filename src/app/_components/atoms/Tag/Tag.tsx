@@ -1,6 +1,6 @@
 'use client'
 
-import toCategoryName from '@/lib/utils/helper'
+import { toCategoryName } from '@/lib/utils/helper'
 import { useTranslations } from 'next-intl'
 
 interface Props {

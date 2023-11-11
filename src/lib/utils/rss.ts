@@ -25,7 +25,7 @@ export default async function generateRssFeed() {
   novelList?.map((novel: Novel) => {
     feed.item({
       title: novel.title,
-      description: novel.summary,
+      description: '',
       url: `${siteUrl}/novels/${novel.id}`,
       date: novel.updated_at,
     })

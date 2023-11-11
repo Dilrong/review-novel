@@ -20,7 +20,6 @@ function BoardList({ boardList }: Props) {
           key={board.id}
           id={board.id}
           title={board.title}
-          category={board.category}
           createdAt={board.created_at}
         />
       ))}
