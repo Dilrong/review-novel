@@ -1,7 +1,7 @@
 import '../../../globals.css'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
-import Sidebar from '@/app/_components/molecules/Sidebar'
+import AdminSidebar from '@/app/_components/molecules/AdminSidebar/AdminSidebar'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${ubuntu.className}`}>
-        <Sidebar />
+        <AdminSidebar />
         <div className="p-4 sm:ml-64">{children}</div>
       </body>
     </html>

@@ -2,9 +2,9 @@
 
 import React from 'react'
 import ScreenContainer from '@/app/_components/molecules/Container/ScreenContainer'
-import BoardViewer from '@/app/_components/molecules/BoardViewer'
+import BoardViewer from '@/app/_components/molecules/VoardViewer/BoardViewer'
 import Board from '@/lib/types/Board'
-import BoardTitle from '@/app/_components/molecules/BoardTitle'
+import BoardTitle from '@/app/_components/molecules/BoardTitle/BoardTitle'
 import ViewerContainer from '@/app/_components/molecules/Container/ViewerContainer'
 
 interface Props {

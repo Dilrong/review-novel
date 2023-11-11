@@ -1,7 +1,7 @@
 'use client'
 
 import Novel from '@/lib/types/Novel'
-import NovelCard from '@/app/_components/molecules/NovelCard'
+import NovelCard from '@/app/_components/molecules/NovelCard/NovelCard'
 
 interface Props {
   novelList: Novel[]

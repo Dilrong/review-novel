@@ -1,6 +1,6 @@
 'use client'
 
-import LinkTag from '@/app/_components/molecules/LinkTag'
+import LinkTag from '@/app/_components/molecules/LinkTag/LinkTag'
 import Category from '@/lib/types/Category'
 
 interface Props {

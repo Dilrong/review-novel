@@ -1,11 +1,11 @@
 'use client'
 
 import { Suspense, useState } from 'react'
-import Logo from '@/app/_components/molecules/Logo'
+import Logo from '@/app/_components/molecules/Logo/Logo'
 import NavMobile from '@/app/_components/molecules/Nav/NavMobile'
 import NavPc from '@/app/_components/molecules/Nav/NavPc'
 import NavContainer from '@/app/_components/molecules/Nav/NavContainer'
-import GoogleTagAnalytics from '@/app/_components/molecules/GoogleTagAnalytics'
+import GoogleTagAnalytics from '@/app/_components/molecules/GoogleTagAnalytics/GoogleTagAnalytics'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { GoogleAnalytics } from 'nextjs-google-analytics'
 import MetaInfo from './MetaInfo'

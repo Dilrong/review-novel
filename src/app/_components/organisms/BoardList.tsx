@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Board from '@/lib/types/Board'
-import BoardItem from '@/app/_components/molecules/BoardItem'
+import BoardItem from '@/app/_components/molecules/BoardItem/BoardItem'
 
 interface Props {
   boardList: Board[]

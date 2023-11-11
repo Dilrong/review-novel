@@ -3,13 +3,13 @@
 import ChapterTitleContainer from '@/app/_components/molecules/Container/ChapterTitleContainer'
 import Heading3 from '@/app/_components/atoms/Heading3/Heading3'
 import ChapterTitleMenuContainer from '@/app/_components/molecules/Container/ChapterTitleMenuContainer'
-import LocaleDate from '@/app/_components/molecules/LocaleDate'
+import LocaleDate from '@/app/_components/molecules/LocaleDate/LocaleDate'
 import Viewer from '@/app/_components/atoms/Viewer/Viewer'
-import ChapterSource from '@/app/_components/molecules/ChapterSource'
+import ChapterSource from '@/app/_components/molecules/ChapterSource/ChapterSource'
 import Hr from '@/app/_components/atoms/Hr/Hr'
 import React, { useEffect, useState } from 'react'
 import Chapter from '@/lib/types/Chapter'
-import TranslationButton from '@/app/_components/molecules/TranslationButton'
+import TranslationButton from '@/app/_components/molecules/TranslationButton/TranslationButton'
 
 interface Props {
   chapter: Chapter
