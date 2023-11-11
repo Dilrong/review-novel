@@ -14,7 +14,7 @@ function NovelFilter({ categoryList }: Props) {
         <LinkTag
           key={category.id}
           id={category.id}
-          link="/novels/category/fantasy"
+          link={`/novels/category/${category.name}`}
         />
       ))}
     </div>
