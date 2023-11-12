@@ -5,7 +5,7 @@ import Novel from '@/lib/types/Novel'
  * @param novelList 소설 리스트
  * @param locale 국가
  */
-const toLocaleTitle = (novelList: Novel[], locale: string) => {
+const toLocaleTitleList = (novelList: Novel[], locale: string) => {
   let titleField = ''
   switch (locale) {
     case 'ko':
@@ -26,6 +26,32 @@ const toLocaleTitle = (novelList: Novel[], locale: string) => {
   }
 
   return novelList
+}
+
+/**
+ * 국가에 맞는 언어로 제목 변경
+ * @param novelList 소설 리스트
+ * @param locale 국가
+ */
+const toLocaleTitle = (novel: Novel, locale: string) => {
+  let titleField = ''
+  switch (locale) {
+    case 'ko':
+      titleField = 'title_ko'
+      break
+    case 'ja':
+      titleField = 'title_ja'
+      break
+    default:
+      titleField = 'title'
+  }
+
+  if (novel) {
+    // eslint-disable-next-line no-param-reassign
+    novel.title = <string>novel[titleField as keyof Novel]
+  }
+
+  return novel
 }
 
 /**
@@ -106,4 +132,4 @@ const toCategoryId = (name: string): number => {
   return id
 }
 
-export { toCategoryName, toCategoryId, toLocaleTitle }
+export { toCategoryName, toCategoryId, toLocaleTitleList, toLocaleTitle }

@@ -1,7 +1,6 @@
 'use client'
 
 import ChapterTitleContainer from '@/app/_components/molecules/Container/ChapterTitleContainer'
-import Heading3 from '@/app/_components/atoms/Heading3/Heading3'
 import ChapterTitleMenuContainer from '@/app/_components/molecules/Container/ChapterTitleMenuContainer'
 import LocaleDate from '@/app/_components/molecules/LocaleDate/LocaleDate'
 import Viewer from '@/app/_components/atoms/Viewer/Viewer'
@@ -66,7 +65,6 @@ function ChapterViewer({ chapter }: Props) {
   return (
     <>
       <ChapterTitleContainer>
-        <Heading3 text={chapter.title} />
         <ChapterTitleMenuContainer>
           <TranslationMenu />
           <LocaleDate date={chapter.created_at} />

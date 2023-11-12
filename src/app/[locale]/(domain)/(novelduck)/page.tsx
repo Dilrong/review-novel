@@ -2,7 +2,7 @@ import supabase from '@/lib/utils/supabase'
 import Novel from '@/lib/types/Novel'
 import Banner from '@/lib/types/Banner'
 import HomeTemplate from '@/app/_components/templates/HomeTemplate'
-import { toLocaleTitle } from '@/lib/utils/helper'
+import { toLocaleTitleList } from '@/lib/utils/helper'
 
 interface Props {
   params: {
@@ -16,7 +16,7 @@ const ServerPage = async ({ params: { locale } }: Props) => {
     .select()
     .order('created_at', { ascending: false })
     .limit(5)
-  toLocaleTitle(novelList as Novel[], locale)
+  toLocaleTitleList(novelList as Novel[], locale)
 
   const { data: duckPickList } = await supabase
     .from('recommendations')
@@ -26,7 +26,7 @@ const ServerPage = async ({ params: { locale } }: Props) => {
     .order('created_at', { ascending: false })
     .eq('feature', 'pick')
     .limit(5)
-  toLocaleTitle(duckPickList as unknown as Novel[], locale)
+  toLocaleTitleList(duckPickList as unknown as Novel[], locale)
 
   const { data: bannerList } = await supabase
     .from('banners')
