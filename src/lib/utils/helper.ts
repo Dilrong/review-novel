@@ -30,7 +30,7 @@ const toLocaleTitleList = (novelList: Novel[], locale: string) => {
 
 /**
  * 국가에 맞는 언어로 제목 변경
- * @param novelList 소설 리스트
+ * @param novel 소설 리스트
  * @param locale 국가
  */
 const toLocaleTitle = (novel: Novel, locale: string) => {

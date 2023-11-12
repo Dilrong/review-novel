@@ -19,7 +19,7 @@ export default function Custom404() {
           </p>
           <Link
             href="/"
-            className="my-4 inline-flex rounded-lg bg-gradient-to-r from-sky-200 to-violet-200 px-5 py-2.5 text-center text-sm font-medium hover:from-sky-300 hover:to-violet-300"
+            className="my-4 inline-flex rounded bg-primary px-5 py-2.5 text-center text-sm font-medium text-white"
           >
             Back to Homepage
           </Link>

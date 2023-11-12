@@ -6,7 +6,7 @@ import supabase from '@/lib/utils/supabase'
 import Headers from '@/app/_components/organisms/Headers'
 import Footer from '@/app/_components/organisms/Footer'
 import { NextIntlClientProvider } from 'next-intl'
-import Custom404 from '@/app/[locale]/(domain)/(novelduck)/not-found'
+import { notFound } from 'next/navigation'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -76,7 +76,7 @@ const RootLayout = async ({
   try {
     messages = (await import(`@/i18n/${locale}.json`)).default
   } catch (error) {
-    return <Custom404 />
+    return notFound()
   }
 
   return (
