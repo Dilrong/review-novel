@@ -10,7 +10,7 @@ interface Props {
 
 const ServerPage = async ({ params: { id } }: Props) => {
   const { data: board } = await supabase
-    .from('board')
+    .from('boards')
     .select()
     .eq('id', id)
     .single()

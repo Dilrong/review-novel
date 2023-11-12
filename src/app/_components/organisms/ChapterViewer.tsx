@@ -39,7 +39,7 @@ function ChapterViewer({ chapter }: Props) {
   // eslint-disable-next-line react/no-unstable-nested-components
   function TranslationMenu() {
     return (
-      <div className="flex gap-2">
+      <div className="fixed bottom-2 right-2 flex gap-2">
         <TranslationButton
           name="🇺🇸 EN"
           handleClick={() => {
