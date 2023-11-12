@@ -7,7 +7,7 @@ interface Props {
   href: string
 }
 
-function CtaButton({ text, href }: Props) {
+function FloatButton({ text, href }: Props) {
   return (
     <Link className="fixed bottom-2 right-2" href={href} target="_blank">
       <button
@@ -20,4 +20,4 @@ function CtaButton({ text, href }: Props) {
   )
 }
 
-export default CtaButton
+export default FloatButton

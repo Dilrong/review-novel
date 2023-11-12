@@ -9,7 +9,7 @@ interface Props {
 
 function NovelFilter({ categoryList }: Props) {
   return (
-    <div className="flex w-full items-center gap-4 pb-4 pt-1">
+    <div className="flex w-full flex-wrap items-center gap-2 pb-4 pt-1">
       {categoryList.map((category) => (
         <LinkTag
           key={category.id}

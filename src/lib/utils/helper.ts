@@ -5,7 +5,7 @@ import Novel from '@/lib/types/Novel'
  * @param novelList 소설 리스트
  * @param locale 국가
  */
-const toLocaleTitle = (novelList: Novel[], locale: string) => {
+const toLocaleTitleList = (novelList: Novel[], locale: string) => {
   let titleField = ''
   switch (locale) {
     case 'ko':
@@ -26,6 +26,32 @@ const toLocaleTitle = (novelList: Novel[], locale: string) => {
   }
 
   return novelList
+}
+
+/**
+ * 국가에 맞는 언어로 제목 변경
+ * @param novelList 소설 리스트
+ * @param locale 국가
+ */
+const toLocaleTitle = (novel: Novel, locale: string) => {
+  let titleField = ''
+  switch (locale) {
+    case 'ko':
+      titleField = 'title_ko'
+      break
+    case 'ja':
+      titleField = 'title_ja'
+      break
+    default:
+      titleField = 'title'
+  }
+
+  if (novel) {
+    // eslint-disable-next-line no-param-reassign
+    novel.title = <string>novel[titleField as keyof Novel]
+  }
+
+  return novel
 }
 
 /**
@@ -67,4 +93,43 @@ const toCategoryName = (id: number) => {
   return name
 }
 
-export { toCategoryName, toLocaleTitle }
+/**
+ * 카테고리 ID 이름으로 변경
+ * @param name 카테고리 이름
+ */
+const toCategoryId = (name: string): number => {
+  let id = 0
+
+  switch (name) {
+    case 'fantasy':
+      id = 1
+      break
+    case 'fun':
+      id = 2
+      break
+    case 'meme':
+      id = 3
+      break
+    case 'motivation':
+      id = 4
+      break
+    case 'horror':
+      id = 5
+      break
+    case 'romance':
+      id = 6
+      break
+    case 'sad':
+      id = 7
+      break
+    case 'sf':
+      id = 8
+      break
+    default:
+      id = 9
+  }
+
+  return id
+}
+
+export { toCategoryName, toCategoryId, toLocaleTitleList, toLocaleTitle }

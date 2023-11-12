@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { NextIntlClientProvider } from 'next-intl'
 
-import Component from './CtaButton'
+import Component from './FloatButton'
 
 const meta = {
-  title: 'MOLECULES/CtaButton',
+  title: 'MOLECULES/FloatButton',
   component: Component,
   decorators: [
     (Story) => (

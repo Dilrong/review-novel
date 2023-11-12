@@ -2,7 +2,7 @@ import supabase from '@/lib/utils/supabase'
 import Novel from '@/lib/types/Novel'
 import NovelTemplate from '@/app/_components/templates/NovelTemplate'
 import Category from '@/lib/types/Category'
-import { toLocaleTitle } from '@/lib/utils/helper'
+import { toCategoryId, toLocaleTitleList } from '@/lib/utils/helper'
 
 interface Props {
   params: {
@@ -12,13 +12,14 @@ interface Props {
 }
 
 const ServerPage = async ({ params: { filter, locale } }: Props) => {
+  const filterId = toCategoryId(filter)
   const { data: novelList } = await supabase
-    .from('novel')
+    .from('novels')
     .select()
-    .eq('category', filter)
+    .eq('category_id', filterId)
     .order('created_at', { ascending: false })
     .limit(12)
-  toLocaleTitle(novelList as Novel[], locale)
+  toLocaleTitleList(novelList as Novel[], locale)
 
   const { data: categoryList } = await supabase
     .from('categories')

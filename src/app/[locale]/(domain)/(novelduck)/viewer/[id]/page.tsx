@@ -2,21 +2,24 @@ import { Metadata } from 'next'
 import supabase from '@/lib/utils/supabase'
 import Chapter from '@/lib/types/Chapter'
 import ViewerTemplate from '@/app/_components/templates/ViewerTemplate'
+import { toLocaleTitle } from '@/lib/utils/helper'
 
 interface Props {
   params: {
     id: number
+    locale: string
   }
 }
 
 export async function generateMetadata({
-  params: { id },
+  params: { id, locale },
 }: Props): Promise<Metadata> {
   const { data: novel } = await supabase
     .from('novels')
     .select()
     .eq('id', id)
     .single()
+  toLocaleTitle(novel, locale)
 
   const { data: chapter } = await supabase
     .from('chapters')
@@ -40,14 +43,26 @@ export async function generateMetadata({
   }
 }
 
-const ViewerPage = async ({ params: { id } }: Props) => {
+const ViewerPage = async ({ params: { id, locale } }: Props) => {
+  const { data: novel } = await supabase
+    .from('novels')
+    .select()
+    .eq('id', id)
+    .single()
+  toLocaleTitle(novel, locale)
+
   const { data: chapterList } = await supabase
     .from('chapters')
     .select()
     .eq('novel_id', id)
     .order('sequence')
 
-  return <ViewerTemplate chapterList={chapterList as Chapter[]} />
+  return (
+    <ViewerTemplate
+      title={novel.title}
+      chapterList={chapterList as Chapter[]}
+    />
+  )
 }
 
 export const revalidate = 0
