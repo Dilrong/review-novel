@@ -67,7 +67,7 @@ const RootLayout = async ({
   }
 }) => {
   const { data: board } = await supabase
-    .from('board')
+    .from('boards')
     .select()
     .eq('id', 1)
     .single()
