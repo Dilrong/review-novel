@@ -20,7 +20,7 @@ const ServerPage = async ({
   const getPagination = (_page: number, size: number) => {
     const limit = size ? +size : 3
     const from = _page ? _page * limit : 0
-    const to = _page ? from + size : size
+    const to = _page ? from + limit - 1 : limit - 1
 
     return { from, to }
   }
