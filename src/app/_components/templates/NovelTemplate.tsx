@@ -11,11 +11,18 @@ import { useTranslations } from 'next-intl'
 import Category from '@/lib/types/Category'
 
 interface Props {
+  novelCount: number
   novelList: Novel[]
   categoryList: Category[]
+  novelFilter: string
 }
 
-function NovelTemplate({ novelList, categoryList }: Props) {
+function NovelTemplate({
+  novelCount,
+  novelList,
+  categoryList,
+  novelFilter,
+}: Props) {
   const t = useTranslations()
 
   return (
@@ -23,7 +30,11 @@ function NovelTemplate({ novelList, categoryList }: Props) {
       <BrowserContainer>
         <Heading3 text={t('novel_page_title')} />
         <NovelFilter categoryList={categoryList} />
-        <BrowserList novelList={novelList} />
+        <BrowserList
+          novelCount={novelCount}
+          novelList={novelList}
+          novelFilter={novelFilter}
+        />
       </BrowserContainer>
     </ScreenContainer>
   )
