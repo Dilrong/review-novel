@@ -46,7 +46,7 @@ export async function generateMetadata({
 const ViewerPage = async ({ params: { id, locale } }: Props) => {
   const { data: novel } = await supabase
     .from('novels')
-    .select()
+    .select('*', { count: 'exact' })
     .eq('id', id)
     .single()
   toLocaleTitle(novel, locale)
