@@ -13,7 +13,7 @@ interface Props {
 function BrowserList({ novelCount, novelList, novelFilter }: Props) {
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-wrap justify-center gap-8 md:justify-start">
+      <div className="grid grid-cols-2 justify-center gap-8 md:grid-cols-5 md:justify-start lg:grid-cols-4 xl:grid-cols-5">
         {novelList.map((novel: Novel) => (
           <NovelCard
             key={novel.id}

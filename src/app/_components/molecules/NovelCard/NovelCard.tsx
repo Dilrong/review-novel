@@ -14,7 +14,7 @@ interface Props {
 
 function NovelCard({ id, thumbnail, title, category }: Props) {
   return (
-    <Link className="w-64" href={`/viewer/${id}`}>
+    <Link className="max-w-md" href={`/viewer/${id}`}>
       <div className="mb-4 w-full">
         <Image
           className="rounded-sm"
