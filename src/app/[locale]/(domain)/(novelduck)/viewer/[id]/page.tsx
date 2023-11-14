@@ -6,7 +6,7 @@ import { toLocaleTitle } from '@/lib/utils/helper'
 
 interface Props {
   params: {
-    id: number
+    id: string
     locale: string
   }
 }
@@ -44,9 +44,13 @@ export async function generateMetadata({
 }
 
 const ViewerPage = async ({ params: { id, locale } }: Props) => {
+  const { count } = await supabase
+    .from('novels')
+    .select('*', { count: 'exact', head: true })
+
   const { data: novel } = await supabase
     .from('novels')
-    .select('*', { count: 'exact' })
+    .select()
     .eq('id', id)
     .single()
   toLocaleTitle(novel, locale)
@@ -59,7 +63,9 @@ const ViewerPage = async ({ params: { id, locale } }: Props) => {
 
   return (
     <ViewerTemplate
+      id={id}
       title={novel.title}
+      novelCount={count as number}
       chapterList={chapterList as Chapter[]}
     />
   )
