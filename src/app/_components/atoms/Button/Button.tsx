@@ -2,6 +2,7 @@
 
 import { MouseEventHandler } from 'react'
 
+// TODO: 버튼 범용성 확대
 interface Props {
   type: 'button' | 'submit' | 'reset'
   text: string

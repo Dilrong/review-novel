@@ -15,7 +15,6 @@ interface Props {
 }
 
 function ChapterViewer({ chapter }: Props) {
-  // TODO: 별도의 컴포넌트로 빼기 - TranslationMenu
   const [content, setContent] = useState('')
 
   useEffect(() => {

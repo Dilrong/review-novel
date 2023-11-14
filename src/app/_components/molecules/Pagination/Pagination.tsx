@@ -65,7 +65,7 @@ function Pagination({ novelCount, novelFilter }: Props) {
             className={`ms-0 flex h-10 items-center justify-center rounded-s-lg border ${
               currentPage === 1
                 ? 'cursor-not-allowed border-gray-300 bg-white text-gray-400'
-                : 'border-e-0 border-gray-300 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+                : 'border-e-0 border-gray-300 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700'
             } px-4 leading-tight transition-all duration-300`}
           >
             <span className="sr-only">Previous</span>
@@ -94,7 +94,7 @@ function Pagination({ novelCount, novelFilter }: Props) {
             className={`flex h-10 items-center justify-center rounded-e-lg border ${
               currentPage === totalPages
                 ? 'cursor-not-allowed border-gray-300 bg-white text-gray-400'
-                : 'border-gray-300 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+                : 'dark border-gray-300 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700'
             } px-4 leading-tight transition-all duration-300`}
           >
             <span className="sr-only">Next</span>
