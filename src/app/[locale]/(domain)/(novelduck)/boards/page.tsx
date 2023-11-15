@@ -6,7 +6,7 @@ const ServerPage = async () => {
   const { data: dataList } = await supabase
     .from('boards')
     .select()
-    .order('created_at', { ascending: false })
+    .order('id', { ascending: false })
 
   return <BoardTemplate boardList={dataList as Board[]} />
 }

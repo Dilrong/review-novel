@@ -14,7 +14,7 @@ const ServerPage = async ({ params: { locale } }: Props) => {
   const { data: novelList } = await supabase
     .from('novels')
     .select()
-    .order('created_at', { ascending: false })
+    .order('id', { ascending: false })
     .limit(5)
   toLocaleTitleList(novelList as Novel[], locale)
 
@@ -23,7 +23,7 @@ const ServerPage = async ({ params: { locale } }: Props) => {
     .select(
       `...novels ( id, title, title_ko, title_ja, thumbnail, category_id)`,
     )
-    .order('created_at', { ascending: false })
+    .order('id', { ascending: false })
     .eq('feature', 'pick')
     .limit(5)
   toLocaleTitleList(duckPickList as unknown as Novel[], locale)
@@ -31,7 +31,7 @@ const ServerPage = async ({ params: { locale } }: Props) => {
   const { data: bannerList } = await supabase
     .from('banners')
     .select()
-    .order('created_at', { ascending: false })
+    .order('id', { ascending: false })
     .limit(5)
 
   return (
