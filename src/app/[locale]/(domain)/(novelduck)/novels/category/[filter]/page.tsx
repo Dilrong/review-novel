@@ -33,14 +33,14 @@ const ServerPage = async ({
     .from('novels')
     .select('*', { count: 'exact' })
     .eq('category_id', filterId)
-    .order('created_at', { ascending: false })
+    .order('id', { ascending: false })
     .range(from, to)
   toLocaleTitleList(novelList as Novel[], locale)
 
   const { data: categoryList } = await supabase
     .from('categories')
     .select()
-    .order('created_at', { ascending: false })
+    .order('id', { ascending: false })
 
   return (
     <NovelTemplate

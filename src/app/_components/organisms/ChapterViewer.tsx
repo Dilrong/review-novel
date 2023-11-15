@@ -36,9 +36,35 @@ function ChapterViewer({ chapter }: Props) {
   }
 
   // eslint-disable-next-line react/no-unstable-nested-components
-  function TranslationMenu() {
+  function TranslationMenuPc() {
     return (
-      <div className="fixed bottom-2 right-2 flex gap-2">
+      <div className="hidden gap-2 md:flex">
+        <TranslationButton
+          name="🇺🇸 EN"
+          handleClick={() => {
+            setContentLang('en')
+          }}
+        />
+        <TranslationButton
+          name="🇰🇷 한국어"
+          handleClick={() => {
+            setContentLang('ko')
+          }}
+        />
+        <TranslationButton
+          name="🇯🇵 日本語"
+          handleClick={() => {
+            setContentLang('ja')
+          }}
+        />
+      </div>
+    )
+  }
+
+  // eslint-disable-next-line react/no-unstable-nested-components
+  function TranslationMenuMobile() {
+    return (
+      <div className="fixed bottom-2 right-2 flex gap-2 md:hidden">
         <TranslationButton
           name="🇺🇸 EN"
           handleClick={() => {
@@ -65,7 +91,8 @@ function ChapterViewer({ chapter }: Props) {
     <>
       <ChapterTitleContainer>
         <ChapterTitleMenuContainer>
-          <TranslationMenu />
+          <TranslationMenuPc />
+          <TranslationMenuMobile />
           <LocaleDate date={chapter.created_at} />
         </ChapterTitleMenuContainer>
       </ChapterTitleContainer>
