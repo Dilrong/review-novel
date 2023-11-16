@@ -1,15 +1,10 @@
-import supabase from '@/lib/utils/supabase'
 import Board from '@/lib/types/Board'
 import BoardTemplate from '@/app/_components/templates/BoardTempate'
+import { getBoardList } from '@/lib/utils/supabaseQuery'
 
 const ServerPage = async () => {
-  const { data: dataList } = await supabase
-    .from('boards')
-    .select()
-    .order('id', { ascending: false })
+  const boardList = await getBoardList()
 
-  return <BoardTemplate boardList={dataList as Board[]} />
+  return <BoardTemplate boardList={boardList as Board[]} />
 }
-
-export const revalidate = 0
 export default ServerPage

@@ -2,6 +2,4 @@ import AdminDashBoardTemplate from '@/app/_components/templates/AdminDashBoardTe
 
 const ServerPage = async () => <AdminDashBoardTemplate />
 
-export const revalidate = 0
-
 export default ServerPage

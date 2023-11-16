@@ -132,4 +132,21 @@ const toCategoryId = (name: string): number => {
   return id
 }
 
-export { toCategoryName, toCategoryId, toLocaleTitleList, toLocaleTitle }
+/**
+ * 페이지네이션 계산
+ */
+const getPagination = (_page: number, size: number) => {
+  const limit = size ? +size : 3
+  const from = _page ? _page * limit : 0
+  const to = _page ? from + limit - 1 : limit - 1
+
+  return { from, to }
+}
+
+export {
+  toCategoryName,
+  toCategoryId,
+  toLocaleTitleList,
+  toLocaleTitle,
+  getPagination,
+}
