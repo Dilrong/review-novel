@@ -2,11 +2,11 @@ import '../../../globals.css'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 
-import supabase from '@/lib/utils/supabase'
 import Headers from '@/app/_components/organisms/Headers'
 import Footer from '@/app/_components/organisms/Footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
+import { getBoard } from '@/lib/utils/supabaseQuery'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -66,11 +66,7 @@ const RootLayout = async ({
     locale: string
   }
 }) => {
-  const { data: board } = await supabase
-    .from('boards')
-    .select()
-    .eq('id', 1)
-    .single()
+  const board = await getBoard(1)
 
   let messages
   try {
@@ -91,5 +87,8 @@ const RootLayout = async ({
     </html>
   )
 }
+
+// 10분 단위 캐싱
+export const revalidate = 600
 
 export default RootLayout

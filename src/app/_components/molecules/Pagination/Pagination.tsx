@@ -94,7 +94,7 @@ function Pagination({ novelCount, novelFilter }: Props) {
             className={`flex h-10 items-center justify-center rounded-e-lg border ${
               currentPage === totalPages
                 ? 'cursor-not-allowed border-gray-300 bg-white text-gray-400'
-                : 'dark border-gray-300 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+                : 'border-gray-300 bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700'
             } px-4 leading-tight transition-all duration-300`}
           >
             <span className="sr-only">Next</span>

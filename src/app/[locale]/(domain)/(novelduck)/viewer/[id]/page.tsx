@@ -1,8 +1,12 @@
 import { Metadata } from 'next'
-import supabase from '@/lib/utils/supabase'
 import Chapter from '@/lib/types/Chapter'
 import ViewerTemplate from '@/app/_components/templates/ViewerTemplate'
-import { toLocaleTitle } from '@/lib/utils/helper'
+import {
+  getChapter,
+  getChapterList,
+  getNovel,
+  getNovelCount,
+} from '@/lib/utils/supabaseQuery'
 
 interface Props {
   params: {
@@ -14,21 +18,10 @@ interface Props {
 export async function generateMetadata({
   params: { id, locale },
 }: Props): Promise<Metadata> {
-  const { data: novel } = await supabase
-    .from('novels')
-    .select()
-    .eq('id', id)
-    .single()
-  toLocaleTitle(novel, locale)
-
-  const { data: chapter } = await supabase
-    .from('chapters')
-    .select()
-    .eq('novel_id', id)
-    .single()
+  const novel = await getNovel(parseInt(id, 10), locale)
+  const chapter = await getChapter(novel.id)
 
   const description = chapter?.content.substring(0, 150)
-
   return {
     title: novel.title,
     description,
@@ -44,22 +37,9 @@ export async function generateMetadata({
 }
 
 const ViewerPage = async ({ params: { id, locale } }: Props) => {
-  const { count } = await supabase
-    .from('novels')
-    .select('*', { count: 'exact', head: true })
-
-  const { data: novel } = await supabase
-    .from('novels')
-    .select()
-    .eq('id', id)
-    .single()
-  toLocaleTitle(novel, locale)
-
-  const { data: chapterList } = await supabase
-    .from('chapters')
-    .select()
-    .eq('novel_id', id)
-    .order('sequence')
+  const count = await getNovelCount()
+  const novel = await getNovel(parseInt(id, 10), locale)
+  const chapterList = await getChapterList(novel.id)
 
   return (
     <ViewerTemplate
@@ -70,6 +50,4 @@ const ViewerPage = async ({ params: { id, locale } }: Props) => {
     />
   )
 }
-
-export const revalidate = 0
 export default ViewerPage

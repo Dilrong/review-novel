@@ -1,6 +1,6 @@
-import supabase from '@/lib/utils/supabase'
 import Board from '@/lib/types/Board'
 import BoardDetailTemplate from '@/app/_components/templates/BoardDetailTempate'
+import { getBoard } from '@/lib/utils/supabaseQuery'
 
 interface Props {
   params: {
@@ -9,14 +9,8 @@ interface Props {
 }
 
 const ServerPage = async ({ params: { id } }: Props) => {
-  const { data: board } = await supabase
-    .from('boards')
-    .select()
-    .eq('id', id)
-    .single()
+  const board = await getBoard(parseInt(id, 10))
 
   return <BoardDetailTemplate board={board as Board} />
 }
-
-export const revalidate = 0
 export default ServerPage
