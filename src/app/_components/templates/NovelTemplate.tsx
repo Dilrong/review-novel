@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Novel from '@/lib/types/Novel'
 import ScreenContainer from '@/app/_components/molecules/Container/ScreenContainer'
 import BrowserContainer from '@/app/_components/molecules/Container/BrowserContainer'
@@ -26,7 +26,9 @@ function NovelTemplate({
 }: Props) {
   const t = useTranslations()
 
-  mixpanel.track('Novel Page View')
+  useEffect(() => {
+    mixpanel.track('Novel Page View')
+  }, [])
 
   return (
     <ScreenContainer>

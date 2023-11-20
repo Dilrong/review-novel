@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Chapter from '@/lib/types/Chapter'
 import ScreenContainer from '@/app/_components/molecules/Container/ScreenContainer'
 import ViewerContainer from '@/app/_components/molecules/Container/ViewerContainer'
@@ -16,10 +16,12 @@ interface Props {
 }
 
 function ViewerTemplate({ id, title, novelCount, chapterList }: Props) {
-  mixpanel.track('Novel Page View', {
-    id,
-    title,
-  })
+  useEffect(() => {
+    mixpanel.track('Novel Page View', {
+      id,
+      title,
+    })
+  }, [])
 
   return (
     <ScreenContainer>
