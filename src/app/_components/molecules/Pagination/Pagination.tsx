@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 interface Props {
   novelCount: number
@@ -8,11 +8,18 @@ interface Props {
 
 function Pagination({ novelCount, novelFilter }: Props) {
   const router = useRouter()
+  const params = useSearchParams()
 
   const category = novelFilter ? `category/${novelFilter}` : ''
   const pageSize = 20
   const totalPages = Math.ceil(novelCount / pageSize)
   const [currentPage, setCurrentPage] = useState(1)
+
+  useEffect(() => {
+    const pageParams = parseInt(params.get('page')!, 10)
+    const page = pageParams + 1
+    setCurrentPage(page)
+  }, [params])
 
   const handlePrev = () => {
     const newPage = currentPage - 1
