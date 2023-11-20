@@ -15,16 +15,18 @@ function Pagination({ novelCount, novelFilter }: Props) {
   const [currentPage, setCurrentPage] = useState(1)
 
   const handlePrev = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1)
-      router.push(`/novels/${category}?page=${currentPage - 2}`)
+    const newPage = currentPage - 1
+    if (newPage >= 1) {
+      setCurrentPage(newPage)
+      router.push(`/novels/${category}?page=${newPage - 1}`)
     }
   }
 
   const handleNext = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1)
-      router.push(`/novels/${category}?page=${currentPage}`)
+    const newPage = currentPage + 1
+    if (newPage <= totalPages) {
+      setCurrentPage(newPage)
+      router.push(`/novels/${category}?page=${newPage - 1}`)
     }
   }
 
