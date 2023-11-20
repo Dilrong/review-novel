@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 interface Props {
   novelCount: number
@@ -8,23 +8,32 @@ interface Props {
 
 function Pagination({ novelCount, novelFilter }: Props) {
   const router = useRouter()
+  const params = useSearchParams()
 
   const category = novelFilter ? `category/${novelFilter}` : ''
   const pageSize = 20
   const totalPages = Math.ceil(novelCount / pageSize)
   const [currentPage, setCurrentPage] = useState(1)
 
+  useEffect(() => {
+    const pageParams = parseInt(params.get('page')!, 10)
+    const page = pageParams + 1
+    setCurrentPage(page)
+  }, [params])
+
   const handlePrev = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1)
-      router.push(`/novels/${category}?page=${currentPage - 2}`)
+    const newPage = currentPage - 1
+    if (newPage >= 1) {
+      setCurrentPage(newPage)
+      router.push(`/novels/${category}?page=${newPage - 1}`)
     }
   }
 
   const handleNext = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1)
-      router.push(`/novels/${category}?page=${currentPage}`)
+    const newPage = currentPage + 1
+    if (newPage <= totalPages) {
+      setCurrentPage(newPage)
+      router.push(`/novels/${category}?page=${newPage - 1}`)
     }
   }
 
