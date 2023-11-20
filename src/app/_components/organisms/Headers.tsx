@@ -6,8 +6,8 @@ import NavMobile from '@/app/_components/molecules/Nav/NavMobile'
 import NavPc from '@/app/_components/molecules/Nav/NavPc'
 import NavContainer from '@/app/_components/molecules/Nav/NavContainer'
 import GoogleTagAnalytics from '@/app/_components/molecules/GoogleTagAnalytics/GoogleTagAnalytics'
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { GoogleAnalytics } from 'nextjs-google-analytics'
+import MixPanel from '@/app/_components/molecules/MixPanel/MixPanel'
 import MetaInfo from './MetaInfo'
 
 function Headers() {
@@ -22,6 +22,7 @@ function Headers() {
       <Suspense>
         <GoogleAnalytics />
         <GoogleTagAnalytics />
+        <MixPanel />
         <MetaInfo />
       </Suspense>
       <NavContainer>

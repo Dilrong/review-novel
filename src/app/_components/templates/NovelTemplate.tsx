@@ -9,6 +9,7 @@ import NovelFilter from '@/app/_components/organisms/NovelFilter'
 import BrowserList from '@/app/_components/organisms/BrowserList'
 import { useTranslations } from 'next-intl'
 import Category from '@/lib/types/Category'
+import mixpanel from 'mixpanel-browser'
 
 interface Props {
   novelCount: number
@@ -24,6 +25,8 @@ function NovelTemplate({
   novelFilter,
 }: Props) {
   const t = useTranslations()
+
+  mixpanel.track('Novel Page View')
 
   return (
     <ScreenContainer>
