@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import ScreenContainer from '@/app/_components/molecules/Container/ScreenContainer'
 import Board from '@/lib/types/Board'
 import BoardTitle from '@/app/_components/molecules/BoardTitle/BoardTitle'
@@ -13,10 +13,12 @@ interface Props {
 }
 
 function BoardDetailTemplate({ board }: Props) {
-  mixpanel.track('board Page View', {
-    id: board.id,
-    title: board.title,
-  })
+  useEffect(() => {
+    mixpanel.track('board Page View', {
+      id: board.id,
+      title: board.title,
+    })
+  }, [])
 
   return (
     <ScreenContainer>

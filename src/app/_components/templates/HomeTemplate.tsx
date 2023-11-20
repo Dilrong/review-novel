@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import mixpanel from 'mixpanel-browser'
 import Novel from '@/lib/types/Novel'
 import Banner from '@/lib/types/Banner'
@@ -17,7 +17,9 @@ interface Props {
 }
 
 function HomeTemplate({ novelList, duckPickList, bannerList }: Props) {
-  mixpanel.track('Home Page View')
+  useEffect(() => {
+    mixpanel.track('Home Page View')
+  }, [])
 
   return (
     <ScreenContainer>
