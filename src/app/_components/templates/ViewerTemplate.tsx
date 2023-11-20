@@ -6,6 +6,7 @@ import ScreenContainer from '@/app/_components/molecules/Container/ScreenContain
 import ViewerContainer from '@/app/_components/molecules/Container/ViewerContainer'
 import ChapterList from '@/app/_components/organisms/ChapterList'
 import PageNav from '@/app/_components/molecules/PageNav/PageNav'
+import mixpanel from 'mixpanel-browser'
 
 interface Props {
   id: string
@@ -15,6 +16,11 @@ interface Props {
 }
 
 function ViewerTemplate({ id, title, novelCount, chapterList }: Props) {
+  mixpanel.track('Novel Page View', {
+    id,
+    title,
+  })
+
   return (
     <ScreenContainer>
       <ViewerContainer>

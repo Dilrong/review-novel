@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import mixpanel from 'mixpanel-browser'
 import Novel from '@/lib/types/Novel'
 import Banner from '@/lib/types/Banner'
 import MainBanner from '@/app/_components/organisms/MainBanner'
@@ -16,6 +17,8 @@ interface Props {
 }
 
 function HomeTemplate({ novelList, duckPickList, bannerList }: Props) {
+  mixpanel.track('Home Page View')
+
   return (
     <ScreenContainer>
       <MainBanner bannerList={bannerList} />

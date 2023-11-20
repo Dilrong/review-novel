@@ -1,5 +1,3 @@
-// create a client component
-
 'use client'
 
 import { usePathname, useSearchParams } from 'next/navigation'
