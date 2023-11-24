@@ -12,5 +12,11 @@
   "novel_category_romance": "ROMANCE",
   "novel_category_sad": "SAD",
   "novel_category_sf": "SF",
-  "novel_category_etc": "ETC"
+  "novel_category_etc": "ETC",
+  "error_internal_title": "Internal Server Error",
+  "error_internal_desc": "We are already working to solve the problem.",
+  "error_internal_button": "Back to Homepage",
+  "error_not_found_title": "That page doesn't exist.",
+  "error_not_found_desc": "Sorry, we can't find that page.\n You'll find lots to explore on the home page.",
+  "error_not_found_button": "Back to Homepage"
 }

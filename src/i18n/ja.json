@@ -12,5 +12,11 @@
   "novel_category_romance": "ロマンス",
   "novel_category_sad": "感動",
   "novel_category_sf": "空想科学",
-  "novel_category_etc": "ギター"
+  "novel_category_etc": "ギター",
+  "error_internal_title": "サーバーエラー",
+  "error_internal_desc": "私たちはすでに問題解決に取り組んでいる。",
+  "error_internal_button": "ホームページに移動",
+  "error_not_found_title": "そのページは存在しない。",
+  "error_not_found_desc": "該当ページが見つかりません。\nホームページで様々な情報を確認することができます。",
+  "error_not_found_button": "ホームページに移動"
 }
