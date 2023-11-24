@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
-import Chapter from '@/lib/types/Chapter'
-import ViewerTemplate from '@/app/_components/templates/ViewerTemplate'
 import {
   getChapter,
   getChapterList,
   getNovel,
   getNovelCount,
 } from '@/lib/utils/supabaseQuery'
+import ScreenContainer from '@/components/ui/screen-container'
+import ChapterViewer from '@/components/feature/viewer/chapter-viewer'
 
 interface Props {
   params: {
@@ -37,17 +37,18 @@ export async function generateMetadata({
 }
 
 const ViewerPage = async ({ params: { id, locale } }: Props) => {
-  const count = await getNovelCount()
   const novel = await getNovel(parseInt(id, 10), locale)
   const chapterList = await getChapterList(novel.id)
 
   return (
-    <ViewerTemplate
-      id={id}
-      title={novel.title}
-      novelCount={count as number}
-      chapterList={chapterList as Chapter[]}
-    />
+    <ScreenContainer>
+      <section className="mx-auto flex w-full max-w-7xl flex-col px-2 py-4">
+        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold first:mt-0">
+          {novel.title}
+        </h2>
+        <ChapterViewer chapter={chapterList[0]} />
+      </section>
+    </ScreenContainer>
   )
 }
 export default ViewerPage

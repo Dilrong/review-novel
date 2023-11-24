@@ -1,5 +1,5 @@
-import Loading from '@/components/ui/Loading'
-import ScreenContainer from '@/app/_components/molecules/Container/ScreenContainer'
+import ScreenContainer from '@/components/ui/screen-container'
+import Loading from '@/components/ui/loading'
 
 export default function LoadingPage() {
   return (

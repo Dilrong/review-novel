@@ -7,7 +7,7 @@ function Logo() {
     <Link href="/" className="flex items-center">
       <h1 className="font-maruBuri self-center whitespace-nowrap text-xl font-semibold">
         Novel
-        <span className="ml-1 font-bold text-primary">DucK</span>
+        <span className="ml-1 font-bold text-yellow-300">DucK</span>
       </h1>
     </Link>
   )

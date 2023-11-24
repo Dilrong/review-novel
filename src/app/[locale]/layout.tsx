@@ -2,13 +2,13 @@ import '../global.css'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 
-import Headers from '@/app/_components/organisms/Headers'
-import Footer from '@/app/_components/organisms/Footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { getBoard } from '@/lib/utils/supabaseQuery'
 import { Toaster } from '@/components/ui/toaster'
 import { ThemeProvider } from '@/components/feature/common/theme-provider'
+import Footer from '@/components/feature/common/footer'
+import Header from '@/components/feature/common/header'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -87,7 +87,7 @@ const RootLayout = async ({
             enableSystem
             disableTransitionOnChange
           >
-            <Headers />
+            <Header />
             {children}
             <Toaster />
             <Footer board={board} />

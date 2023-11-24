@@ -1,10 +1,15 @@
 import Board from '@/lib/types/Board'
-import BoardTemplate from '@/app/_components/templates/BoardTempate'
 import { getBoardList } from '@/lib/utils/supabaseQuery'
+import BoardList from '@/components/feature/boards/BoardList'
+import ScreenContainer from '@/components/ui/screen-container'
 
 const ServerPage = async () => {
   const boardList = await getBoardList()
 
-  return <BoardTemplate boardList={boardList as Board[]} />
+  return (
+    <ScreenContainer>
+      <BoardList boardList={boardList as Board[]} />
+    </ScreenContainer>
+  )
 }
 export default ServerPage

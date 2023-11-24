@@ -11,7 +11,7 @@ interface Props {
 function BannerViewer({ content }: Props) {
   return (
     <article
-      className="prose leading-10"
+      className="prose mt-2 leading-10"
       dangerouslySetInnerHTML={{
         __html: marked(DOMPurify.sanitize(content)),
       }}

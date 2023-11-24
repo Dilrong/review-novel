@@ -1,11 +1,12 @@
-import Novel from '@/lib/types/Novel'
-import Banner from '@/lib/types/Banner'
-import HomeTemplate from '@/app/_components/templates/HomeTemplate'
 import {
   getBanner,
   getDuckPickList,
   getNovelList,
 } from '@/lib/utils/supabaseQuery'
+import ScreenContainer from '@/components/ui/screen-container'
+import MainBanner from '@/components/feature/home/MainBanner'
+import LatestList from '@/components/feature/home/LatestList'
+import PickList from '@/components/feature/home/PickList'
 
 interface Props {
   params: {
@@ -19,11 +20,11 @@ const ServerPage = async ({ params: { locale } }: Props) => {
   const bannerList = await getBanner()
 
   return (
-    <HomeTemplate
-      novelList={novelList as Novel[]}
-      duckPickList={duckPickList as unknown as Novel[]}
-      bannerList={bannerList as Banner[]}
-    />
+    <ScreenContainer>
+      <MainBanner bannerList={bannerList} />
+      <LatestList novelList={novelList} />
+      <PickList novelList={duckPickList} />
+    </ScreenContainer>
   )
 }
 

@@ -3,7 +3,6 @@
 import Link from 'next-intl/link'
 import Image from 'next/image'
 import Tag from '@/components/ui/tag'
-import Heading6 from '@/app/_components/atoms/Heading6/Heading6'
 
 interface Props {
   id: number
@@ -24,7 +23,7 @@ function NovelCard({ id, thumbnail, title, category }: Props) {
           height={250}
         />
         <div className="mt-2 ">
-          <Heading6 text={title} />
+          <h6 className="leading-6 [&:not(:first-child)]:mt-6">{title}</h6>
         </div>
         <Tag id={category} />
       </div>

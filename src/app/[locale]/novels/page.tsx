@@ -1,11 +1,11 @@
-import Novel from '@/lib/types/Novel'
-import NovelTemplate from '@/app/_components/templates/NovelTemplate'
-import Category from '@/lib/types/Category'
 import { getPagination } from '@/lib/utils/helper'
 import {
   getCategoryList,
   getNovelListAndCount,
 } from '@/lib/utils/supabaseQuery'
+import ScreenContainer from '@/components/ui/screen-container'
+import NovelFilter from '@/components/feature/novels/NovelFilter'
+import BrowserList from '@/components/feature/novels/BrowserList'
 
 interface Props {
   params: {
@@ -25,12 +25,19 @@ const ServerPage = async ({
   const categoryList = await getCategoryList()
 
   return (
-    <NovelTemplate
-      novelCount={count as number}
-      novelList={novelList as Novel[]}
-      novelFilter=""
-      categoryList={categoryList as Category[]}
-    />
+    <ScreenContainer>
+      <section className="mt-8">
+        <article className="mx-auto max-w-7xl px-2">
+          {/*<h3>t('novel_page_title')</h3>*/}
+          <NovelFilter categoryList={categoryList} />
+          <BrowserList
+            novelCount={count}
+            novelList={novelList}
+            novelFilter={''}
+          />
+        </article>
+      </section>
+    </ScreenContainer>
   )
 }
 export default ServerPage

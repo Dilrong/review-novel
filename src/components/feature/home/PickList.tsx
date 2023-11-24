@@ -2,7 +2,6 @@
 
 import Novel from '@/lib/types/Novel'
 import React from 'react'
-import Heading3 from '@/app/_components/atoms/Heading3/Heading3'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import NovelCard from '@/components/feature/novels/NovelCard'
 import { useTranslations } from 'next-intl'
@@ -17,7 +16,9 @@ function PickList({ novelList }: Props) {
   return (
     <section className="mt-8">
       <article className="mx-auto max-w-7xl px-2">
-        <Heading3 text={t('pick_list_title')} />
+        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+          {t('pick_list_title')}
+        </h3>
         <div className="mt-2 flex flex-col gap-4">
           <div>
             <Swiper

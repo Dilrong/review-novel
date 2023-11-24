@@ -2,6 +2,7 @@
 
 import Link from 'next-intl/link'
 import { useTranslations } from 'next-intl'
+import { ModeToggle } from '@/components/feature/common/mode-toggle'
 
 interface Props {
   toggle: boolean
@@ -23,6 +24,9 @@ function NavPc({ toggle, handleToggle }: Props) {
           <Link href="/novels" className="block" onClick={handleToggle}>
             {t('browser_menu')}
           </Link>
+        </li>
+        <li className="hidden md:flex">
+          <ModeToggle />
         </li>
       </ul>
     </div>
