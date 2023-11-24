@@ -28,10 +28,4 @@ NEXT_PUBLIC_SLACK_HOOKS=
 - next.js
 - supabase
 
-## Atomic Design
-
-본 프로젝트는 아토믹 디자인을 적용함
-
 ## 참고
-
-- [아토믹 디자인을 활용한 디자인 시스템 도입기](https://fe-developers.kakaoent.com/2022/220505-how-page-part-use-atomic-design-system/)
