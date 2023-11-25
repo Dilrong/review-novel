@@ -29,7 +29,7 @@ function ChapterViewer({ chapter, learningList }: Props) {
         setContent(chapter.content)
         break
     }
-  }, [lang])
+  }, [chapter.content, chapter.content_ja, chapter.content_ko, lang])
 
   return (
     <>

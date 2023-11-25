@@ -2,6 +2,7 @@
 
 import Link from 'next-intl/link'
 import Image from 'next/image'
+import mixpanel from 'mixpanel-browser'
 
 interface Props {
   link: string
@@ -11,7 +12,16 @@ interface Props {
 
 function BannerItem({ link, image, name }: Props) {
   return (
-    <Link href={link} target="_blank">
+    <Link
+      href={link}
+      target="_blank"
+      onClick={() => {
+        mixpanel.track('배너 클릭', {
+          name: name,
+          link: link,
+        })
+      }}
+    >
       <Image
         className="mt-8 max-h-80 w-full bg-cover"
         src={image}

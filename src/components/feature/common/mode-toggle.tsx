@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import mixpanel from 'mixpanel-browser'
 
 export function ModeToggle() {
   const { setTheme } = useTheme()
@@ -25,13 +26,28 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme('light')}>
+        <DropdownMenuItem
+          onClick={() => {
+            mixpanel.track('테마 설정', { theme: 'light' })
+            setTheme('light')
+          }}
+        >
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
+        <DropdownMenuItem
+          onClick={() => {
+            mixpanel.track('테마 설정', { theme: 'dark' })
+            setTheme('dark')
+          }}
+        >
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
+        <DropdownMenuItem
+          onClick={() => {
+            mixpanel.track('테마 설정', { theme: 'system' })
+            setTheme('system')
+          }}
+        >
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
