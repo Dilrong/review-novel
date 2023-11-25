@@ -4,7 +4,6 @@ import {
   getChapterList,
   getLearningList,
   getNovel,
-  getNovelCount,
 } from '@/lib/utils/supabaseQuery'
 import ScreenContainer from '@/components/ui/screen-container'
 import ChapterViewer from '@/components/feature/viewer/chapter-viewer'
