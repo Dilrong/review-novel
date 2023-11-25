@@ -4,20 +4,20 @@ import React, { useEffect, useState } from 'react'
 import { marked } from 'marked'
 import DOMPurify from 'isomorphic-dompurify'
 import Chapter from '@/lib/types/Chapter'
-import { Badge } from '@/components/ui/badge'
+import ViewerSidebar from '@/components/feature/viewer/chapter-sidebar'
+import { useChapterStore } from '@/lib/store/zustand'
+import Learnings from '@/lib/types/Learnings'
 
 interface Props {
   chapter: Chapter
+  learningList: Learnings[]
 }
 
-function ChapterViewer({ chapter }: Props) {
+function ChapterViewer({ chapter, learningList }: Props) {
   const [content, setContent] = useState('')
+  const { lang } = useChapterStore()
 
   useEffect(() => {
-    setContent(chapter.content)
-  }, [chapter.content])
-
-  function setContentLang(lang: string) {
     switch (lang) {
       case 'ko':
         setContent(chapter.content_ko)
@@ -29,47 +29,11 @@ function ChapterViewer({ chapter }: Props) {
         setContent(chapter.content)
         break
     }
-  }
-
-  function ViewerSidebar() {
-    return (
-      <section className="fixed bottom-4">
-        <div className="flex gap-2">
-          <button
-            onClick={() => {
-              setContentLang('ko')
-            }}
-          >
-            <Badge>🇰🇷 한국어</Badge>
-          </button>
-          <button
-            onClick={() => {
-              setContentLang('en')
-            }}
-          >
-            <Badge>🇺🇸 English</Badge>
-          </button>
-          <button
-            onClick={() => {
-              setContentLang('ja')
-            }}
-          >
-            <Badge>🇯🇵 日本語</Badge>
-          </button>
-          {/*<Popover>*/}
-          {/*  <PopoverTrigger>*/}
-          {/*    <Badge>🤖 학습</Badge>*/}
-          {/*  </PopoverTrigger>*/}
-          {/*  <PopoverContent>학습 컨텐츠 영역</PopoverContent>*/}
-          {/*</Popover>*/}
-        </div>
-      </section>
-    )
-  }
+  }, [lang])
 
   return (
     <>
-      <ViewerSidebar />
+      <ViewerSidebar learningList={learningList} />
       <article
         className="prose mt-1 leading-10"
         dangerouslySetInnerHTML={{

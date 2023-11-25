@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import {
   getChapter,
   getChapterList,
+  getLearningList,
   getNovel,
   getNovelCount,
 } from '@/lib/utils/supabaseQuery'
@@ -39,6 +40,7 @@ export async function generateMetadata({
 const ViewerPage = async ({ params: { id, locale } }: Props) => {
   const novel = await getNovel(parseInt(id, 10), locale)
   const chapterList = await getChapterList(novel.id)
+  const learningList = await getLearningList(chapterList[0].id)
 
   return (
     <ScreenContainer>
@@ -46,9 +48,10 @@ const ViewerPage = async ({ params: { id, locale } }: Props) => {
         <h2 className="scroll-m-20 pb-2 text-3xl font-semibold first:mt-0">
           {novel.title}
         </h2>
-        <ChapterViewer chapter={chapterList[0]} />
+        <ChapterViewer chapter={chapterList[0]} learningList={learningList} />
       </section>
     </ScreenContainer>
   )
 }
+
 export default ViewerPage
