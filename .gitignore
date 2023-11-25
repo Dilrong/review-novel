@@ -36,3 +36,6 @@ chromatic.log
 next-env.d.ts
 
 .idea
+
+# Sentry Config File
+.sentryclirc
