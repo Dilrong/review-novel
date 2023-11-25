@@ -5,6 +5,7 @@ import Banner from '@/lib/types/Banner'
 import Board from '@/lib/types/Board'
 import Chapter from '@/lib/types/Chapter'
 import Category from '@/lib/types/Category'
+import Learnings from '@/lib/types/Learnings'
 
 /**
  * Novel
@@ -101,7 +102,7 @@ async function getDuckPickList(locale: string): Promise<Novel[]> {
 }
 
 /**
- * chapter
+ * Chapter
  */
 async function getChapterList(novelId: number): Promise<Chapter[]> {
   const { data: chapterList } = await supabase
@@ -121,6 +122,18 @@ async function getChapter(novelId: number): Promise<Chapter> {
     .single()
 
   return chapter
+}
+
+/**
+ * Learning
+ */
+async function getLearningList(chapterId: number): Promise<Learnings[]> {
+  const { data: learning } = await supabase
+    .from('learnings')
+    .select()
+    .eq('chapter_id', chapterId)
+
+  return learning as Learnings[]
 }
 
 /**
@@ -180,6 +193,7 @@ export {
   getDuckPickList,
   getChapterList,
   getChapter,
+  getLearningList,
   getBanner,
   getBoardList,
   getBoard,
