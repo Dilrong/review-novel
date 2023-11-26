@@ -33,7 +33,7 @@ function ChapterViewer({ chapter, learningList }: Props) {
 
   return (
     <>
-      <ViewerSidebar learningList={learningList} />
+      <ViewerSidebar chapter={chapter} learningList={learningList} />
       <article
         className="prose mt-1 leading-10"
         dangerouslySetInnerHTML={{

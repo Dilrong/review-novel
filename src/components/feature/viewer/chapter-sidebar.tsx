@@ -9,12 +9,15 @@ import { useChapterStore } from '@/lib/store/zustand'
 import Learnings from '@/lib/types/Learnings'
 import LearningViewer from '@/components/feature/viewer/learning-viewer'
 import mixpanel from 'mixpanel-browser'
+import Chapter from '@/lib/types/Chapter'
+import speakText from '@/lib/utils/tts'
 
 interface Props {
+  chapter: Chapter
   learningList: Learnings[]
 }
 
-function ViewerSidebar({ learningList }: Props) {
+function ViewerSidebar({ chapter, learningList }: Props) {
   const { lang, setLang } = useChapterStore()
 
   return (
@@ -43,6 +46,20 @@ function ViewerSidebar({ learningList }: Props) {
           }}
         >
           <Badge>🇯🇵 日本語</Badge>
+        </button>
+        <button
+          onClick={async () => {
+            mixpanel.track('듣기 버튼 클릭')
+            if (lang === 'ko') {
+              await speakText(chapter.content_ko, lang)
+            } else if (lang === 'ja') {
+              await speakText(chapter.content_ja, lang)
+            } else {
+              await speakText(chapter.content, lang)
+            }
+          }}
+        >
+          <Badge>🗣듣기</Badge>
         </button>
         {learningList.length ? (
           <Popover>
