@@ -4,13 +4,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import React from 'react'
+import React, { useState } from 'react'
 import { useChapterStore } from '@/lib/store/zustand'
 import Learnings from '@/lib/types/Learnings'
 import LearningViewer from '@/components/feature/viewer/learning-viewer'
 import mixpanel from 'mixpanel-browser'
 import Chapter from '@/lib/types/Chapter'
-import speakText from '@/lib/utils/tts'
 
 interface Props {
   chapter: Chapter
@@ -19,6 +18,33 @@ interface Props {
 
 function ViewerSidebar({ chapter, learningList }: Props) {
   const { lang, setLang } = useChapterStore()
+  const [isSpeaking, setSpeaking] = useState(false)
+
+  const speak = () => {
+    let content = chapter.content
+    if (lang === 'ko') {
+      content = chapter.content_ko
+    } else if (lang === 'ja') {
+      content = chapter.content_ja
+    } else {
+      content = chapter.content
+    }
+
+    const utterance = new SpeechSynthesisUtterance(content)
+    utterance.lang = lang
+    speechSynthesis.speak(utterance)
+    setSpeaking(true)
+    mixpanel.track('듣기 버튼 클릭', {
+      lang: lang,
+      chapter: chapter.id,
+    })
+  }
+
+  const stopSpeak = () => {
+    mixpanel.track('듣기 중지 버튼 클릭')
+    setSpeaking(false)
+    window.speechSynthesis.cancel()
+  }
 
   return (
     <section className="fixed bottom-4">
@@ -47,20 +73,23 @@ function ViewerSidebar({ chapter, learningList }: Props) {
         >
           <Badge>🇯🇵 日本語</Badge>
         </button>
-        <button
-          onClick={async () => {
-            mixpanel.track('듣기 버튼 클릭')
-            if (lang === 'ko') {
-              await speakText(chapter.content_ko, lang)
-            } else if (lang === 'ja') {
-              await speakText(chapter.content_ja, lang)
-            } else {
-              await speakText(chapter.content, lang)
-            }
-          }}
-        >
-          <Badge>🗣듣기</Badge>
-        </button>
+        {isSpeaking ? (
+          <button
+            onClick={async () => {
+              stopSpeak()
+            }}
+          >
+            <Badge>🛑정지</Badge>
+          </button>
+        ) : (
+          <button
+            onClick={async () => {
+              speak()
+            }}
+          >
+            <Badge>🗣듣기</Badge>
+          </button>
+        )}
         {learningList.length ? (
           <Popover>
             <PopoverTrigger>
