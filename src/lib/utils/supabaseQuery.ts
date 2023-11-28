@@ -6,6 +6,7 @@ import Board from '@/lib/types/Board'
 import Chapter from '@/lib/types/Chapter'
 import Category from '@/lib/types/Category'
 import Learnings from '@/lib/types/Learnings'
+import Affiliate from '@/lib/types/Affiliate'
 
 /**
  * Novel
@@ -137,6 +138,23 @@ async function getLearningList(chapterId: number): Promise<Learnings[]> {
 }
 
 /**
+ * Affiliate
+ */
+async function getAffiliate(): Promise<{
+  affiliateList: Affiliate[]
+  count: number
+}> {
+  const { data: affiliate, count } = await supabase
+    .from('affiliate')
+    .select('*', { count: 'exact' })
+
+  return {
+    affiliateList: affiliate as Affiliate[],
+    count: count!,
+  }
+}
+
+/**
  * Banner
  */
 
@@ -194,6 +212,7 @@ export {
   getChapterList,
   getChapter,
   getLearningList,
+  getAffiliate,
   getBanner,
   getBoardList,
   getBoard,

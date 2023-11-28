@@ -1,22 +1,25 @@
 import { Badge } from '@/components/ui/badge'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
 import React, { useState } from 'react'
 import { useChapterStore } from '@/lib/store/zustand'
 import Learnings from '@/lib/types/Learnings'
-import LearningViewer from '@/components/feature/viewer/learning-viewer'
 import mixpanel from 'mixpanel-browser'
 import Chapter from '@/lib/types/Chapter'
+import Affiliate from '@/lib/types/Affiliate'
+import LearningPopover from '@/components/feature/viewer/learning-popover'
 
 interface Props {
   chapter: Chapter
   learningList: Learnings[]
+  affiliateList: Affiliate[]
+  affiliateCount: number
 }
 
-function ViewerSidebar({ chapter, learningList }: Props) {
+function ViewerSidebar({
+  chapter,
+  learningList,
+  affiliateList,
+  affiliateCount,
+}: Props) {
   const { lang, setLang } = useChapterStore()
   const [isSpeaking, setSpeaking] = useState(false)
 
@@ -91,30 +94,14 @@ function ViewerSidebar({ chapter, learningList }: Props) {
           </button>
         )}
         {learningList.length ? (
-          <Popover>
-            <PopoverTrigger>
-              <Badge
-                onClick={() => {
-                  mixpanel.track('학습 버튼 클릭', {
-                    chapterId: learningList.filter(
-                      (learning) => learning.lang === lang,
-                    )[0].chapter_id,
-                    lang: lang,
-                  })
-                }}
-              >
-                🤖 학습
-              </Badge>
-            </PopoverTrigger>
-            <PopoverContent>
-              <LearningViewer
-                content={
-                  learningList.filter((learning) => learning.lang === lang)[0]
-                    .content
-                }
-              />
-            </PopoverContent>
-          </Popover>
+          <LearningPopover
+            learnings={
+              learningList.filter((learning) => learning.lang === lang)[0]
+            }
+            lang={lang}
+            affiliateList={affiliateList}
+            affiliateCount={affiliateCount}
+          />
         ) : (
           <div />
         )}

@@ -22,12 +22,12 @@ function Footer({ board }: Props) {
         </Link>
       </section>
       <footer>
-        <div className="mx-auto w-full max-w-screen-xl md:py-4">
-          <span className="font-maruBuri mb-1 block text-xs sm:text-center">
+        <div className="mx-auto w-full max-w-screen-xl py-4">
+          <span className="mb-1 block text-center text-xs">
             {t('footer_content')}
           </span>
         </div>
-        <span className="block pb-6 text-sm sm:text-center">
+        <span className="block pb-6 text-center text-sm">
           © 2023{' '}
           <a href="/" className="hover:underline">
             NovelDuck
