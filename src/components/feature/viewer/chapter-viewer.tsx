@@ -7,13 +7,21 @@ import Chapter from '@/lib/types/Chapter'
 import ViewerSidebar from '@/components/feature/viewer/chapter-sidebar'
 import { useChapterStore } from '@/lib/store/zustand'
 import Learnings from '@/lib/types/Learnings'
+import Affiliate from '@/lib/types/Affiliate'
 
 interface Props {
   chapter: Chapter
   learningList: Learnings[]
+  affiliateList: Affiliate[]
+  affiliateCount: number
 }
 
-function ChapterViewer({ chapter, learningList }: Props) {
+function ChapterViewer({
+  chapter,
+  learningList,
+  affiliateList,
+  affiliateCount,
+}: Props) {
   const [content, setContent] = useState('')
   const { lang } = useChapterStore()
 
@@ -33,7 +41,12 @@ function ChapterViewer({ chapter, learningList }: Props) {
 
   return (
     <>
-      <ViewerSidebar chapter={chapter} learningList={learningList} />
+      <ViewerSidebar
+        chapter={chapter}
+        learningList={learningList}
+        affiliateList={affiliateList}
+        affiliateCount={affiliateCount}
+      />
       <article
         className="prose mt-1 leading-10"
         dangerouslySetInnerHTML={{
