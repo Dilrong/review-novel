@@ -10,7 +10,7 @@ interface Props {
 function ScreenContainer({ children }: Props) {
   useEffect(() => {
     mixpanel.track_pageview()
-  }, [mixpanel])
+  }, [])
 
   return <div className="flex min-h-screen flex-col">{children}</div>
 }
