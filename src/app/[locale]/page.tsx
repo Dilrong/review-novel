@@ -4,9 +4,9 @@ import {
   getNovelList,
 } from '@/lib/utils/supabaseQuery'
 import ScreenContainer from '@/components/ui/screen-container'
-import MainBanner from '@/components/feature/home/MainBanner'
-import LatestList from '@/components/feature/home/LatestList'
-import PickList from '@/components/feature/home/PickList'
+import MainBanner from '@/components/feature/home/main-banner'
+import LatestList from '@/components/feature/home/latest-list'
+import PickList from '@/components/feature/home/pick-list'
 
 interface Props {
   params: {

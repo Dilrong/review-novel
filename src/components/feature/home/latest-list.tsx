@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Novel from '@/lib/types/Novel'
 import React from 'react'
-import NovelCard from '@/components/feature/novels/NovelCard'
+import NovelCard from '@/components/feature/novels/novel-card'
 import { useTranslations } from 'next-intl'
 
 interface Props {

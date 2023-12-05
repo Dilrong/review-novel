@@ -16,7 +16,7 @@ function LearningViewer({ content, affiliateList, affiliateCount }: Props) {
   return (
     <>
       <article
-        className="prose-xs mt-2 leading-8"
+        className="prose-xs mt-2 max-h-96 overflow-scroll leading-8"
         dangerouslySetInnerHTML={{
           __html: marked(DOMPurify.sanitize(content)),
         }}

@@ -13,7 +13,7 @@ import LearningViewer from '@/components/feature/viewer/learning-viewer'
 import Learnings from '@/lib/types/Learnings'
 
 interface Props {
-  learnings: Learnings
+  learnings: Learnings | undefined
   lang: string
   affiliateList: Affiliate[]
   affiliateCount: number
@@ -25,6 +25,8 @@ function LearningPopover({
   affiliateList,
   affiliateCount,
 }: Props) {
+  if (!learnings) return null
+
   return (
     <Popover>
       <PopoverTrigger>

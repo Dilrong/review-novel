@@ -1,7 +1,7 @@
 'use client'
 
 import Novel from '@/lib/types/Novel'
-import NovelCard from '@/components/feature/novels/NovelCard'
+import NovelCard from '@/components/feature/novels/novel-card'
 import Pagination from '@/components/feature/novels/Pagination'
 
 interface Props {

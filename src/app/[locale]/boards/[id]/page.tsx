@@ -1,7 +1,7 @@
 import { getBoard } from '@/lib/utils/supabaseQuery'
 import ScreenContainer from '@/components/ui/screen-container'
-import BoardTitle from '@/components/feature/boards/BoardTitle'
-import BoardViewer from '@/components/feature/boards/BoardViewer'
+import BoardTitle from '@/components/feature/boards/board-title'
+import BoardViewer from '@/components/feature/boards/board-viewer'
 
 interface Props {
   params: {
