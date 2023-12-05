@@ -4,7 +4,9 @@ import Link from 'next-intl/link'
 import { useTranslations } from 'next-intl'
 import { ModeToggle } from '@/components/feature/common/mode-toggle'
 import { useUserStore } from '@/lib/store/zustand'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { useEffect } from 'react'
+import supabase from '@/lib/utils/supabase'
+import UserAvatar from '@/components/feature/users/user-avatar'
 
 interface Props {
   toggle: boolean
@@ -13,7 +15,25 @@ interface Props {
 
 function NavPc({ toggle, handleToggle }: Props) {
   const t = useTranslations()
-  const { profile } = useUserStore()
+  const { id, setUser } = useUserStore()
+
+  useEffect(() => {
+    getUser()
+  }, [])
+
+  const getUser = async () => {
+    const { data, error } = await supabase.auth.getUser()
+
+    if (data.user) {
+      setUser(
+        data.user!.id,
+        data.user!.user_metadata.name,
+        data.user?.user_metadata.avatar_url,
+      )
+    }
+
+    console.error(error)
+  }
 
   return (
     <div
@@ -28,18 +48,15 @@ function NavPc({ toggle, handleToggle }: Props) {
             {t('browser_menu')}
           </Link>
         </li>
-        {/*<li>*/}
-        {/*  {profile ? (*/}
-        {/*    <Avatar>*/}
-        {/*      <AvatarImage src={profile} />*/}
-        {/*      <AvatarFallback>CN</AvatarFallback>*/}
-        {/*    </Avatar>*/}
-        {/*  ) : (*/}
-        {/*    <Link href="/users/login" className="block" onClick={handleToggle}>*/}
-        {/*      {t('login_menu')}*/}
-        {/*    </Link>*/}
-        {/*  )}*/}
-        {/*</li>*/}
+        <li>
+          {id ? (
+            <UserAvatar />
+          ) : (
+            <Link href="/users/login" className="block" onClick={handleToggle}>
+              {t('login_menu')}
+            </Link>
+          )}
+        </li>
         <li className="hidden md:flex">
           <ModeToggle />
         </li>
