@@ -1,6 +1,6 @@
 'use client'
 
-import LinkTag from '@/components/feature/novels/LinkTag'
+import LinkTag from '@/components/feature/novels/link-tag'
 import Category from '@/lib/types/Category'
 
 interface Props {

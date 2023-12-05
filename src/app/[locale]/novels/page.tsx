@@ -4,8 +4,8 @@ import {
   getNovelListAndCount,
 } from '@/lib/utils/supabaseQuery'
 import ScreenContainer from '@/components/ui/screen-container'
-import NovelFilter from '@/components/feature/novels/NovelFilter'
-import BrowserList from '@/components/feature/novels/BrowserList'
+import NovelFilter from '@/components/feature/novels/novel-filter'
+import BrowserList from '@/components/feature/novels/browser-list'
 
 interface Props {
   params: {
