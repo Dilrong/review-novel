@@ -19,5 +19,14 @@
   "error_internal_button": "ホームページに移動",
   "error_not_found_title": "そのページは存在しない。",
   "error_not_found_desc": "該当ページが見つかりません。\nホームページで様々な情報を確認することができます。",
-  "error_not_found_button": "ホームページに移動"
+  "error_not_found_button": "ホームページに移動",
+  "login_menu": "ログイン",
+  "login_title": "小説で自然に学ぶ外国語",
+  "login_google_button": "Googleでログイン",
+  "login_kakao_button": "カカオでログイン",
+  "login_success_toast_title": "ノベルドックへようこそ。",
+  "login_success_toast_desc": "小説で自然に外国語を学ぶ",
+  "login_fail_toast_title": "ログインに問題があります\uD83E\uDD79",
+  "login_fail_toast_desc": "問題は開発者に送信されましたが、それでも問題が解決しない場合は、ノーベルドクターまでご連絡ください！",
+  "user_logout_button": "ログアウト"
 }

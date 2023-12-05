@@ -1,5 +1,4 @@
 {
-  "login_menu": "로그인",
   "browser_menu": "소설 더보기",
   "latest_list_title": "최신 소설",
   "pick_list_title": "에디터 추천",
@@ -19,5 +18,14 @@
   "error_internal_button": "홈페이지로 이동",
   "error_not_found_title": "페이지가 존재하지 않습니다.",
   "error_not_found_desc": "해당 페이지를 찾을 수 없습니다. \n홈페이지에서 다양한 정보를 확인할 수 있습니다.",
-  "error_not_found_button": "홈페이지로 이동"
+  "error_not_found_button": "홈페이지로 이동",
+  "login_menu": "로그인",
+  "login_title": "소설로 자연스럽게 배우는 외국어",
+  "login_google_button": "구글로 로그인",
+  "login_kakao_button": "카카오로 로그인",
+  "login_success_toast_title": "노벨덕에 오신걸 환영합니다.",
+  "login_success_toast_desc": "소설로 자연스럽게 외국어를 배워요",
+  "login_fail_toast_title": "로그인에 문제가 있어요\uD83E\uDD79",
+  "login_fail_toast_desc": "해당 문제는 개발자에게 전달되었지만 여전히 문제가 발생하면 노벨덕에 알려주세요!",
+  "user_logout_button": "로그아웃"
 }
