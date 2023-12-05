@@ -7,6 +7,7 @@ import { Icons } from '@/components/ui/icons'
 import supabase from '@/lib/utils/supabase'
 import { useToast } from '@/components/ui/use-toast'
 import { useTranslations } from 'next-intl'
+import mixpanel from 'mixpanel-browser'
 
 function LoginForm() {
   const t = useTranslations()
@@ -27,6 +28,7 @@ function LoginForm() {
       })
 
       setIsLoading(false)
+      mixpanel.track('구글 로그인')
     }
 
     if (error) {
@@ -36,6 +38,7 @@ function LoginForm() {
       })
 
       setIsLoading(false)
+      mixpanel.track('구글 로그인 실패')
     }
   }
 
@@ -53,6 +56,7 @@ function LoginForm() {
       })
 
       setIsLoading(false)
+      mixpanel.track('카카오 로그인')
     }
 
     if (error) {
@@ -62,6 +66,7 @@ function LoginForm() {
       })
 
       setIsLoading(false)
+      mixpanel.track('카카오 로그인 실패')
     }
   }
 

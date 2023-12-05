@@ -7,6 +7,7 @@ import { useUserStore } from '@/lib/store/zustand'
 import { useEffect } from 'react'
 import supabase from '@/lib/utils/supabase'
 import UserAvatar from '@/components/feature/users/user-avatar'
+import mixpanel from 'mixpanel-browser'
 
 interface Props {
   toggle: boolean
@@ -26,10 +27,17 @@ function NavPc({ toggle, handleToggle }: Props) {
 
     if (data.user) {
       setUser(
-        data.user!.id,
-        data.user!.user_metadata.name,
-        data.user?.user_metadata.avatar_url,
+        data.user.id,
+        data.user.user_metadata.name,
+        data.user.user_metadata.avatar_url,
       )
+
+      mixpanel.identify(data.user.id)
+      mixpanel.track('로그인')
+      mixpanel.people.set({
+        $name: data.user.user_metadata.name,
+        $email: data.user.email,
+      })
     }
 
     console.error(error)
