@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { LogOut } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import mixpanel from 'mixpanel-browser'
 
 function UserAvatar() {
   const t = useTranslations()
@@ -23,11 +24,17 @@ function UserAvatar() {
   const logout = async () => {
     await supabase.auth.signOut()
     deleteUser()
+    mixpanel.track('로그아웃')
   }
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger
+        asChild
+        onClick={() => {
+          mixpanel.track('아바타 클릭')
+        }}
+      >
         <Avatar onClick={logout}>
           <AvatarImage src={profile} />
           <AvatarFallback>{name}</AvatarFallback>
