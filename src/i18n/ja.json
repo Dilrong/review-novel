@@ -27,5 +27,6 @@
   "login_success_toast_desc": "小説で自然に外国語を学ぶ",
   "login_fail_toast_title": "ログインに問題があります\uD83E\uDD79",
   "login_fail_toast_desc": "問題は開発者に送信されましたが、それでも問題が解決しない場合は、ノーベルドクターまでご連絡ください！",
-  "user_logout_button": "ログアウト"
+  "user_logout_button": "ログアウト",
+  "source_title": ""
 }
