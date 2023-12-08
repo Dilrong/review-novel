@@ -27,5 +27,6 @@
   "login_success_toast_desc": "Learn, a foreign language naturally with fiction",
   "login_fail_toast_title": "I,'m having trouble logging in🥹",
   "login_fail_toast_desc": "The, issue has been sent to the developers, but if you're still having trouble, let us know on Novelduck!",
-  "user_logout_button": "Log out"
+  "user_logout_button": "Log out",
+  "source_title": "Source"
 }

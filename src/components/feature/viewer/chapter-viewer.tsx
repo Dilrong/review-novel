@@ -8,6 +8,7 @@ import ViewerSidebar from '@/components/feature/viewer/chapter-sidebar'
 import { useChapterStore } from '@/lib/store/zustand'
 import Learnings from '@/lib/types/Learnings'
 import Affiliate from '@/lib/types/Affiliate'
+import SourceItem from '@/components/feature/viewer/source-item'
 
 interface Props {
   chapter: Chapter
@@ -53,6 +54,7 @@ function ChapterViewer({
           __html: marked(DOMPurify.sanitize(content)),
         }}
       />
+      <SourceItem source={chapter.source} />
     </>
   )
 }
