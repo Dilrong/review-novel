@@ -86,6 +86,12 @@ const toCategoryName = (id: number) => {
     case 8:
       name = 'novel_category_sf'
       break
+    case 9:
+      name = 'novel_category_business'
+      break
+    case 10:
+      name = 'novel_category_tip'
+      break
     default:
       name = 'novel_category_etc'
   }

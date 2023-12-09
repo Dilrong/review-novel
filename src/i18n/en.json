@@ -12,6 +12,8 @@
   "novel_category_romance": "ROMANCE",
   "novel_category_sad": "SAD",
   "novel_category_sf": "SF",
+  "novel_category_business": "BUSINESS",
+  "novel_category_tip": "TIP",
   "novel_category_etc": "ETC",
   "error_internal_title": "Internal Server Error",
   "error_internal_desc": "We are already working to solve the problem.",

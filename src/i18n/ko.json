@@ -12,6 +12,8 @@
   "novel_category_romance": "로맨스",
   "novel_category_sad": "감동",
   "novel_category_sf": "공상과학",
+  "novel_category_business": "사업",
+  "novel_category_tip": "팁",
   "novel_category_etc": "기타",
   "error_internal_title": "서버 오류",
   "error_internal_desc": "문제를 해결하기 위해 노력하고 있습니다.",
