@@ -7,6 +7,7 @@ import Chapter from '@/lib/types/Chapter'
 import Category from '@/lib/types/Category'
 import Learnings from '@/lib/types/Learnings'
 import Affiliate from '@/lib/types/Affiliate'
+import Highlights from '@/lib/types/Highlights'
 
 /**
  * Novel
@@ -202,6 +203,18 @@ async function getCategoryList(): Promise<Category[]> {
   return categoryList as Category[]
 }
 
+/**
+ * Highlights
+ */
+async function getHighlightList(userId: string): Promise<Highlights[]> {
+  const { data: highlightList } = await supabase
+    .from('highlights')
+    .select()
+    .eq('user_id', userId)
+
+  return highlightList as Highlights[]
+}
+
 export {
   getNovelCount,
   getNovelListAndCount,
@@ -217,4 +230,5 @@ export {
   getBoardList,
   getBoard,
   getCategoryList,
+  getHighlightList,
 }
