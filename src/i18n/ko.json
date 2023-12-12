@@ -30,7 +30,10 @@
   "login_fail_toast_title": "로그인에 문제가 있어요\uD83E\uDD79",
   "login_fail_toast_desc": "해당 문제는 개발자에게 전달되었지만 여전히 문제가 발생하면 노벨덕에 알려주세요!",
   "user_logout_button": "로그아웃",
+  "user_highlight_button": "내 형광펜",
   "source_title": "출처",
   "highlight_button": "형광펜",
-  "copy_text_button": "복사"
+  "copy_text_button": "복사",
+  "my_highlight_delete_button": "지우기",
+  "my_highlight_delete_toast_title": "표시한 형광펜이 지워졌어요."
 }

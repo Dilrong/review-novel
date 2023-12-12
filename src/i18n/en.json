@@ -30,7 +30,10 @@
   "login_fail_toast_title": "I,'m having trouble logging in🥹",
   "login_fail_toast_desc": "The, issue has been sent to the developers, but if you're still having trouble, let us know on Novelduck!",
   "user_logout_button": "Log out",
+  "user_highlight_button": "My Highlight",
   "source_title": "Source",
   "highlight_button": "Highlight",
-  "copy_text_button": "Copy Text"
+  "copy_text_button": "Copy Text",
+  "my_highlight_delete_button": "Clear",
+  "my_highlight_delete_toast_title": "The highlighter you marked has been erased."
 }
