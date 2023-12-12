@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation'
 import supabase from '@/lib/utils/supabase'
 import { getHighlightList } from '@/lib/utils/supabaseQuery'
 import { useTranslations } from 'next-intl'
+import mixpanel from 'mixpanel-browser'
 
 interface Props {
   chapter: Chapter
@@ -91,6 +92,10 @@ function ChapterViewer({
     const textContent = parentElement.textContent as string
     const startOffset = textContent.indexOf(selectedText)
 
+    mixpanel.track('문구 형광펜', {
+      selectedText,
+    })
+
     await supabase.from('highlights').insert({
       tag_name: parentElement.tagName,
       index_of_tags: indexOfTags,
@@ -143,6 +148,9 @@ function ChapterViewer({
           tooltipElement.remove()
         }
         navigator.clipboard.writeText(selectedText)
+        mixpanel.track('문구 복사', {
+          selectedText,
+        })
       })
     }
   }

@@ -30,7 +30,10 @@
   "login_fail_toast_title": "ログインに問題があります\uD83E\uDD79",
   "login_fail_toast_desc": "問題は開発者に送信されましたが、それでも問題が解決しない場合は、ノーベルドクターまでご連絡ください！",
   "user_logout_button": "ログアウト",
+  "user_highlight_button": "私のハイライト",
   "source_title": "出典",
   "highlight_button": "ハイライト",
-  "copy_text_button": "テキストをコピーする"
+  "copy_text_button": "テキストをコピーする",
+  "my_highlight_delete_button": "クリア",
+  "my_highlight_delete_toast_title": "マークした蛍光ペンが消えました。"
 }
