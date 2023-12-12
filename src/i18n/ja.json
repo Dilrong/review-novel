@@ -30,5 +30,7 @@
   "login_fail_toast_title": "ログインに問題があります\uD83E\uDD79",
   "login_fail_toast_desc": "問題は開発者に送信されましたが、それでも問題が解決しない場合は、ノーベルドクターまでご連絡ください！",
   "user_logout_button": "ログアウト",
-  "source_title": ""
+  "source_title": "出典",
+  "highlight_button": "ハイライト",
+  "copy_text_button": "テキストをコピーする"
 }

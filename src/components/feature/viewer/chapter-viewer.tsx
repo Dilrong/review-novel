@@ -12,6 +12,7 @@ import SourceItem from '@/components/feature/viewer/source-item'
 import { useRouter } from 'next/navigation'
 import supabase from '@/lib/utils/supabase'
 import { getHighlightList } from '@/lib/utils/supabaseQuery'
+import { useTranslations } from 'next-intl'
 
 interface Props {
   chapter: Chapter
@@ -31,6 +32,7 @@ function ChapterViewer({
   const router = useRouter()
   const { id } = useUserStore()
   const { lang } = useChapterStore()
+  const t = useTranslations()
 
   useEffect(() => {
     switch (lang) {
@@ -110,9 +112,9 @@ function ChapterViewer({
       const boundingRect = range.getBoundingClientRect()
       tooltip.innerHTML = `
     <div id='tooltip' class='z-50 flex gap-2 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2'>
-      <button id='highlightButton'>형광펜</button>
+      <button id='highlightButton'>${t('highlight_button')}</button>
       <div></div>
-      <button id='copyTextButton'>복사</button>
+      <button id='copyTextButton'>${t('copy_text_button')}</button>
     </div>
     `
       tooltip.style.position = 'absolute'
