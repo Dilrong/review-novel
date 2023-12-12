@@ -67,7 +67,7 @@ function ChapterViewer({
           const start = innerHTML.substring(0, index)
           const end = innerHTML.substring(index + highlight.text.length)
 
-          item.innerHTML = `${start}<span class='bg-yellow-100'>${highlight.text}</span>${end}`
+          item.innerHTML = `${start}<span class='bg-yellow-100 py-1 text-black'>${highlight.text}</span>${end}`
         }
       }
     })
@@ -80,7 +80,7 @@ function ChapterViewer({
   ) {
     const span = document.createElement('span')
     span.textContent = selectedText
-    span.setAttribute('class', 'bg-yellow-100')
+    span.setAttribute('class', 'bg-yellow-100 py-1 text-black')
     range.deleteContents()
     range.insertNode(span)
 
