@@ -17,6 +17,12 @@ function LoginForm() {
   const handleGoogleLogin = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
+      options: {
+        redirectTo:
+          process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000/'
+            : 'https://novelduck.farm/',
+      },
     })
 
     setIsLoading(true)
