@@ -34,6 +34,13 @@
   "source_title": "出典",
   "highlight_button": "ハイライト",
   "copy_text_button": "テキストをコピーする",
+  "my_highlight_title": "私のハイライト",
   "my_highlight_delete_button": "クリア",
-  "my_highlight_delete_toast_title": "マークした蛍光ペンが消えました。"
+  "my_highlight_delete_toast_title": "マークした蛍光ペンが消えました。",
+  "my_highlight_share_button": "共有",
+  "my_highlight_share_button_toast_title": "共有をサポートしていない環境です。",
+  "my_highlight_share_button_toast_desc": "他のデバイスやブラウザで共有してください。",
+  "my_highlight_not_found_title": "現在保存されている蛍光ペンがありません",
+  "my_highlight_not_found_desc": "コンテンツを見て、好きなフレーズや難しいフレーズを蛍光ペンで保存してみましょう。",
+  "my_highlight_not_found_button": "コンテンツを見る"
 }

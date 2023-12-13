@@ -34,6 +34,13 @@
   "source_title": "Source",
   "highlight_button": "Highlight",
   "copy_text_button": "Copy Text",
+  "my_highlight_title": "My Highlights",
   "my_highlight_delete_button": "Clear",
-  "my_highlight_delete_toast_title": "The highlighter you marked has been erased."
+  "my_highlight_delete_toast_title": "The highlighter you marked has been erased.",
+  "my_highlight_share_button": "Share",
+  "my_highlight_share_button_toast_title": "The environment doesn't support sharing.",
+  "my_highlight_share_button_toast_desc": "Please share from another device or browser.",
+  "my_highlight_not_found_title": "No highlighter currently saved",
+  "my_highlight_not_found_desc": "View content and save your favorite or challenging phrases with a highlighter",
+  "my_highlight_not_found_button": "View content"
 }
