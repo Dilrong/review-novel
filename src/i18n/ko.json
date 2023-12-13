@@ -34,6 +34,13 @@
   "source_title": "출처",
   "highlight_button": "형광펜",
   "copy_text_button": "복사",
+  "my_highlight_title": "내 형광펜",
   "my_highlight_delete_button": "지우기",
-  "my_highlight_delete_toast_title": "표시한 형광펜이 지워졌어요."
+  "my_highlight_delete_toast_title": "표시한 형광펜이 지워졌어요.",
+  "my_highlight_share_button": "공유",
+  "my_highlight_share_button_toast_title": "공유하기를 지원하지 않는 환경이에요.",
+  "my_highlight_share_button_toast_desc": "다른 기기나 브라우저에서 공유하기를 해주세요.",
+  "my_highlight_not_found_title": "현재 저장된 형광펜이 없어요",
+  "my_highlight_not_found_desc": "컨텐츠를 보고 내가 좋아하거나 어려운 문구를 형광펜으로 저장해보세요",
+  "my_highlight_not_found_button": "컨텐츠 보러가기"
 }

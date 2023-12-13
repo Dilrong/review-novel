@@ -10,15 +10,18 @@ import Highlights from '@/lib/types/Highlights'
 import supabase from '@/lib/utils/supabase'
 import { useToast } from '@/components/ui/use-toast'
 import { useRouter } from 'next/navigation'
+import mixpanel from 'mixpanel-browser'
+import { useUserStore } from '@/lib/store/zustand'
 
 interface Props {
   highlight: Highlights
 }
 
-function HighlightItem({ highlight }: Props) {
+function MyHighlightItem({ highlight }: Props) {
   const t = useTranslations()
   const router = useRouter()
   const { toast } = useToast()
+  const { id: userId } = useUserStore()
 
   const deleteHighlight = async () => {
     const { error } = await supabase
@@ -32,7 +35,28 @@ function HighlightItem({ highlight }: Props) {
         description: highlight.text,
       })
 
+      mixpanel.track('형광펜 삭제', {
+        selectedText: highlight.text,
+      })
       router.refresh()
+    }
+  }
+
+  const shareHighlight = async () => {
+    if (!navigator.canShare) {
+      toast({
+        title: '공유하기를 지원하지 않는 환경이에요.',
+        description: '다른 기기나 브라우저에서 공유하기를 해주세요.',
+      })
+    } else {
+      await navigator.share({
+        text: highlight.text,
+        url: `https://novelduck.farm/viewer/${highlight.chapter_id}`,
+      })
+
+      mixpanel.track('형광펜 공유', {
+        selectedText: highlight.text,
+      })
     }
   }
 
@@ -46,8 +70,13 @@ function HighlightItem({ highlight }: Props) {
           {highlight.text}
         </Link>
         <div className="mt-2 flex gap-2">
-          <Button variant="ghost" size="icon" onClick={deleteHighlight}>
-            {t('my_highlight_delete_button')}
+          {highlight.user_id === userId && (
+            <Button variant="ghost" size="icon" onClick={deleteHighlight}>
+              {t('my_highlight_delete_button')}
+            </Button>
+          )}
+          <Button variant="ghost" size="icon" onClick={shareHighlight}>
+            {t('my_highlight_share_button')}
           </Button>
         </div>
       </CardHeader>
@@ -55,4 +84,4 @@ function HighlightItem({ highlight }: Props) {
   )
 }
 
-export default HighlightItem
+export default MyHighlightItem
