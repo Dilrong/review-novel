@@ -50,7 +50,7 @@ function ViewerSidebar({
   }
 
   return (
-    <section className="fixed bottom-4">
+    <section className="fixed bottom-4 z-50">
       <div className="flex gap-2">
         <button
           onClick={() => {
