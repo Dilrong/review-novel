@@ -5,9 +5,11 @@ import {
   getChapterList,
   getLearningList,
   getNovel,
+  getRandomNovelList,
 } from '@/lib/utils/supabaseQuery'
 import ScreenContainer from '@/components/ui/screen-container'
 import ChapterViewer from '@/components/feature/viewer/chapter-viewer'
+import RelatedNovels from '@/components/feature/viewer/related-novels'
 
 interface Props {
   params: {
@@ -41,6 +43,7 @@ const ViewerPage = async ({ params: { id, locale } }: Props) => {
   const novel = await getNovel(parseInt(id, 10), locale)
   const chapterList = await getChapterList(novel.id)
   const learningList = await getLearningList(chapterList[0].id)
+  const randomNovelList = await getRandomNovelList(locale)
   const { affiliateList, count } = await getAffiliate()
 
   return (
@@ -56,6 +59,7 @@ const ViewerPage = async ({ params: { id, locale } }: Props) => {
           affiliateCount={count}
         />
       </section>
+      <RelatedNovels novelList={randomNovelList} />
     </ScreenContainer>
   )
 }

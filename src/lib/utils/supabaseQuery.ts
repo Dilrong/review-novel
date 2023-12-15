@@ -64,6 +64,18 @@ async function getNovelListAndCountByCategory(
   }
 }
 
+async function getRandomNovelList(locale: string): Promise<Novel[]> {
+  const { data: novelList, error } = await supabase
+    .from('novels')
+    .select('*')
+    .limit(5)
+  toLocaleTitleList(novelList as Novel[], locale)
+
+  console.error(error)
+
+  return novelList as Novel[]
+}
+
 async function getNovelList(locale: string): Promise<Novel[]> {
   const { data: novelList } = await supabase
     .from('novels')
@@ -219,6 +231,7 @@ export {
   getNovelCount,
   getNovelListAndCount,
   getNovelListAndCountByCategory,
+  getRandomNovelList,
   getNovelList,
   getNovel,
   getDuckPickList,
