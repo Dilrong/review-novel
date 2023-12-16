@@ -1,9 +1,7 @@
 import { Metadata } from 'next'
 import {
-  getAffiliate,
   getChapter,
   getChapterList,
-  getLearningList,
   getNovel,
   getRandomNovelList,
 } from '@/lib/utils/supabaseQuery'
@@ -42,9 +40,7 @@ export async function generateMetadata({
 const ViewerPage = async ({ params: { id, locale } }: Props) => {
   const novel = await getNovel(parseInt(id, 10), locale)
   const chapterList = await getChapterList(novel.id)
-  const learningList = await getLearningList(chapterList[0].id)
   const randomNovelList = await getRandomNovelList(locale)
-  const { affiliateList, count } = await getAffiliate()
 
   return (
     <ScreenContainer>
@@ -52,12 +48,7 @@ const ViewerPage = async ({ params: { id, locale } }: Props) => {
         <h2 className="scroll-m-20 pb-2 text-3xl font-semibold first:mt-0">
           {novel.title}
         </h2>
-        <ChapterViewer
-          chapter={chapterList[0]}
-          learningList={learningList}
-          affiliateList={affiliateList}
-          affiliateCount={count}
-        />
+        <ChapterViewer chapter={chapterList[0]} />
       </section>
       <RelatedNovels novelList={randomNovelList} />
     </ScreenContainer>

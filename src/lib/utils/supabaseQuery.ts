@@ -5,8 +5,6 @@ import Banner from '@/lib/types/Banner'
 import Board from '@/lib/types/Board'
 import Chapter from '@/lib/types/Chapter'
 import Category from '@/lib/types/Category'
-import Learnings from '@/lib/types/Learnings'
-import Affiliate from '@/lib/types/Affiliate'
 import Highlights from '@/lib/types/Highlights'
 
 /**
@@ -134,35 +132,6 @@ async function getChapter(novelId: number): Promise<Chapter> {
 }
 
 /**
- * Learning
- */
-async function getLearningList(chapterId: number): Promise<Learnings[]> {
-  const { data: learning } = await supabase
-    .from('learnings')
-    .select()
-    .eq('chapter_id', chapterId)
-
-  return learning as Learnings[]
-}
-
-/**
- * Affiliate
- */
-async function getAffiliate(): Promise<{
-  affiliateList: Affiliate[]
-  count: number
-}> {
-  const { data: affiliate, count } = await supabase
-    .from('affiliate')
-    .select('*', { count: 'exact' })
-
-  return {
-    affiliateList: affiliate as Affiliate[],
-    count: count!,
-  }
-}
-
-/**
  * Banner
  */
 
@@ -199,7 +168,7 @@ async function getBoard(id: number): Promise<Board> {
 }
 
 /**
- * category
+ * Category
  */
 async function getCategoryList(): Promise<Category[]> {
   const { data: categoryList } = await supabase
@@ -232,8 +201,6 @@ export {
   getDuckPickList,
   getChapterList,
   getChapter,
-  getLearningList,
-  getAffiliate,
   getBanner,
   getBoardList,
   getBoard,
