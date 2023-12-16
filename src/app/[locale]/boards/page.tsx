@@ -1,5 +1,5 @@
 import Board from '@/lib/types/Board'
-import { getBoardList } from '@/lib/utils/supabaseQuery'
+import { getBoardList } from '@/lib/utils/supabase-query'
 import BoardList from '@/components/feature/boards/board-list'
 import ScreenContainer from '@/components/ui/screen-container'
 

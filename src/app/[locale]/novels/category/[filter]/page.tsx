@@ -2,7 +2,7 @@ import { getPagination, toCategoryId } from '@/lib/utils/helper'
 import {
   getCategoryList,
   getNovelListAndCountByCategory,
-} from '@/lib/utils/supabaseQuery'
+} from '@/lib/utils/supabase-query'
 import ScreenContainer from '@/components/ui/screen-container'
 import NovelFilter from '@/components/feature/novels/novel-filter'
 import BrowserList from '@/components/feature/novels/browser-list'

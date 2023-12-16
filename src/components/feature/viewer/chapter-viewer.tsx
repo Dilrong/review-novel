@@ -9,7 +9,7 @@ import { useChapterStore, useUserStore } from '@/lib/store/zustand'
 import SourceItem from '@/components/feature/viewer/source-item'
 import { useRouter } from 'next/navigation'
 import supabase from '@/lib/utils/supabase'
-import { getHighlightList } from '@/lib/utils/supabaseQuery'
+import { getHighlightList } from '@/lib/utils/supabase-query'
 import { useTranslations } from 'next-intl'
 import mixpanel from 'mixpanel-browser'
 

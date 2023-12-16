@@ -31,6 +31,7 @@ async function getNovelListAndCount(
     .select('*', { count: 'exact' })
     .order('id', { ascending: false })
     .range(from, to)
+
   toLocaleTitleList(novelList as Novel[], locale)
 
   return {

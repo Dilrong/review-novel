@@ -1,5 +1,5 @@
 import ScreenContainer from '@/components/ui/screen-container'
-import { getHighlightList } from '@/lib/utils/supabaseQuery'
+import { getHighlightList } from '@/lib/utils/supabase-query'
 import MyHighlightItem from '@/components/feature/users/my-highlight-item'
 import MyHighlightTitle from '@/components/feature/users/my-highlight-title'
 import MyHighlightNotFound from '@/components/feature/users/my-highlight-not-found'
