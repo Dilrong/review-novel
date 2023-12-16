@@ -1,25 +1,14 @@
 import { Badge } from '@/components/ui/badge'
 import React, { useState } from 'react'
 import { useChapterStore } from '@/lib/store/zustand'
-import Learnings from '@/lib/types/Learnings'
 import mixpanel from 'mixpanel-browser'
 import Chapter from '@/lib/types/Chapter'
-import Affiliate from '@/lib/types/Affiliate'
-import LearningPopover from '@/components/feature/viewer/learning-popover'
 
 interface Props {
   chapter: Chapter
-  learningList: Learnings[]
-  affiliateList: Affiliate[]
-  affiliateCount: number
 }
 
-function ViewerSidebar({
-  chapter,
-  learningList,
-  affiliateList,
-  affiliateCount,
-}: Props) {
+function ViewerSidebar({ chapter }: Props) {
   const { lang, setLang } = useChapterStore()
   const [isSpeaking, setSpeaking] = useState(false)
 
@@ -92,18 +81,6 @@ function ViewerSidebar({
           >
             <Badge>🗣듣기</Badge>
           </button>
-        )}
-        {learningList.length ? (
-          <LearningPopover
-            learnings={
-              learningList.filter((learning) => learning.lang === lang)[0]
-            }
-            lang={lang}
-            affiliateList={affiliateList}
-            affiliateCount={affiliateCount}
-          />
-        ) : (
-          <div />
         )}
       </div>
     </section>

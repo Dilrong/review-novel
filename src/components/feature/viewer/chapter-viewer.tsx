@@ -6,8 +6,6 @@ import DOMPurify from 'isomorphic-dompurify'
 import Chapter from '@/lib/types/Chapter'
 import ViewerSidebar from '@/components/feature/viewer/chapter-sidebar'
 import { useChapterStore, useUserStore } from '@/lib/store/zustand'
-import Learnings from '@/lib/types/Learnings'
-import Affiliate from '@/lib/types/Affiliate'
 import SourceItem from '@/components/feature/viewer/source-item'
 import { useRouter } from 'next/navigation'
 import supabase from '@/lib/utils/supabase'
@@ -17,18 +15,10 @@ import mixpanel from 'mixpanel-browser'
 
 interface Props {
   chapter: Chapter
-  learningList: Learnings[]
-  affiliateList: Affiliate[]
-  affiliateCount: number
 }
 
 // TODO: 하이라이트 테스트 기능으로 개선 예정
-function ChapterViewer({
-  chapter,
-  learningList,
-  affiliateList,
-  affiliateCount,
-}: Props) {
+function ChapterViewer({ chapter }: Props) {
   const [content, setContent] = useState('')
   const router = useRouter()
   const { id } = useUserStore()
@@ -164,12 +154,7 @@ function ChapterViewer({
 
   return (
     <>
-      <ViewerSidebar
-        chapter={chapter}
-        learningList={learningList}
-        affiliateList={affiliateList}
-        affiliateCount={affiliateCount}
-      />
+      <ViewerSidebar chapter={chapter} />
       <article
         className="prose mt-1 leading-10"
         dangerouslySetInnerHTML={{
