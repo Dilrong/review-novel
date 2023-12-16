@@ -1,20 +1,21 @@
 'use client'
 
-import React from 'react'
-import { useTranslations } from 'next-intl'
-import Novel from '@/lib/types/Novel'
-import NovelCard from '@/components/feature/novels/novel-card'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Novel from '@/lib/types/Novel'
+import React from 'react'
+import NovelCard from '@/components/feature/novels/novel-card'
+import { useTranslations } from 'next-intl'
+import 'swiper/css'
 
 interface Props {
   novelList: Novel[]
 }
 
-function RelatedNovels({ novelList }: Props) {
+function LatestList({ novelList }: Props) {
   const t = useTranslations()
 
   return (
-    <section className="mt-16">
+    <section className="mt-8">
       <article className="mx-auto max-w-7xl px-2">
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           {t('related_list_title')}
@@ -38,7 +39,7 @@ function RelatedNovels({ novelList }: Props) {
                   spaceBetween: 30,
                 },
                 1024: {
-                  slidesPerView: 5,
+                  slidesPerView: 3,
                   spaceBetween: 30,
                 },
               }}
@@ -65,4 +66,4 @@ function RelatedNovels({ novelList }: Props) {
   )
 }
 
-export default RelatedNovels
+export default LatestList
