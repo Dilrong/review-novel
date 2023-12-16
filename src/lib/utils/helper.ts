@@ -131,8 +131,14 @@ const toCategoryId = (name: string): number => {
     case 'sf':
       id = 8
       break
-    default:
+    case 'business':
       id = 9
+      break
+    case 'tip':
+      id = 10
+      break
+    default:
+      id = 100
   }
 
   return id

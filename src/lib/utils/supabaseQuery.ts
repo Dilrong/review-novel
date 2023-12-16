@@ -65,13 +65,8 @@ async function getNovelListAndCountByCategory(
 }
 
 async function getRandomNovelList(locale: string): Promise<Novel[]> {
-  const { data: novelList, error } = await supabase
-    .from('novels')
-    .select('*')
-    .limit(5)
+  const { data: novelList } = await supabase.from('novels').select('*').limit(3)
   toLocaleTitleList(novelList as Novel[], locale)
-
-  console.error(error)
 
   return novelList as Novel[]
 }
