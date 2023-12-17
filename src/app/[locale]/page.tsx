@@ -2,7 +2,7 @@ import {
   getBanner,
   getDuckPickList,
   getNovelList,
-} from '@/lib/utils/supabaseQuery'
+} from '@/lib/utils/supabase-query'
 import ScreenContainer from '@/components/ui/screen-container'
 import MainBanner from '@/components/feature/home/main-banner'
 import LatestList from '@/components/feature/home/latest-list'

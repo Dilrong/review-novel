@@ -4,7 +4,7 @@ import {
   getChapterList,
   getNovel,
   getRandomNovelList,
-} from '@/lib/utils/supabaseQuery'
+} from '@/lib/utils/supabase-query'
 import ScreenContainer from '@/components/ui/screen-container'
 import ChapterViewer from '@/components/feature/viewer/chapter-viewer'
 import RelatedNovels from '@/components/feature/viewer/related-novels'

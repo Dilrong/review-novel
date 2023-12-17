@@ -4,7 +4,7 @@ import { Ubuntu } from 'next/font/google'
 
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
-import { getBoard } from '@/lib/utils/supabaseQuery'
+import { getBoard } from '@/lib/utils/supabase-query'
 import { Toaster } from '@/components/ui/toaster'
 import { ThemeProvider } from '@/components/feature/common/theme-provider'
 import Footer from '@/components/feature/common/footer'

@@ -1,4 +1,4 @@
-import { getBoard } from '@/lib/utils/supabaseQuery'
+import { getBoard } from '@/lib/utils/supabase-query'
 import ScreenContainer from '@/components/ui/screen-container'
 import BoardTitle from '@/components/feature/boards/board-title'
 import BoardViewer from '@/components/feature/boards/board-viewer'

@@ -9,7 +9,7 @@ import { useChapterStore, useUserStore } from '@/lib/store/zustand'
 import SourceItem from '@/components/feature/viewer/source-item'
 import { useRouter } from 'next/navigation'
 import supabase from '@/lib/utils/supabase'
-import { getHighlightList } from '@/lib/utils/supabaseQuery'
+import { getHighlightList } from '@/lib/utils/supabase-query'
 import { useTranslations } from 'next-intl'
 import mixpanel from 'mixpanel-browser'
 
@@ -91,7 +91,6 @@ function ChapterViewer({ chapter }: Props) {
       index_of_tags: indexOfTags,
       text: selectedText,
       start_offset: startOffset,
-      text_content: textContent,
       user_id: id,
       chapter_id: chapter.id,
     })
