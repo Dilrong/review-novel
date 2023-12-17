@@ -91,7 +91,6 @@ function ChapterViewer({ chapter }: Props) {
       index_of_tags: indexOfTags,
       text: selectedText,
       start_offset: startOffset,
-      text_content: textContent,
       user_id: id,
       chapter_id: chapter.id,
     })

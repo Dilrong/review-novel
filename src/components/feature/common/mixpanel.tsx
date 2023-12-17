@@ -4,13 +4,12 @@ import mixpanel from 'mixpanel-browser'
 import Script from 'next/script'
 
 export default function MixPanel() {
-  if (process.env.NEXT_PUBLIC_MIX_PANEL_TOKEN) {
-    mixpanel.init(process.env.NEXT_PUBLIC_MIX_PANEL_TOKEN, {
-      debug: process.env.NODE_ENV === 'development',
-      track_pageview: true,
-      persistence: 'localStorage',
-    })
-  }
+  mixpanel.init(process.env.NEXT_PUBLIC_MIX_PANEL_TOKEN!, {
+    ignore_dnt: true,
+    debug: process.env.NODE_ENV === 'development',
+    track_pageview: true,
+    persistence: 'localStorage',
+  })
   return (
     <>
       <Script />

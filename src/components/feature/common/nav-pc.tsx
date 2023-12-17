@@ -39,8 +39,6 @@ function NavPc({ toggle, handleToggle }: Props) {
         $email: data.user.email,
       })
     }
-
-    console.error(error)
   }
 
   return (
