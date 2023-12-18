@@ -24,7 +24,7 @@ function NavPc({ toggle, handleToggle }: Props) {
 
   const getUser = async () => {
     const { data, error } = await supabase.auth.getUser()
-
+    
     if (data.user) {
       setUser(
         data.user.id,
