@@ -27,6 +27,9 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
     if (id) {
       getHighlightListByUser(id)
     }
+    return () => {
+      document.removeEventListener('click', handleDocumentClick)
+    }
   }, [id, lang])
 
   async function getHighlightListByUser(userId: string) {
@@ -147,7 +150,7 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
     text: string,
     start: number,
   ) => {
-    const { error } = await supabase.from('highlights').insert({
+    const { data, error } = await supabase.from('highlights').insert({
       tag_name: tagName,
       index_of_tags: index,
       text: text,
@@ -155,7 +158,6 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
       user_id: id,
       chapter_id: chapterId,
     })
-
     if (!error) {
       toast({
         title: t('highlight_confirm_toast_title'),
@@ -181,7 +183,7 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
       <button id='highlightButton'>${t('highlight_button')}</button>
       <button id='copyTextButton'>${t('copy_text_button')}</button>  
       </div>`
-    tooltip.style.position = 'absolute'
+    tooltip.style.position = 'fixed'
     isMobileDevice
       ? (tooltip.style.top = `${boundingRect.bottom + scrollY + 10}px`)
       : (tooltip.style.top = `${boundingRect.top - 28}px`)
