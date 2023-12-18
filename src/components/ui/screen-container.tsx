@@ -9,7 +9,11 @@ interface Props {
 
 function ScreenContainer({ children }: Props) {
   useEffect(() => {
-    mixpanel.track_pageview()
+    try {
+      mixpanel.track_pageview()
+    } catch (error) {
+      console.error('Error occurred while tracking page view:', error)
+    }
   }, [])
 
   return <div className="flex min-h-screen flex-col">{children}</div>
