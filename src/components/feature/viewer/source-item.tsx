@@ -12,7 +12,7 @@ function SourceItem({ source }: Props) {
   const t = useTranslations()
 
   return (
-    <div className="mt-8 flex ">
+    <div className="mt-8 flex truncate">
       <p className="mr-2 text-sm text-muted-foreground">{t('source_title')}:</p>
       <Link
         className="text-sm text-blue-700 hover:text-blue-600"
