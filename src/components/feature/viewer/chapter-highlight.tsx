@@ -60,6 +60,14 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
     })
   }
 
+  const handleDocumentClick = (event: MouseEvent) => {
+    const tooltip = document.getElementById('tooltip')
+
+    if (tooltip && !tooltip.contains(event.target as Node)) {
+      deleteTooltip()
+    }
+  }
+
   // 하이라이팅
   const handleHighlightClick = (
     selection: Selection,
@@ -153,9 +161,12 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
 
   // 툴팁
   const showTooltip = (selection: Selection, selectedText: string) => {
+    deleteTooltip()
+
     const tooltip = document.createElement('div')
     const range = selection.getRangeAt(0)
     const boundingRect = range.getBoundingClientRect()
+    const isMobileDevice = window.innerWidth < 768 || window.innerHeight < 768
 
     tooltip.innerHTML = `  
       <div id='tooltip' class='z-50 flex gap-2 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2'>        
@@ -163,7 +174,9 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
       <button id='copyTextButton'>${t('copy_text_button')}</button>  
       </div>`
     tooltip.style.position = 'absolute'
-    tooltip.style.top = `${boundingRect.top - 28}px`
+    isMobileDevice
+      ? (tooltip.style.top = `${boundingRect.bottom + scrollY + 10}px`)
+      : (tooltip.style.top = `${boundingRect.top - 28}px`)
     tooltip.style.left = `${(boundingRect.left + boundingRect.right) / 2}px`
 
     document.body.appendChild(tooltip)
@@ -177,19 +190,40 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
     copyTextButton!.addEventListener('click', () =>
       handleCopyTextClick(selectedText),
     )
+
+    document.removeEventListener('click', handleDocumentClick)
   }
 
   const deleteTooltip = () => {
     const tooltipElement = document.querySelector('#tooltip')
     if (tooltipElement) {
       tooltipElement.remove()
+      document.removeEventListener('click', handleDocumentClick)
     }
   }
 
   const handleCopyTextClick = (selectedText: string) => {
     deleteTooltip()
-    navigator.clipboard.writeText(selectedText)
-    mixpanel.track('문구 복사', { selectedText })
+    if ('clipboard' in navigator) {
+      navigator.clipboard
+        .writeText(selectedText)
+        .then(() => {
+          toast({
+            title: '문구 복사를 했어요!',
+            description: selectedText,
+          })
+          mixpanel.track('문구 복사', { selectedText })
+        })
+        .catch(() => {
+          toast({
+            title: '복사하는 동안 오류가 있었어요',
+          })
+        })
+    } else {
+      toast({
+        title: '현재 브라우저에서 클립보드 작업을 지원하지 않아요',
+      })
+    }
   }
 
   // 마우스 이벤트
@@ -209,7 +243,11 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
   }
 
   return (
-    <div onMouseUp={handleMouseUp} onMouseDown={handleMouseDown}>
+    <div
+      onMouseUp={handleMouseUp}
+      onMouseDown={handleMouseDown}
+      onTouchStart={handleMouseUp}
+    >
       {children}
     </div>
   )
