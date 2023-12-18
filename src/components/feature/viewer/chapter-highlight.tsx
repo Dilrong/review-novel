@@ -9,6 +9,7 @@ import mixpanel from 'mixpanel-browser'
 import supabase from '@/lib/utils/supabase'
 import { useToast } from '@/components/ui/use-toast'
 import { ToastAction } from '@/components/ui/toast'
+import { useRouter } from 'next/navigation'
 
 interface Props {
   children: ReactNode
@@ -18,6 +19,7 @@ interface Props {
 
 function ChapterHighlight({ children, chapterId, lang }: Props) {
   const t = useTranslations()
+  const router = useRouter()
   const { id } = useUserStore()
   const { toast } = useToast()
 
@@ -80,10 +82,13 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
       toast({
         title: t('highlight_require_toast_title'),
         action: (
-          <ToastAction altText={t('highlight_require_action_title')}>
-            <Link href="/users/login">
-              {t('highlight_require_action_title')}
-            </Link>
+          <ToastAction
+            onClick={() => {
+              router.push('/users/login')
+            }}
+            altText={t('highlight_require_action_title')}
+          >
+            {t('highlight_require_action_title')}
           </ToastAction>
         ),
       })
@@ -103,10 +108,13 @@ function ChapterHighlight({ children, chapterId, lang }: Props) {
       toast({
         title: t('highlight_toast_title'),
         action: (
-          <ToastAction altText={t('highlight_action_title')}>
-            <Link href={`/users/${id}/highlights`}>
-              {t('highlight_action_title')}
-            </Link>
+          <ToastAction
+            onClick={() => {
+              router.push(`/users/${id}/highlights`)
+            }}
+            altText={t('highlight_action_title')}
+          >
+            {t('highlight_action_title')}
           </ToastAction>
         ),
       })
