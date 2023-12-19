@@ -52,5 +52,7 @@
   "my_highlight_share_button_toast_desc": "他のデバイスやブラウザで共有してください。",
   "my_highlight_not_found_title": "現在保存されている蛍光ペンがありません",
   "my_highlight_not_found_desc": "コンテンツを見て、好きなフレーズや難しいフレーズを蛍光ペンで保存してみましょう。",
-  "my_highlight_not_found_button": "コンテンツを見る"
+  "my_highlight_not_found_button": "コンテンツを見る",
+  "search_keyword_error_title": "2文字以上の文字が必要です",
+  "search_placeholder_title": "見たい小説のタイトルを入力してください"
 }

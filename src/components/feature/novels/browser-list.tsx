@@ -8,9 +8,15 @@ interface Props {
   novelCount: number
   novelList: Novel[]
   novelFilter: string
+  isPage?: boolean
 }
 
-function BrowserList({ novelCount, novelList, novelFilter }: Props) {
+function BrowserList({
+  novelCount,
+  novelList,
+  novelFilter,
+  isPage = true,
+}: Props) {
   return (
     <div className="flex flex-col items-center">
       <div className="grid grid-cols-2 justify-center gap-8 md:grid-cols-5 md:justify-start lg:grid-cols-4 xl:grid-cols-5">
@@ -24,11 +30,13 @@ function BrowserList({ novelCount, novelList, novelFilter }: Props) {
           />
         ))}
       </div>
-      <Pagination
-        novelCount={novelCount}
-        novelFilter={novelFilter}
-        path="/novels"
-      />
+      {isPage && (
+        <Pagination
+          novelCount={novelCount}
+          novelFilter={novelFilter}
+          path="/novels"
+        />
+      )}
     </div>
   )
 }
