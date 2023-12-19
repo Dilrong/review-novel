@@ -52,5 +52,7 @@
   "my_highlight_share_button_toast_desc": "Please share from another device or browser.",
   "my_highlight_not_found_title": "No highlighter currently saved",
   "my_highlight_not_found_desc": "View content and save your favorite or challenging phrases with a highlighter",
-  "my_highlight_not_found_button": "View content"
+  "my_highlight_not_found_button": "View content",
+  "search_keyword_error_title": "I need more than 2 characters",
+  "search_placeholder_title": "Enter the title of the novel you'd like to see"
 }

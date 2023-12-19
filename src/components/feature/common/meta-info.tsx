@@ -9,12 +9,8 @@ function MetaInfo() {
         name="naver-site-verification"
         content={`${process.env.NEXT_PUBLIC_NAVER_SITE_ID}`}
       />
-      <meta
-        name="google-adsense-account"
-        content={`${process.env.NEXT_PUBLIC_ADSENSE}`}
-      />
-      {/* eslint-disable-next-line @next/next/inline-script-id */}
       <Script
+        id="jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

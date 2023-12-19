@@ -52,5 +52,7 @@
   "my_highlight_share_button_toast_desc": "다른 기기나 브라우저에서 공유하기를 해주세요.",
   "my_highlight_not_found_title": "현재 저장된 형광펜이 없어요",
   "my_highlight_not_found_desc": "컨텐츠를 보고 내가 좋아하거나 어려운 문구를 형광펜으로 저장해보세요",
-  "my_highlight_not_found_button": "컨텐츠 보러가기"
+  "my_highlight_not_found_button": "컨텐츠 보러가기",
+  "search_keyword_error_title": "2글자 이상의 문자가 필요해요",
+  "search_placeholder_title": "보고 싶은 소설 제목을 입력해주세요"
 }

@@ -8,6 +8,8 @@ import { useEffect } from 'react'
 import supabase from '@/lib/utils/supabase'
 import UserAvatar from '@/components/feature/users/user-avatar'
 import mixpanel from 'mixpanel-browser'
+import { Button } from '@/components/ui/button'
+import { Search as SearchIcon } from 'lucide-react'
 
 interface Props {
   toggle: boolean
@@ -24,7 +26,7 @@ function NavPc({ toggle, handleToggle }: Props) {
 
   const getUser = async () => {
     const { data, error } = await supabase.auth.getUser()
-    
+
     if (data.user) {
       setUser(
         data.user.id,
@@ -48,10 +50,10 @@ function NavPc({ toggle, handleToggle }: Props) {
       } w-full items-center justify-between lg:order-1 lg:flex lg:w-auto`}
       id="mobile-menu"
     >
-      <ul className="mt-4 flex flex-col items-center gap-2 lg:mt-0 lg:flex-row lg:space-x-4">
+      <ul className="mt-4 flex flex-col items-center lg:mt-0 lg:flex-row">
         <li>
           <Link href="/novels" className="block" onClick={handleToggle}>
-            {t('browser_menu')}
+            <Button variant="ghost">{t('browser_menu')}</Button>
           </Link>
         </li>
         <li>
@@ -59,11 +61,18 @@ function NavPc({ toggle, handleToggle }: Props) {
             <UserAvatar />
           ) : (
             <Link href="/users/login" className="block" onClick={handleToggle}>
-              {t('login_menu')}
+              <Button variant="ghost">{t('login_menu')}</Button>
             </Link>
           )}
         </li>
-        <li className="hidden md:flex">
+        <li>
+          <Link href="/search">
+            <Button variant="ghost" size="icon">
+              <SearchIcon className="h-4 w-4" />
+            </Button>
+          </Link>
+        </li>
+        <li className="flex">
           <ModeToggle />
         </li>
       </ul>
