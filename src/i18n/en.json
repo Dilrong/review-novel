@@ -1,7 +1,11 @@
 {
   "browser_menu": "Browser",
-  "latest_list_title": "Latest List",
-  "pick_list_title": "Editor's Pick",
+  "popular_list_title": "Novelduck Popular Content",
+  "popular_list_desc": "\uD83E\uDEE3Popular movies everyone's seen",
+  "latest_list_title": "Newest Content on Novelduck",
+  "latest_list_desc": "\uD83D\uDD25Let's see what's new~.",
+  "pick_list_title": "Soduk's Recommended Content",
+  "pick_list_desc": "\uD83D\uDC25Try it and see how it goes!",
   "related_list_title": "What about this novel?",
   "footer_content": "Novel Duck: A Foreign Language Learning Naturally from Novel",
   "novel_page_title": "Novels",
@@ -54,5 +58,11 @@
   "my_highlight_not_found_desc": "View content and save your favorite or challenging phrases with a highlighter",
   "my_highlight_not_found_button": "View content",
   "search_keyword_error_title": "I need more than 2 characters",
-  "search_placeholder_title": "Enter the title of the novel you'd like to see"
+  "search_placeholder_title": "Enter the title of the novel you'd like to see",
+  "notice_menu": "Notice",
+  "notice_number_title": "No",
+  "notice_title_title": "Title",
+  "notice_author_title": "Author",
+  "notice_date_title": "Date",
+  "notice_caption_title": "Learn a foreign language naturally with novels! News from NovelDuck."
 }

@@ -1,7 +1,11 @@
 {
   "browser_menu": "小説をもっと見る",
-  "latest_list_title": "最新小説",
-  "pick_list_title": "エディター推薦",
+  "popular_list_title": "ノベルドック人気コンテンツ",
+  "popular_list_desc": "\uD83E\uDEE3私以外は見たことのある人気作品",
+  "latest_list_title": "ノベルドック最新コンテンツ",
+  "latest_list_desc": "\uD83D\uDD25あたたかい新作見て行ってらっしゃいませ〜。",
+  "pick_list_title": "ソドゥク'sおすすめコンテンツ",
+  "pick_list_desc": "\uD83D\uDC25信じて一度押してみるのがおすすめです！",
   "related_list_title": "この小説はどうですか？",
   "footer_content": "小説で自然に学ぶ外国語 - ノーベルダック",
   "novel_page_title": "しょうせつ",
@@ -54,5 +58,11 @@
   "my_highlight_not_found_desc": "コンテンツを見て、好きなフレーズや難しいフレーズを蛍光ペンで保存してみましょう。",
   "my_highlight_not_found_button": "コンテンツを見る",
   "search_keyword_error_title": "2文字以上の文字が必要です",
-  "search_placeholder_title": "見たい小説のタイトルを入力してください"
+  "search_placeholder_title": "見たい小説のタイトルを入力してください",
+  "notice_menu": "お知らせ",
+  "notice_number_title": "番号",
+  "notice_title_title": "タイトル",
+  "notice_author_title": "作成者",
+  "notice_date_title": "作成日",
+  "notice_caption_title": "小説で自然に学ぶ外国語！ノベルドックからのお知らせです。"
 }
