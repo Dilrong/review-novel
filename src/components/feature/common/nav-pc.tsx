@@ -52,6 +52,11 @@ function NavPc({ toggle, handleToggle }: Props) {
     >
       <ul className="mt-4 flex flex-col items-center lg:mt-0 lg:flex-row">
         <li>
+          <Link href="/boards" className="block" onClick={handleToggle}>
+            <Button variant="ghost">{t('notice_menu')}</Button>
+          </Link>
+        </li>
+        <li>
           <Link href="/novels" className="block" onClick={handleToggle}>
             <Button variant="ghost">{t('browser_menu')}</Button>
           </Link>

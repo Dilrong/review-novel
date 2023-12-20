@@ -8,7 +8,9 @@ const ServerPage = async () => {
 
   return (
     <ScreenContainer>
-      <BoardList boardList={boardList as Board[]} />
+      <section className="mx-auto mt-8 w-full max-w-7xl px-2">
+        <BoardList boardList={boardList as Board[]} />
+      </section>
     </ScreenContainer>
   )
 }
