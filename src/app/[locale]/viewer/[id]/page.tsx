@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import {
   getChapter,
   getChapterList,
+  getDuckPickList,
   getNovel,
-  getRandomNovelList,
 } from '@/lib/utils/supabase-query'
 import ScreenContainer from '@/components/ui/screen-container'
 import ChapterViewer from '@/components/feature/viewer/chapter-viewer'
-import RelatedNovels from '@/components/feature/viewer/related-novels'
+import PickList from '@/components/feature/home/pick-list'
 
 interface Props {
   params: {
@@ -40,7 +40,7 @@ export async function generateMetadata({
 const ViewerPage = async ({ params: { id, locale } }: Props) => {
   const novel = await getNovel(parseInt(id, 10), locale)
   const chapterList = await getChapterList(novel.id)
-  const randomNovelList = await getRandomNovelList(locale)
+  const duckPickList = await getDuckPickList(locale)
 
   return (
     <ScreenContainer>
@@ -50,7 +50,7 @@ const ViewerPage = async ({ params: { id, locale } }: Props) => {
         </h2>
         <ChapterViewer chapter={chapterList[0]} />
       </section>
-      <RelatedNovels novelList={randomNovelList} />
+      <PickList novelList={duckPickList} />
     </ScreenContainer>
   )
 }
