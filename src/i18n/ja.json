@@ -1,7 +1,11 @@
 {
   "browser_menu": "小説をもっと見る",
-  "latest_list_title": "最新小説",
-  "pick_list_title": "エディター推薦",
+  "popular_list_title": "ノベルドック人気コンテンツ",
+  "popular_list_desc": "\uD83E\uDEE3私以外は見たことのある人気作品",
+  "latest_list_title": "ノベルドック最新コンテンツ",
+  "latest_list_desc": "\uD83D\uDD25あたたかい新作見て行ってらっしゃいませ〜。",
+  "pick_list_title": "ソドゥク'sおすすめコンテンツ",
+  "pick_list_desc": "\uD83D\uDC25信じて一度押してみるのがおすすめです！",
   "related_list_title": "この小説はどうですか？",
   "footer_content": "小説で自然に学ぶ外国語 - ノーベルダック",
   "novel_page_title": "しょうせつ",

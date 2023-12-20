@@ -1,8 +1,8 @@
 'use client'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
 import Novel from '@/lib/types/Novel'
 import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import NovelCard from '@/components/feature/novels/novel-card'
 import { useTranslations } from 'next-intl'
 
@@ -10,17 +10,17 @@ interface Props {
   novelList: Novel[]
 }
 
-function LatestList({ novelList }: Props) {
+function PopularList({ novelList }: Props) {
   const t = useTranslations()
 
   return (
     <section className="mt-8">
       <article className="mx-auto max-w-7xl px-2">
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-          {t('latest_list_title')}
+          {t('popular_list_title')}
         </h3>
         <p className="mt-1 text-sm text-muted-foreground">
-          {t('latest_list_desc')}
+          {t('popular_list_desc')}
         </p>
         <div className="mt-2 flex flex-col gap-4">
           <div>
@@ -53,8 +53,8 @@ function LatestList({ novelList }: Props) {
                 >
                   <NovelCard
                     key={novel.id}
-                    thumbnail={novel.thumbnail}
                     id={novel.id}
+                    thumbnail={novel.thumbnail}
                     title={novel.title}
                     category={novel.category_id}
                   />
@@ -68,4 +68,4 @@ function LatestList({ novelList }: Props) {
   )
 }
 
-export default LatestList
+export default PopularList

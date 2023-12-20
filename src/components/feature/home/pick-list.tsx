@@ -19,6 +19,9 @@ function PickList({ novelList }: Props) {
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           {t('pick_list_title')}
         </h3>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {t('pick_list_desc')}
+        </p>
         <div className="mt-2 flex flex-col gap-4">
           <div>
             <Swiper

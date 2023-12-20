@@ -1,7 +1,11 @@
 {
   "browser_menu": "소설 더보기",
+  "popular_list_title": "노벨덕 인기 컨텐츠",
+  "popular_list_desc": "\uD83E\uDEE3나 빼고 다 본 인기 작품",
   "latest_list_title": "노벨덕 최신 컨텐츠",
+  "latest_list_desc": "\uD83D\uDD25따끈따끈한 신작보고 가세요~",
   "pick_list_title": "소덕's 추천 컨텐츠",
+  "pick_list_desc": "\uD83D\uDC25믿고 일단 눌러보는 소덕이 추천!",
   "related_list_title": "이 소설은 어때요?",
   "footer_content": "소설로 자연스럽게 배우는 외국어 - 노벨덕",
   "novel_page_title": "소설",

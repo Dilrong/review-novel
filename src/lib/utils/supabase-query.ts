@@ -108,6 +108,20 @@ async function getNovel(id: number, locale: string): Promise<Novel> {
 /**
  * Recommendations
  */
+async function getPopularList(locale: string): Promise<Novel[]> {
+  const { data: duckPickList } = await supabase
+    .from('recommendations')
+    .select(
+      `...novels ( id, title, title_ko, title_ja, thumbnail, category_id)`,
+    )
+    .order('id', { ascending: false })
+    .eq('feature', 'popular')
+    .limit(5)
+  toLocaleTitleList(duckPickList as unknown as Novel[], locale)
+
+  return duckPickList as unknown as Novel[]
+}
+
 async function getDuckPickList(locale: string): Promise<Novel[]> {
   const { data: duckPickList } = await supabase
     .from('recommendations')
@@ -214,6 +228,7 @@ export {
   getNovelList,
   getNovel,
   getDuckPickList,
+  getPopularList,
   getChapterList,
   getChapter,
   getBanner,
