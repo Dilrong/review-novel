@@ -2,7 +2,6 @@
 
 import Banner from '@/lib/types/Banner'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
 import BannerItem from '@/components/feature/home/banner-item'
 
 interface Props {
