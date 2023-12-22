@@ -2,6 +2,7 @@
 
 import Banner from '@/lib/types/Banner'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { A11y, Autoplay } from 'swiper/modules'
 import BannerItem from '@/components/feature/home/banner-item'
 
 interface Props {
@@ -15,8 +16,10 @@ function MainBanner({ bannerList }: Props) {
         className="mx-auto max-h-80 max-w-7xl px-2"
         slidesPerView={1}
         spaceBetween={30}
+        modules={[Autoplay, A11y]}
+        scrollbar={{ draggable: true }}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={{
