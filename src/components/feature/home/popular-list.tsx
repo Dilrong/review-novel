@@ -2,9 +2,15 @@
 
 import Novel from '@/lib/types/Novel'
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import NovelCard from '@/components/feature/novels/novel-card'
 import { useTranslations } from 'next-intl'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
 
 interface Props {
   novelList: Novel[]
@@ -14,7 +20,7 @@ function PopularList({ novelList }: Props) {
   const t = useTranslations()
 
   return (
-    <section className="mt-8">
+    <section className="my-8">
       <article className="mx-auto max-w-7xl px-2">
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           {t('popular_list_title')}
@@ -22,35 +28,11 @@ function PopularList({ novelList }: Props) {
         <p className="mt-1 text-sm text-muted-foreground">
           {t('popular_list_desc')}
         </p>
-        <div className="mt-2 flex flex-col gap-4">
-          <div>
-            <Swiper
-              className="my-8"
-              slidesPerView={2}
-              spaceBetween={12}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              breakpoints={{
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                },
-                1024: {
-                  slidesPerView: 5,
-                  spaceBetween: 30,
-                },
-              }}
-            >
+        <div className="mt-4">
+          <Carousel className="w-full max-w-7xl">
+            <CarouselContent>
               {novelList.map((novel: Novel) => (
-                <SwiperSlide
-                  className="m-1 flex justify-center align-middle"
-                  key={novel.id}
-                >
+                <CarouselItem key={novel.id} className="basis-1/2 lg:basis-1/5">
                   <NovelCard
                     key={novel.id}
                     id={novel.id}
@@ -58,10 +40,10 @@ function PopularList({ novelList }: Props) {
                     title={novel.title}
                     category={novel.category_id}
                   />
-                </SwiperSlide>
+                </CarouselItem>
               ))}
-            </Swiper>
-          </div>
+            </CarouselContent>
+          </Carousel>
         </div>
       </article>
     </section>
