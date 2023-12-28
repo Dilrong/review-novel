@@ -1,9 +1,13 @@
 'use client'
 
 import Banner from '@/lib/types/Banner'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { A11y, Autoplay } from 'swiper/modules'
 import BannerItem from '@/components/feature/home/banner-item'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
 
 interface Props {
   bannerList: Banner[]
@@ -11,34 +15,27 @@ interface Props {
 
 function MainBanner({ bannerList }: Props) {
   return (
-    <div>
-      <Swiper
-        className="mx-auto max-h-80 max-w-7xl px-2"
-        slidesPerView={1}
-        spaceBetween={30}
-        modules={[Autoplay, A11y]}
-        scrollbar={{ draggable: true }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
+    <div className="flex justify-center">
+      <Carousel
+        className="w-full max-w-7xl"
+        plugins={[
+          Autoplay({
+            delay: 5000,
+          }),
+        ]}
       >
-        {bannerList.map((banner: Banner) => (
-          <SwiperSlide
-            key={banner.id}
-            className="flex justify-center align-middle"
-          >
-            <BannerItem
-              link={banner.link}
-              image={banner.image_pc}
-              name={banner.name}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <CarouselContent>
+          {bannerList.map((banner: Banner) => (
+            <CarouselItem key={banner.id}>
+              <BannerItem
+                link={banner.link}
+                image={banner.image_pc}
+                name={banner.name}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </div>
   )
 }

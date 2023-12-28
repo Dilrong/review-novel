@@ -1,6 +1,4 @@
 import '../global.css'
-import 'swiper/css'
-import 'swiper/css/bundle'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 
