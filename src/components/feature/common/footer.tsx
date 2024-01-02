@@ -27,6 +27,17 @@ function Footer({ board }: Props) {
             {t('footer_content')}
           </span>
         </div>
+        <div className="mb-4 flex justify-center gap-4">
+          <Link className="text-sm text-muted-foreground" href="/terms/service">
+            Terms of Service
+          </Link>
+          <Link className="text-sm text-muted-foreground" href="/terms/privacy">
+            Privacy Policy
+          </Link>
+          <Link className="text-sm text-muted-foreground" href="/contact">
+            Contact Us
+          </Link>
+        </div>
         <span className="block pb-6 text-center text-sm">
           © 2023{' '}
           <a href="/" className="hover:underline">
