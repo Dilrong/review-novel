@@ -1,7 +1,6 @@
 import {
   Pagination as PaginationContainer,
   PaginationContent,
-  PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
