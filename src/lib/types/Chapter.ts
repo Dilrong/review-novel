@@ -2,6 +2,7 @@ export default interface Chapter {
   id: number
   order: number
   title: string
+  sequence: number
   content: string
   content_ko: string
   content_ja: string

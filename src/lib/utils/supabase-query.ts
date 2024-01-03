@@ -149,11 +149,11 @@ async function getChapterList(novelId: number): Promise<Chapter[]> {
   return chapterList as Chapter[]
 }
 
-async function getChapter(novelId: number): Promise<Chapter> {
+async function getChapter(id: number): Promise<Chapter> {
   const { data: chapter } = await supabase
     .from('chapters')
     .select()
-    .eq('novel_id', novelId)
+    .eq('id', id)
     .single()
 
   return chapter
