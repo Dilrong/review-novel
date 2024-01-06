@@ -8,6 +8,8 @@ import {
 import ScreenContainer from '@/components/ui/screen-container'
 import ChapterViewer from '@/components/feature/viewer/chapter-viewer'
 import PickList from '@/components/feature/home/pick-list'
+import React from 'react'
+import ViewerSidebar from '@/components/feature/viewer/viewer-sidebar'
 
 interface Props {
   params: {
@@ -17,17 +19,16 @@ interface Props {
 }
 
 export async function generateMetadata({
-  params: { id, locale },
+  params: { id },
 }: Props): Promise<Metadata> {
-  const novel = await getNovel(parseInt(id, 10), locale)
-  const chapter = await getChapter(novel.id)
+  const chapter = await getChapter(parseInt(id, 10))
 
   const description = chapter?.content.substring(0, 150)
   return {
-    title: novel.title,
+    title: chapter.title,
     description,
     openGraph: {
-      title: `${novel.title} | 노벨덕`,
+      title: `${chapter.title} | 노벨덕`,
       description,
       siteName: 'NovelDuck',
       images: ['/images/og.png'],
@@ -38,19 +39,25 @@ export async function generateMetadata({
 }
 
 const ViewerPage = async ({ params: { id, locale } }: Props) => {
-  const novel = await getNovel(parseInt(id, 10), locale)
-  const chapterList = await getChapterList(novel.id)
+  const chapter = await getChapter(parseInt(id, 10))
+  const chapterList = await getChapterList(chapter.novel_id)
+  const novel = await getNovel(chapter.novel_id, locale)
   const duckPickList = await getDuckPickList(locale)
 
   return (
     <ScreenContainer>
       <section className="mx-auto flex w-full max-w-7xl flex-col px-2 py-4">
         <h2 className="scroll-m-20 pb-2 text-3xl font-semibold first:mt-0">
-          {novel.title}
+          {chapter.title}
         </h2>
-        <ChapterViewer chapter={chapterList[0]} />
+        <ChapterViewer chapter={chapter} />
       </section>
       <PickList novelList={duckPickList} />
+      <ViewerSidebar
+        novel={novel}
+        chapterList={chapterList}
+        chapter={chapter}
+      />
     </ScreenContainer>
   )
 }

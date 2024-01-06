@@ -68,7 +68,7 @@ const RootLayout = async ({
     locale: string
   }
 }) => {
-  const board = await getBoard(1)
+  const board = await getBoard(2)
 
   let messages
   try {
