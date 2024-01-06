@@ -1,41 +1,49 @@
 'use client'
 
 import LinkTag from '@/components/feature/novels/link-tag'
-import Chapter from '@/lib/types/Chapter'
 import { Separator } from '@/components/ui/separator'
+import { useTranslations } from 'next-intl'
+import NovelReview from '@/components/feature/novel/novel-review'
 
 interface Props {
   chapterCount: number
   licensed: string
   translator: string
+  categoryId: number
 }
 
-function NovelAbout({ chapterCount, licensed, translator }: Props) {
+function NovelAbout({ chapterCount, licensed, translator, categoryId }: Props) {
+  const t = useTranslations()
+
   return (
     <section>
-      <section className="mt-4 flex justify-between">
-        <div>
-          <p className="text-sm text-muted-foreground">Chapters</p>
-          <p>{chapterCount} Chapters</p>
+      <section className="mt-4 flex flex-col justify-between md:flex-row">
+        <div className="py-2">
+          <p className="text-sm text-muted-foreground">
+            {t('novel_chapter_title')}
+          </p>
+          <p>
+            {chapterCount} {t('novel_chapter_title')}
+          </p>
         </div>
-        <div>
-          <p className="text-sm text-muted-foreground">Licensed From</p>
+        <div className="py-2">
+          <p className="text-sm text-muted-foreground">
+            {t('novel_licensed_from_title')}
+          </p>
           <p>{licensed}</p>
         </div>
-        <div>
-          <p className="text-sm text-muted-foreground">Translator From</p>
+        <div className="py-2">
+          <p className="text-sm text-muted-foreground">
+            {t('novel_translator_from_title')}
+          </p>
           <p>{translator}</p>
         </div>
       </section>
       <section className="mt-4">
-        <LinkTag id={1} link="#" />
+        <LinkTag id={categoryId} link="#" />
       </section>
       <Separator className="my-6" />
-      <article>
-        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-          Reviews
-        </h3>
-      </article>
+      <NovelReview />
     </section>
   )
 }

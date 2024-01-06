@@ -23,28 +23,28 @@ function Footer({ board }: Props) {
       </section>
       <footer>
         <div className="mx-auto w-full max-w-screen-xl py-4">
-          <span className="mb-1 block text-center text-xs">
+          <span className="block text-center text-xs">
             {t('footer_content')}
           </span>
         </div>
-        <div className="mb-4 flex justify-center gap-4">
-          <Link className="text-sm text-muted-foreground" href="/terms/service">
-            Terms of Service
-          </Link>
-          <Link className="text-sm text-muted-foreground" href="/terms/privacy">
-            Privacy Policy
-          </Link>
-          <Link className="text-sm text-muted-foreground" href="/contact">
-            Contact Us
-          </Link>
-        </div>
-        <span className="block pb-6 text-center text-sm">
+        <span className="block text-center text-sm">
           © 2023{' '}
           <a href="/" className="hover:underline">
             NovelDuck
           </a>
           . All Rights Reserved.
         </span>
+        <div className="flex justify-center gap-8 py-4">
+          <Link className="text-xs text-muted-foreground" href="/terms/service">
+            {t('footer_terms_of_service')}
+          </Link>
+          <Link className="text-xs text-muted-foreground" href="/terms/privacy">
+            {t('footer_privacy_policy')}
+          </Link>
+          <Link className="text-xs text-muted-foreground" href="/contact">
+            {t('footer_contact_us')}
+          </Link>
+        </div>
       </footer>
     </>
   )

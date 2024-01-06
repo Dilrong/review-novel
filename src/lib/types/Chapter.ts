@@ -7,6 +7,7 @@ export default interface Chapter {
   content_ko: string
   content_ja: string
   source: string
+  novel_id: number
   created_at: Date
   updated_at: Date
 }

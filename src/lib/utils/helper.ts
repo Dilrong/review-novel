@@ -69,10 +69,7 @@ const toCategoryName = (id: number) => {
       name = 'novel_category_fun'
       break
     case 3:
-      name = 'novel_category_meme'
-      break
-    case 4:
-      name = 'novel_category_motivation'
+      name = 'novel_category_wuxia'
       break
     case 5:
       name = 'novel_category_horror'
@@ -85,12 +82,6 @@ const toCategoryName = (id: number) => {
       break
     case 8:
       name = 'novel_category_sf'
-      break
-    case 9:
-      name = 'novel_category_business'
-      break
-    case 10:
-      name = 'novel_category_tip'
       break
     default:
       name = 'novel_category_etc'

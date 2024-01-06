@@ -9,19 +9,22 @@ import {
 } from '@/components/ui/table'
 import NovelChapter from '@/components/feature/novel/novel-chapter'
 import Chapter from '@/lib/types/Chapter'
+import { useTranslations } from 'next-intl'
 
 interface Props {
   chapterList: Chapter[]
 }
 
 function NovelChapterList({ chapterList }: Props) {
+  const t = useTranslations()
+
   return (
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>번호</TableHead>
-          <TableHead>제목</TableHead>
-          <TableHead>등록일</TableHead>
+          <TableHead>{t('novel_no_title')}</TableHead>
+          <TableHead>{t('novel_chapter_list_title')}</TableHead>
+          <TableHead>{t('novel_date_title')}</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

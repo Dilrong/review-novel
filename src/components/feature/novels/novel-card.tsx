@@ -16,7 +16,7 @@ function NovelCard({ id, thumbnail, title, category }: Props) {
   return (
     <Link
       className="max-w-md"
-      href={`/viewer/${id}`}
+      href={`/novel/${id}`}
       onClick={() => {
         mixpanel.track('소설카드 클릭', {
           id: id,

@@ -10,12 +10,17 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import Novel from '@/lib/types/Novel'
+import Link from 'next-intl/link'
+import { Separator } from '@/components/ui/separator'
 
 interface Props {
+  novel: Novel
+  chapterList: Chapter[]
   chapter: Chapter
 }
 
-function ViewerSidebar({ chapter }: Props) {
+function ViewerSidebar({ novel, chapterList, chapter }: Props) {
   return (
     <section className="fixed bottom-0 z-50 w-full bg-secondary">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between p-2 py-4">
@@ -24,24 +29,30 @@ function ViewerSidebar({ chapter }: Props) {
             <SheetTrigger>📚</SheetTrigger>
             <SheetContent side="left">
               <SheetHeader>
-                <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+                <SheetTitle>{novel.title}</SheetTitle>
                 <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
+                  <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+                    {chapterList.map((chapter, index) => (
+                      <Link key={index} href={`/viewer/${chapter.id}`}>
+                        <li className="my-4">{chapter.title}</li>
+                      </Link>
+                    ))}
+                  </ul>
                 </SheetDescription>
               </SheetHeader>
             </SheetContent>
           </Sheet>
           <p className="text-sm text-muted-foreground">{chapter.title}</p>
         </div>
-        <div>
-          <Button variant="ghost" size="icon">
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
+        {/*TODO: 네비게이션*/}
+        {/*<div>*/}
+        {/*  <Button variant="ghost" size="icon">*/}
+        {/*    <ChevronLeft className="h-4 w-4" />*/}
+        {/*  </Button>*/}
+        {/*  <Button variant="ghost" size="icon">*/}
+        {/*    <ChevronRight className="h-4 w-4" />*/}
+        {/*  </Button>*/}
+        {/*</div>*/}
       </div>
     </section>
   )

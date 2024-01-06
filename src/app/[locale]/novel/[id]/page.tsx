@@ -4,6 +4,7 @@ import NovelHeader from '@/components/feature/novel/novel-header'
 import NovelTab from '@/components/feature/novel/novel-tab'
 import { Button } from '@/components/ui/button'
 import Link from 'next-intl/link'
+import StartReadingButton from '@/components/feature/novel/start-reading-button'
 
 interface Props {
   params: {
@@ -26,9 +27,7 @@ const ServerPage = async ({ params: { locale, id } }: Props) => {
           author={novel.author}
           translator={novel.translator}
         />
-        <Link href={`/viewer/${chapterList[0].id}`}>
-          <Button className="mt-4 w-full">소설 읽기</Button>
-        </Link>
+        <StartReadingButton id={chapterList[0].id} />
         <NovelTab novel={novel} chapterList={chapterList} />
       </section>
     </ScreenContainer>
